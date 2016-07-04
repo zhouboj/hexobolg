@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/07/04/git命令详解（高级）/index.html">
 <meta property="og:site_name" content="老男孩的技术笔记">
 <meta property="og:description" content="Git日常应用中的命令，最基本的操作详解。">
-<meta property="og:updated_time" content="2016-07-04T04:10:00.000Z">
+<meta property="og:updated_time" content="2016-07-04T04:13:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git命令详解（高级）">
 <meta name="twitter:description" content="Git日常应用中的命令，最基本的操作详解。">
@@ -305,14 +305,10 @@
       
           
         <p>Git日常应用中的命令，最基本的操作详解。<br><a id="more"></a></p>
-<h2 id="Git详解高级"><a href="#Git详解高级" class="headerlink" title="Git详解高级"></a>Git详解高级</h2><p>###1.什么是分支？为何存在？如何创建？如何切换？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">git pull 								//更新代码</div><div class="line">git branch								//查看本地分支，以*开头</div><div class="line">git branch -a							//查看所有分支</div><div class="line">git branch new-branch-name				//在当前分支的基础上创建新分支</div><div class="line">git checkout new-branch-name			//切换到新分支</div><div class="line">git push -u origin new-branch-name 		//把本地的新分支推送到远程库</div></pre></td></tr></table></figure>
-<p>###2.代码如何合并？遇到冲突怎么解决？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git checkout new-branch-name</div><div class="line">git pull</div><div class="line">git merge master 						//把主干的新代码合并到本地，有冲突解决冲突</div><div class="line">git add . 								//添加新增文件</div><div class="line">git commit -am							//添加修改文件，去掉删除文件，提交</div></pre></td></tr></table></figure>
-<p>###3.查看代码提交记录？回溯代码？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">git log -l 5</div><div class="line">git reset HEAD</div><div class="line">git reset -- hard @a232fdfsf334</div><div class="line">git commit -am &quot;message&quot;</div><div class="line">git push -f origin new-branch-name</div><div class="line">git revert @a232fdfsf334</div><div class="line">git push origin new-branch-name</div></pre></td></tr></table></figure>
-<p>###4.gitlab,github,多个git库帐号？推送到多个库?</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git remote -v</div><div class="line">git remote add gitlab git@gitlab.com/XXX</div><div class="line">git push -u origin gitlab</div></pre></td></tr></table></figure>
+<h2 id="Git详解高级"><a href="#Git详解高级" class="headerlink" title="Git详解高级"></a>Git详解高级</h2><h3 id="什么是分支？为何存在？如何创建？如何切换？"><a href="#什么是分支？为何存在？如何创建？如何切换？" class="headerlink" title="什么是分支？为何存在？如何创建？如何切换？"></a>什么是分支？为何存在？如何创建？如何切换？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">git pull 								//更新代码</div><div class="line">git branch								//查看本地分支，以*开头</div><div class="line">git branch -a							//查看所有分支</div><div class="line">git branch new-branch-name				//在当前分支的基础上创建新分支</div><div class="line">git checkout new-branch-name			//切换到新分支</div><div class="line">git push -u origin new-branch-name 		//把本地的新分支推送到远程库</div></pre></td></tr></table></figure>
+<h3 id="代码如何合并？遇到冲突怎么解决？"><a href="#代码如何合并？遇到冲突怎么解决？" class="headerlink" title="代码如何合并？遇到冲突怎么解决？"></a>代码如何合并？遇到冲突怎么解决？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git checkout new-branch-name</div><div class="line">git pull</div><div class="line">git merge master 						//把主干的新代码合并到本地，有冲突解决冲突</div><div class="line">git add . 								//添加新增文件</div><div class="line">git commit -am							//添加修改文件，去掉删除文件，提交</div></pre></td></tr></table></figure>
+<h3 id="查看代码提交记录？回溯代码？"><a href="#查看代码提交记录？回溯代码？" class="headerlink" title="查看代码提交记录？回溯代码？"></a>查看代码提交记录？回溯代码？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">git log -l 5</div><div class="line">git reset HEAD</div><div class="line">git reset -- hard @a232fdfsf334</div><div class="line">git commit -am &quot;message&quot;</div><div class="line">git push -f origin new-branch-name</div><div class="line">git revert @a232fdfsf334</div><div class="line">git push origin new-branch-name</div></pre></td></tr></table></figure>
+<h3 id="gitlab-github-多个git库帐号？推送到多个库"><a href="#gitlab-github-多个git库帐号？推送到多个库" class="headerlink" title="gitlab,github,多个git库帐号？推送到多个库?"></a>gitlab,github,多个git库帐号？推送到多个库?</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git remote -v</div><div class="line">git remote add gitlab git@gitlab.com/XXX</div><div class="line">git push -u origin gitlab</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -323,7 +319,7 @@
         <p><span>本文标题:</span><a href="/2016/07/04/git命令详解（高级）/">git命令详解（高级）</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">老蒋</a></p>
         <p><span>发布时间:</span>2016-07-04, 12:00:11</p>
-        <p><span>最后更新:</span>2016-07-04, 12:10:00</p>
+        <p><span>最后更新:</span>2016-07-04, 12:13:47</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/07/04/git命令详解（高级）/" title="git命令详解（高级）">http://yoursite.com/2016/07/04/git命令详解（高级）/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/07/04/git命令详解（高级）/　　作者: 老蒋" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -352,7 +348,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Git详解高级"><span class="toc-number">1.</span> <span class="toc-text">Git详解高级</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Git详解高级"><span class="toc-number">1.</span> <span class="toc-text">Git详解高级</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是分支？为何存在？如何创建？如何切换？"><span class="toc-number">1.1.</span> <span class="toc-text">什么是分支？为何存在？如何创建？如何切换？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码如何合并？遇到冲突怎么解决？"><span class="toc-number">1.2.</span> <span class="toc-text">代码如何合并？遇到冲突怎么解决？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看代码提交记录？回溯代码？"><span class="toc-number">1.3.</span> <span class="toc-text">查看代码提交记录？回溯代码？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gitlab-github-多个git库帐号？推送到多个库"><span class="toc-number">1.4.</span> <span class="toc-text">gitlab,github,多个git库帐号？推送到多个库?</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn,
