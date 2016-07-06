@@ -4,224 +4,8 @@
   
     
     <entry>
-      <title><![CDATA[Markdown编辑器Mou中的代码高亮方法]]></title>
-      <url>http://yoursite.com/2016/07/04/Markdown%E7%BC%96%E8%BE%91%E5%99%A8Mou%E4%B8%AD%E7%9A%84%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE%E6%96%B9%E6%B3%95/</url>
-      <content type="html"><![CDATA[<p>Mac中Markdown编辑器Mou不支持代码高亮，通过highlight可以将代码高亮显示。</p>
-<a id="more"></a>
-<p>去<a href="https://highlightjs.org/usage/" target="_blank" rel="external">这里</a>看使用说明，去这里<a href="https://highlightjs.org/download/" target="_blank" rel="external">下载</a>对应的文件。</p>
-<p>在使用说明中我们可以看到如下的代码：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"/path/to/styles/default.css"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/path/to/highlight.pack.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">hljs.initHighlightingOnLoad();</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>第一行href后面引号的内容是你下载文件中存放css文件的路径，第二行src后面的内容是下载的文件中存放hightlight.pack.js的路径。<br>下载下来是一个zip包，解压以后是个文件名为highlight的文件夹，其中css存放在styles文件夹中，在官方有详细说明文档。</p>
-<p><strong>示例：</strong><em>把以下代码放入md文件的开头，那么所有的代码在左边显示为高亮的，在styles文件夹中有许许多多的css，即很多显示主题，我这里用的时googlecode，你可以按照自己喜欢的主题更改路径中css的名称。</em></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"http://yandex.st/highlightjs/8.0/styles/solarized_dark.min.css"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://yandex.st/highlightjs/8.0/highlight.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">hljs.initHighlightingOnLoad();</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>效果显示：</strong><em>以下是示例代码</em></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> re</div><div class="line"> </div><div class="line">p = re.compile(<span class="string">"(\w+)('s|'re|n't)?"</span>)</div><div class="line">wc = &#123;&#125;</div><div class="line">tail_map = &#123; <span class="string">"'s"</span> : <span class="string">'is'</span>, <span class="string">"'re"</span> : <span class="string">'are'</span>, <span class="string">"n't"</span>: <span class="string">'not'</span>&#125;</div><div class="line"> </div><div class="line"><span class="keyword">for</span> m <span class="keyword">in</span> re.finditer(p, s):</div><div class="line">    word = m.group(<span class="number">1</span>).lower()                   <span class="comment"># Get the word in lower case</span></div><div class="line">    wc[word] = wc.get(word, <span class="number">0</span>) + <span class="number">1</span>              <span class="comment"># Increase word count</span></div><div class="line">    tail = m.group(<span class="number">2</span>)                           <span class="comment"># Get the word tail</span></div><div class="line">    <span class="keyword">if</span> tail <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:                        <span class="comment"># If a word tail exists,</span></div><div class="line">        tail = tail_map[tail]                   <span class="comment"># map it to its full form</span></div><div class="line">        wc[tail] = wc.get(tail, <span class="number">0</span>)+<span class="number">1</span>            <span class="comment"># Increase word count</span></div><div class="line"> </div><div class="line"><span class="keyword">print</span> (<span class="string">'Total word count: %d'</span>%sum(wc.values())) <span class="comment"># Output the total count</span></div><div class="line">max_len = max(map(len, wc.keys()))              <span class="comment"># Calculate the max length of words for pretty printing</span></div><div class="line"><span class="keyword">for</span> w <span class="keyword">in</span> sorted(wc.keys()):                     <span class="comment"># Sort the words</span></div><div class="line">    <span class="keyword">print</span> (<span class="string">'%*s =&gt; %d'</span>%(max_len, w, wc[w]))     <span class="comment"># Output</span></div></pre></td></tr></table></figure>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Yii2.0框架实战开发]]></title>
-      <url>http://yoursite.com/2016/07/04/Yii2-0%E6%A1%86%E6%9E%B6%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91/</url>
-      <content type="html"><![CDATA[<p>Yii是一个基于组件的高性能PHP框架，用于开发大型Web应用。Yii采用严格的OOP编写，并有着完善的库引用以及全面的教程。从MVC,DAO/ActiveRecord,widgets,cashing,等级式RBAC，Web服务，到主题化，I18N和L10N，Yii提供了今日Web2.0应用开发所需要的几乎一切功能。事实上，Yii是最有效率的PHP框架之一。</p>
-<a id="more"></a>
-<h2 id="第一课-安装Yii2-0框架及环境配置"><a href="#第一课-安装Yii2-0框架及环境配置" class="headerlink" title="第一课 安装Yii2.0框架及环境配置"></a>第一课 安装Yii2.0框架及环境配置</h2><h3 id="Composer安装静态资源索引插件和Yii2-0框架"><a href="#Composer安装静态资源索引插件和Yii2-0框架" class="headerlink" title="Composer安装静态资源索引插件和Yii2.0框架"></a>Composer安装静态资源索引插件和Yii2.0框架</h3><ul>
-<li><p><a href="https://getcomposer.org/download/" target="_blank" rel="external">composer</a></p>
-</li>
-<li><p><a href="https://packagist.org/" target="_blank" rel="external">Packagist仓库</a></p>
-</li>
-</ul>
-<blockquote>
-<p>yiisoft/yii2-app-basic</p>
-</blockquote>
-<p>  在 <a href="http://github.com" title="@githut" target="_blank" rel="external">GitHub仓库</a>下载</p>
-<ul>
-<li>安装插件，创建一个projects 目录下安装 yii</li>
-</ul>
-<pre><code>☁  ~ php composer.phar global require &quot;fxp/composer-asset-plugin:~1.1.1&quot;
-☁  ~ mkdir projects
-☁  ~ cd projects
-☁  projects php composer.phar create-project --prefer-dist --stability=dev yiisoft/yii2-app-basic yii
-</code></pre><p> 安装中可能出现需<strong>Token (hidden):</strong>提示，到<a href="https://github.com/settings/tokens" target="_blank" rel="external">GitHub -&gt; Personal access tokens</a> 如下图：<br> <img src="2.11.png" alt="图2.11"></p>
-<p>Yii2.0框架参考文档</p>
-<ul>
-<li><p><a href="http://www.yiichina.com/doc/guide/2.0" target="_blank" rel="external">中文文档</a> <strong><em>中文文档并不完全需查英文文档</em></strong></p>
-</li>
-<li><p><a href="http://www.yiiframework.com/doc-2.0/guide-index.html" target="_blank" rel="external">英文文档</a>   <strong><em>本人经过翻墙访问</em></strong></p>
-</li>
-</ul>
-<h3 id="归档文件安装"><a href="#归档文件安装" class="headerlink" title="归档文件安装"></a>归档文件安装</h3><ul>
-<li><p><a href="http://www.yiiframework.com/download" target="_blank" rel="external">下载地址：</a></p>
-</li>
-<li><p>修改<em>config/web.php</em>文件，给<em>cookerValidationKey</em>配置项添加一个密钥</p>
-</li>
-<li><p>（通过Composer安装，刚此步骤会自动完成）</p>
-</li>
-</ul>
-<blockquote>
-<p><em>在下面插入一段密钥（若为空），以供cookie validation的需要</em></p>
-<p><strong>‘cookieValidationKey’ = &gt; ‘在此处输入密钥’ </strong></p>
-</blockquote>
-<h3 id="Yii2-0框架目录结构"><a href="#Yii2-0框架目录结构" class="headerlink" title="Yii2.0框架目录结构"></a>Yii2.0框架目录结构</h3><p>目录结构</p>
-<ul>
-<li><p>basic/ 应用根目录</p>
-</li>
-<li><p>composer.json Composer 配置文件，描述包信息</p>
-</li>
-<li><p>console.php 控制台应用配置信息</p>
-</li>
-<li><p>web.php Web应用配置信息</p>
-</li>
-<li><p>commands/ 包含控制台命令类</p>
-</li>
-<li><p>controllers/ 包含控制器类</p>
-</li>
-<li><p>models/ 包含模型类</p>
-</li>
-<li><p>runtime/ 包含Yii在运行时生成的文件，例如日志和缓存文件</p>
-</li>
-<li><p>vendor/ 包含已经安装的Composer包，包括Yii框架自身</p>
-</li>
-<li><p>views/ 包含视图文件</p>
-</li>
-<li><p>web/ Web应用根目录，包含Web入口文件</p>
-</li>
-<li><p>assets/ 包含Yii发布的资源文件（javascript和css）</p>
-</li>
-<li><p>index.php 应用入口文件</p>
-</li>
-<li><p>yii Yii控制台命令执行脚本</p>
-</li>
-</ul>
-<p>– 后续完善中 –</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[git命令详解（高级）]]></title>
-      <url>http://yoursite.com/2016/07/04/git%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3%EF%BC%88%E9%AB%98%E7%BA%A7%EF%BC%89/</url>
-      <content type="html"><![CDATA[<p>Git日常应用中的命令，最基本的操作详解。<br><a id="more"></a></p>
-<h2 id="Git详解高级"><a href="#Git详解高级" class="headerlink" title="Git详解高级"></a>Git详解高级</h2><h3 id="什么是分支？为何存在？如何创建？如何切换？"><a href="#什么是分支？为何存在？如何创建？如何切换？" class="headerlink" title="什么是分支？为何存在？如何创建？如何切换？"></a>什么是分支？为何存在？如何创建？如何切换？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">git pull //更新代码</div><div class="line">git branch //查看本地分支，以*开头</div><div class="line">git branch -a //查看所有分支</div><div class="line">git branch new-branch-name //在当前分支的基础上创建新分支</div><div class="line">git checkout new-branch-name //切换到新分支</div><div class="line">git push -u origin new-branch-name //把本地的新分支推送到远程库</div></pre></td></tr></table></figure>
-<h3 id="代码如何合并？遇到冲突怎么解决？"><a href="#代码如何合并？遇到冲突怎么解决？" class="headerlink" title="代码如何合并？遇到冲突怎么解决？"></a>代码如何合并？遇到冲突怎么解决？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git checkout new-branch-name</div><div class="line">git pull</div><div class="line">git merge master //把主干的新代码合并到本地，有冲突解决冲突</div><div class="line">git add . //添加新增文件</div><div class="line">git commit -am //添加修改文件，去掉删除文件，提交</div></pre></td></tr></table></figure>
-<h3 id="查看代码提交记录？回溯代码？"><a href="#查看代码提交记录？回溯代码？" class="headerlink" title="查看代码提交记录？回溯代码？"></a>查看代码提交记录？回溯代码？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">git log -l 5</div><div class="line">git reset HEAD</div><div class="line">git reset -- hard @a232fdfsf334</div><div class="line">git commit -am &quot;message&quot;</div><div class="line">git push -f origin new-branch-name</div><div class="line">git revert @a232fdfsf334</div><div class="line">git push origin new-branch-name</div></pre></td></tr></table></figure>
-<h3 id="gitlab-github-多个git库帐号？推送到多个库"><a href="#gitlab-github-多个git库帐号？推送到多个库" class="headerlink" title="gitlab,github,多个git库帐号？推送到多个库?"></a>gitlab,github,多个git库帐号？推送到多个库?</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git remote -v</div><div class="line">git remote add gitlab git@gitlab.com/XXX</div><div class="line">git push -u origin gitlab</div></pre></td></tr></table></figure>]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[GitHut的入门与实践]]></title>
-      <url>http://yoursite.com/2016/07/02/GitHub%E7%9A%84%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5/</url>
-      <content type="html"><![CDATA[<p>从Git的基本知识和操作方法入手，详细介绍了GitHub的各种功能，GitHub与其它工具或服务的集成，使用GitHub的开发流程以及如何将GitHub引入到企业中。<br><a id="more"></a></p>
-<h2 id="第1章-欢迎来到GitHub的世界"><a href="#第1章-欢迎来到GitHub的世界" class="headerlink" title="第1章 欢迎来到GitHub的世界"></a>第1章 欢迎来到GitHub的世界</h2><h3 id="什么是GitHub"><a href="#什么是GitHub" class="headerlink" title="什么是GitHub"></a>什么是GitHub</h3><p>GitHub 是为了开发者提供Git仓库的托管服务。这是一个让开发者与朋友、同事、同学及陌生人共享代码的完美场所。<br>GitHub除提供Git仓库的托管服务外，还为开发者或团队提供了一系列功能，帮助其高效率、高品质地进行代码编写。</p>
-<h3 id="使用GitHub会带来哪些变化"><a href="#使用GitHub会带来哪些变化" class="headerlink" title="使用GitHub会带来哪些变化"></a>使用GitHub会带来哪些变化</h3><ul>
-<li><p>协作形式变化</p>
-</li>
-<li><p>在开发者之间引发化学反应的Pull Request</p>
-</li>
-<li><p>……对特定用户进行评论</p>
-</li>
-<li><p>……GitHub Flavored Markdown</p>
-</li>
-</ul>
-<blockquote>
-<p>专栏：还可以这样写！！<br>GitHub中可使用的描述方法并不止”@用户名”一种。<br>输入”@组织名”可以让属于该 Organization(组织)的所有成员收到通知。输入”@组织名/团队”可以让该团队的所有成员收到通知。<br>输入”#编号”，会连接到该仓库所对应的lssue编号。输入”用户名/仓库名#编号”则可以连接到指定仓库所对应的lssue编号。只要按照这类特定格式书写便会自动创建链接。<br>多加利用上述这些功能，可以让交流更有效率。</p>
-</blockquote>
-<ul>
-<li><p>能看到更多其他团队的软件<br>GitHub快捷的环境为开发者带来的合作伙伴，并不只局限于自己团队内部。只要将感兴趣的仓库添加至Watch中，就可以在News Feed查看该仓库的相关信息。</p>
-</li>
-<li><p>与开源软件相同的开发模式</p>
-</li>
-</ul>
-<h3 id="社会化编程"><a href="#社会化编程" class="headerlink" title="社会化编程"></a>社会化编程</h3><p>GitHub这一服务，为开源世界带来了社会化编程的概念。<br>如今，世界众多程序员都在通过GitHut公开源代码，同时利用GitHub支持着自己日常的软件开发。软件开发者的世界带来了真正意义上的『民主』，让所有人平等地拥有了更改源代码的权利。这在软件开发领域是一场巨大的革命。</p>
-<h3 id="为什么需要社会化编程"><a href="#为什么需要社会化编程" class="headerlink" title="为什么需要社会化编程"></a>为什么需要社会化编程</h3><ul>
-<li><p>不要闭目塞听，要接触不同的文化</p>
-</li>
-<li><p>会写代码的程序员更受青睐</p>
-</li>
-<li><p>GitHub 最大的特征是”面向人”<br>您可以将注意力聚集到感兴趣的人身上。他既可以崇拜已久的超级黑客，也可以是同校同学或公司的同事。<br>能同时关注人和代码，是GitHub为我们带来的一个新的世界。</p>
-</li>
-</ul>
-<h3 id="GitHub-提供的主要功能"><a href="#GitHub-提供的主要功能" class="headerlink" title="GitHub 提供的主要功能"></a>GitHub 提供的主要功能</h3><ul>
-<li><p>Git 仓库<br>一般情况下，我们可以免费建立任意个GitHub提供的Git仓库。但如果需要建立只对特定人物或只对自己公开的私有仓库，则需要依照套餐类型支付每月7美元的使用费。</p>
-</li>
-<li><p>Organization<br>通常来说，个人使用时只要使用个人账户就足够了，但如果是公司，建议使用Organization。</p>
-</li>
-<li><p>lssue<br>Issue 功能，是将一个任务或问题分配给一个 Issue 进行追踪和管理的功能。</p>
-</li>
-<li><p>Pull Request<br>开发者向GitHub的仓库推送更改或功能添加后，可以通过Pull Request功能向别人的仓库提出申请，请求对方合并。</p>
-</li>
-</ul>
-<h2 id="第2章-Git的导入"><a href="#第2章-Git的导入" class="headerlink" title="第2章 Git的导入"></a>第2章 Git的导入</h2><p>Git 仓库管理功能是GitHub的核心。</p>
-<h3 id="诞生背景"><a href="#诞生背景" class="headerlink" title="诞生背景"></a>诞生背景</h3><p>Git 属于分散型版本管理系统，是为版本管理而设计的程序。<br>Linux 的创始人 Linux Torvalds 在2005年开发了Git的原型程序。</p>
-<h3 id="什么是版本管理"><a href="#什么是版本管理" class="headerlink" title="什么是版本管理"></a>什么是版本管理</h3><p>版本管理就是管理更新的历史记录。</p>
-<ul>
-<li><p>集中型与分散型<br>版本管理系统分为Subversion 这类集中型的与 Git 这类分散型的。</p>
-</li>
-<li><p>…… 集中型<br>以 Subversion 为代表的集中型，仓库集中存放在服务器之中，所以只存在一个仓库。</p>
-</li>
-</ul>
-<p><img src="2.1.png" alt="图2.1"></p>
-<ul>
-<li>…… 分散型</li>
-</ul>
-<p><img src="2.2.png" alt="图2.2"></p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
-<li><p>Mac 与Linux<br>最近的 Mac 中都已预装了Git。而各版本的Linux中也都以软件包(Package)的形式提供给用户了。</p>
-</li>
-<li><p>Windows<br>在 Windows 环境中，最简单快捷的方法是使用 <a href="https://git-for-windows.github.io/" target="_blank" rel="external">msysGit</a> 。</p>
-</li>
-<li><p>……组件的选择<br>在图2.3的页面中选择需要的组件。</p>
-</li>
-<li><p>……设置环境变量<br>在图2.4的页面中，可以设置调用Git的环境变量。<br><img src="2.3.png" alt="图2.3"><br><img src="2.4.png" alt="图2.4"></p>
-</li>
-<li><p>……换行符的处理<br>使用Windows环境的各位，请选择推荐的图2.5选项。<br><img src="2.5.png" alt="图2.5"></p>
-</li>
-<li><p>…… Git Bash<br>顺利安装好msysGit之后，Git Bash会作为一个应用程序添加进系统，接下来请启动它。<br><img src="2.6.png" alt="图2.6"></p>
-</li>
-</ul>
-<h3 id="初始设置"><a href="#初始设置" class="headerlink" title="初始设置"></a>初始设置</h3><ul>
-<li>设置姓名和邮箱地址<br>首先来设置使用Git时的姓名和邮箱地址。名字请用英文输入。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name &quot;Firstname Lastname&quot;</div><div class="line">$ git config --global user.email &quot;Your_email@example.com&quot;</div></pre></td></tr></table></figure>
-<p>这个命令，会在”~/.gitconfig”中以如下形式输出设置文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[user]</div><div class="line">	name = Firstname Lastname</div><div class="line">	email = Your_email@example.com</div></pre></td></tr></table></figure>
-<ul>
-<li>提高命令输出的可读性</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git config --global color.ui auto</div></pre></td></tr></table></figure>
-<p>“~/.gitconfig”中会增加下面一行。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[color]</div><div class="line">	ui = auto</div></pre></td></tr></table></figure>
-<p>这样一来，各种命令的输出就会变得更容易分辨。</p>
-<h2 id="第3章-使用GitHub的前期准备"><a href="#第3章-使用GitHub的前期准备" class="headerlink" title="第3章 使用GitHub的前期准备"></a>第3章 使用GitHub的前期准备</h2><h3 id="使用前的准备"><a href="#使用前的准备" class="headerlink" title="使用前的准备"></a>使用前的准备</h3><ul>
-<li><p>创建账户<br>在<a href="http://github.com" target="_blank" rel="external">GitHub</a>来创建账户</p>
-</li>
-<li><p>设置SSH Key</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p>会在 ~/.ssh 目录下生成二个文件 id_rsa 文件是私有密钥，id_rsa.pub 是公开密钥。</p>
-</blockquote>
-<p>– 后续完善中 –</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>http://yoursite.com/2016/07/01/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[Anki 记忆库之 Excel 快捷键大全]]></title>
-      <url>http://yoursite.com/2015/12/22/anki-excel-shortcuts/</url>
+      <url>http://yoursite.com/2016/07/06/anki-excel-shortcuts/</url>
       <content type="html"><![CDATA[<p></p><h2 id="intro">前言</h2>如果微软 Office 系列套件里只能保留一个，我会选择保留 Excel。只需要学一点基础的 Excel 知识，就能直观地感受到信息技术所带来的高效生产力。有些软件，掌握了它的快捷键，不仅能较全面地了解它的功能，也能极大地提升使用效率。Excel 就属于这类软件。<p></p>
 <a id="more"></a>
 <h2 id="记忆库使用"><a href="#记忆库使用" class="headerlink" title="记忆库使用"></a>记忆库使用</h2><p>所有快捷键已整理为 Anki 记忆库，下载后导入即可开始使用。</p>
@@ -928,6 +712,222 @@
 <li>微软 Office 帮助中心: <a href="https://support.office.com/zh-cn/article/Excel-%e5%bf%ab%e6%8d%b7%e9%94%ae%e5%92%8c%e5%8a%9f%e8%83%bd%e9%94%ae-1798d9d5-842a-42b8-9c99-9b7213f0040f?ui=zh-CN&amp;rs=zh-CN&amp;ad=CN" target="_blank" rel="external">Excel 快捷键和功能键</a></li>
 <li>Microsoft Office Support: <a href="https://support.office.com/en-ca/article/Excel-shortcut-and-function-keys-1798d9d5-842a-42b8-9c99-9b7213f0040f" target="_blank" rel="external">Excel shortcut and function keys</a></li>
 </ol>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Markdown编辑器Mou中的代码高亮方法]]></title>
+      <url>http://yoursite.com/2016/07/04/Markdown%E7%BC%96%E8%BE%91%E5%99%A8Mou%E4%B8%AD%E7%9A%84%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE%E6%96%B9%E6%B3%95/</url>
+      <content type="html"><![CDATA[<p>Mac中Markdown编辑器Mou不支持代码高亮，通过highlight可以将代码高亮显示。</p>
+<a id="more"></a>
+<p>去<a href="https://highlightjs.org/usage/" target="_blank" rel="external">这里</a>看使用说明，去这里<a href="https://highlightjs.org/download/" target="_blank" rel="external">下载</a>对应的文件。</p>
+<p>在使用说明中我们可以看到如下的代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"/path/to/styles/default.css"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/path/to/highlight.pack.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">hljs.initHighlightingOnLoad();</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>第一行href后面引号的内容是你下载文件中存放css文件的路径，第二行src后面的内容是下载的文件中存放hightlight.pack.js的路径。<br>下载下来是一个zip包，解压以后是个文件名为highlight的文件夹，其中css存放在styles文件夹中，在官方有详细说明文档。</p>
+<p><strong>示例：</strong><em>把以下代码放入md文件的开头，那么所有的代码在左边显示为高亮的，在styles文件夹中有许许多多的css，即很多显示主题，我这里用的时googlecode，你可以按照自己喜欢的主题更改路径中css的名称。</em></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"http://yandex.st/highlightjs/8.0/styles/solarized_dark.min.css"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://yandex.st/highlightjs/8.0/highlight.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">hljs.initHighlightingOnLoad();</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>效果显示：</strong><em>以下是示例代码</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> re</div><div class="line"> </div><div class="line">p = re.compile(<span class="string">"(\w+)('s|'re|n't)?"</span>)</div><div class="line">wc = &#123;&#125;</div><div class="line">tail_map = &#123; <span class="string">"'s"</span> : <span class="string">'is'</span>, <span class="string">"'re"</span> : <span class="string">'are'</span>, <span class="string">"n't"</span>: <span class="string">'not'</span>&#125;</div><div class="line"> </div><div class="line"><span class="keyword">for</span> m <span class="keyword">in</span> re.finditer(p, s):</div><div class="line">    word = m.group(<span class="number">1</span>).lower()                   <span class="comment"># Get the word in lower case</span></div><div class="line">    wc[word] = wc.get(word, <span class="number">0</span>) + <span class="number">1</span>              <span class="comment"># Increase word count</span></div><div class="line">    tail = m.group(<span class="number">2</span>)                           <span class="comment"># Get the word tail</span></div><div class="line">    <span class="keyword">if</span> tail <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:                        <span class="comment"># If a word tail exists,</span></div><div class="line">        tail = tail_map[tail]                   <span class="comment"># map it to its full form</span></div><div class="line">        wc[tail] = wc.get(tail, <span class="number">0</span>)+<span class="number">1</span>            <span class="comment"># Increase word count</span></div><div class="line"> </div><div class="line"><span class="keyword">print</span> (<span class="string">'Total word count: %d'</span>%sum(wc.values())) <span class="comment"># Output the total count</span></div><div class="line">max_len = max(map(len, wc.keys()))              <span class="comment"># Calculate the max length of words for pretty printing</span></div><div class="line"><span class="keyword">for</span> w <span class="keyword">in</span> sorted(wc.keys()):                     <span class="comment"># Sort the words</span></div><div class="line">    <span class="keyword">print</span> (<span class="string">'%*s =&gt; %d'</span>%(max_len, w, wc[w]))     <span class="comment"># Output</span></div></pre></td></tr></table></figure>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Yii2.0框架实战开发]]></title>
+      <url>http://yoursite.com/2016/07/04/Yii2-0%E6%A1%86%E6%9E%B6%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91/</url>
+      <content type="html"><![CDATA[<p>Yii是一个基于组件的高性能PHP框架，用于开发大型Web应用。Yii采用严格的OOP编写，并有着完善的库引用以及全面的教程。从MVC,DAO/ActiveRecord,widgets,cashing,等级式RBAC，Web服务，到主题化，I18N和L10N，Yii提供了今日Web2.0应用开发所需要的几乎一切功能。事实上，Yii是最有效率的PHP框架之一。</p>
+<a id="more"></a>
+<h2 id="第一课-安装Yii2-0框架及环境配置"><a href="#第一课-安装Yii2-0框架及环境配置" class="headerlink" title="第一课 安装Yii2.0框架及环境配置"></a>第一课 安装Yii2.0框架及环境配置</h2><h3 id="Composer安装静态资源索引插件和Yii2-0框架"><a href="#Composer安装静态资源索引插件和Yii2-0框架" class="headerlink" title="Composer安装静态资源索引插件和Yii2.0框架"></a>Composer安装静态资源索引插件和Yii2.0框架</h3><ul>
+<li><p><a href="https://getcomposer.org/download/" target="_blank" rel="external">composer</a></p>
+</li>
+<li><p><a href="https://packagist.org/" target="_blank" rel="external">Packagist仓库</a></p>
+</li>
+</ul>
+<blockquote>
+<p>yiisoft/yii2-app-basic</p>
+</blockquote>
+<p>  在 <a href="http://github.com" title="@githut" target="_blank" rel="external">GitHub仓库</a>下载</p>
+<ul>
+<li>安装插件，创建一个projects 目录下安装 yii</li>
+</ul>
+<pre><code>☁  ~ php composer.phar global require &quot;fxp/composer-asset-plugin:~1.1.1&quot;
+☁  ~ mkdir projects
+☁  ~ cd projects
+☁  projects php composer.phar create-project --prefer-dist --stability=dev yiisoft/yii2-app-basic yii
+</code></pre><p> 安装中可能出现需<strong>Token (hidden):</strong>提示，到<a href="https://github.com/settings/tokens" target="_blank" rel="external">GitHub -&gt; Personal access tokens</a> 如下图：<br> <img src="2.11.png" alt="图2.11"></p>
+<p>Yii2.0框架参考文档</p>
+<ul>
+<li><p><a href="http://www.yiichina.com/doc/guide/2.0" target="_blank" rel="external">中文文档</a> <strong><em>中文文档并不完全需查英文文档</em></strong></p>
+</li>
+<li><p><a href="http://www.yiiframework.com/doc-2.0/guide-index.html" target="_blank" rel="external">英文文档</a>   <strong><em>本人经过翻墙访问</em></strong></p>
+</li>
+</ul>
+<h3 id="归档文件安装"><a href="#归档文件安装" class="headerlink" title="归档文件安装"></a>归档文件安装</h3><ul>
+<li><p><a href="http://www.yiiframework.com/download" target="_blank" rel="external">下载地址：</a></p>
+</li>
+<li><p>修改<em>config/web.php</em>文件，给<em>cookerValidationKey</em>配置项添加一个密钥</p>
+</li>
+<li><p>（通过Composer安装，刚此步骤会自动完成）</p>
+</li>
+</ul>
+<blockquote>
+<p><em>在下面插入一段密钥（若为空），以供cookie validation的需要</em></p>
+<p><strong>‘cookieValidationKey’ = &gt; ‘在此处输入密钥’ </strong></p>
+</blockquote>
+<h3 id="Yii2-0框架目录结构"><a href="#Yii2-0框架目录结构" class="headerlink" title="Yii2.0框架目录结构"></a>Yii2.0框架目录结构</h3><p>目录结构</p>
+<ul>
+<li><p>basic/ 应用根目录</p>
+</li>
+<li><p>composer.json Composer 配置文件，描述包信息</p>
+</li>
+<li><p>console.php 控制台应用配置信息</p>
+</li>
+<li><p>web.php Web应用配置信息</p>
+</li>
+<li><p>commands/ 包含控制台命令类</p>
+</li>
+<li><p>controllers/ 包含控制器类</p>
+</li>
+<li><p>models/ 包含模型类</p>
+</li>
+<li><p>runtime/ 包含Yii在运行时生成的文件，例如日志和缓存文件</p>
+</li>
+<li><p>vendor/ 包含已经安装的Composer包，包括Yii框架自身</p>
+</li>
+<li><p>views/ 包含视图文件</p>
+</li>
+<li><p>web/ Web应用根目录，包含Web入口文件</p>
+</li>
+<li><p>assets/ 包含Yii发布的资源文件（javascript和css）</p>
+</li>
+<li><p>index.php 应用入口文件</p>
+</li>
+<li><p>yii Yii控制台命令执行脚本</p>
+</li>
+</ul>
+<p>– 后续完善中 –</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[git命令详解（高级）]]></title>
+      <url>http://yoursite.com/2016/07/04/git%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3%EF%BC%88%E9%AB%98%E7%BA%A7%EF%BC%89/</url>
+      <content type="html"><![CDATA[<p>Git日常应用中的命令，最基本的操作详解。<br><a id="more"></a></p>
+<h2 id="Git详解高级"><a href="#Git详解高级" class="headerlink" title="Git详解高级"></a>Git详解高级</h2><h3 id="什么是分支？为何存在？如何创建？如何切换？"><a href="#什么是分支？为何存在？如何创建？如何切换？" class="headerlink" title="什么是分支？为何存在？如何创建？如何切换？"></a>什么是分支？为何存在？如何创建？如何切换？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">git pull //更新代码</div><div class="line">git branch //查看本地分支，以*开头</div><div class="line">git branch -a //查看所有分支</div><div class="line">git branch new-branch-name //在当前分支的基础上创建新分支</div><div class="line">git checkout new-branch-name //切换到新分支</div><div class="line">git push -u origin new-branch-name //把本地的新分支推送到远程库</div></pre></td></tr></table></figure>
+<h3 id="代码如何合并？遇到冲突怎么解决？"><a href="#代码如何合并？遇到冲突怎么解决？" class="headerlink" title="代码如何合并？遇到冲突怎么解决？"></a>代码如何合并？遇到冲突怎么解决？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git checkout new-branch-name</div><div class="line">git pull</div><div class="line">git merge master //把主干的新代码合并到本地，有冲突解决冲突</div><div class="line">git add . //添加新增文件</div><div class="line">git commit -am //添加修改文件，去掉删除文件，提交</div></pre></td></tr></table></figure>
+<h3 id="查看代码提交记录？回溯代码？"><a href="#查看代码提交记录？回溯代码？" class="headerlink" title="查看代码提交记录？回溯代码？"></a>查看代码提交记录？回溯代码？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">git log -l 5</div><div class="line">git reset HEAD</div><div class="line">git reset -- hard @a232fdfsf334</div><div class="line">git commit -am &quot;message&quot;</div><div class="line">git push -f origin new-branch-name</div><div class="line">git revert @a232fdfsf334</div><div class="line">git push origin new-branch-name</div></pre></td></tr></table></figure>
+<h3 id="gitlab-github-多个git库帐号？推送到多个库"><a href="#gitlab-github-多个git库帐号？推送到多个库" class="headerlink" title="gitlab,github,多个git库帐号？推送到多个库?"></a>gitlab,github,多个git库帐号？推送到多个库?</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git remote -v</div><div class="line">git remote add gitlab git@gitlab.com/XXX</div><div class="line">git push -u origin gitlab</div></pre></td></tr></table></figure>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[GitHut的入门与实践]]></title>
+      <url>http://yoursite.com/2016/07/02/GitHub%E7%9A%84%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5/</url>
+      <content type="html"><![CDATA[<p>从Git的基本知识和操作方法入手，详细介绍了GitHub的各种功能，GitHub与其它工具或服务的集成，使用GitHub的开发流程以及如何将GitHub引入到企业中。<br><a id="more"></a></p>
+<h2 id="第1章-欢迎来到GitHub的世界"><a href="#第1章-欢迎来到GitHub的世界" class="headerlink" title="第1章 欢迎来到GitHub的世界"></a>第1章 欢迎来到GitHub的世界</h2><h3 id="什么是GitHub"><a href="#什么是GitHub" class="headerlink" title="什么是GitHub"></a>什么是GitHub</h3><p>GitHub 是为了开发者提供Git仓库的托管服务。这是一个让开发者与朋友、同事、同学及陌生人共享代码的完美场所。<br>GitHub除提供Git仓库的托管服务外，还为开发者或团队提供了一系列功能，帮助其高效率、高品质地进行代码编写。</p>
+<h3 id="使用GitHub会带来哪些变化"><a href="#使用GitHub会带来哪些变化" class="headerlink" title="使用GitHub会带来哪些变化"></a>使用GitHub会带来哪些变化</h3><ul>
+<li><p>协作形式变化</p>
+</li>
+<li><p>在开发者之间引发化学反应的Pull Request</p>
+</li>
+<li><p>……对特定用户进行评论</p>
+</li>
+<li><p>……GitHub Flavored Markdown</p>
+</li>
+</ul>
+<blockquote>
+<p>专栏：还可以这样写！！<br>GitHub中可使用的描述方法并不止”@用户名”一种。<br>输入”@组织名”可以让属于该 Organization(组织)的所有成员收到通知。输入”@组织名/团队”可以让该团队的所有成员收到通知。<br>输入”#编号”，会连接到该仓库所对应的lssue编号。输入”用户名/仓库名#编号”则可以连接到指定仓库所对应的lssue编号。只要按照这类特定格式书写便会自动创建链接。<br>多加利用上述这些功能，可以让交流更有效率。</p>
+</blockquote>
+<ul>
+<li><p>能看到更多其他团队的软件<br>GitHub快捷的环境为开发者带来的合作伙伴，并不只局限于自己团队内部。只要将感兴趣的仓库添加至Watch中，就可以在News Feed查看该仓库的相关信息。</p>
+</li>
+<li><p>与开源软件相同的开发模式</p>
+</li>
+</ul>
+<h3 id="社会化编程"><a href="#社会化编程" class="headerlink" title="社会化编程"></a>社会化编程</h3><p>GitHub这一服务，为开源世界带来了社会化编程的概念。<br>如今，世界众多程序员都在通过GitHut公开源代码，同时利用GitHub支持着自己日常的软件开发。软件开发者的世界带来了真正意义上的『民主』，让所有人平等地拥有了更改源代码的权利。这在软件开发领域是一场巨大的革命。</p>
+<h3 id="为什么需要社会化编程"><a href="#为什么需要社会化编程" class="headerlink" title="为什么需要社会化编程"></a>为什么需要社会化编程</h3><ul>
+<li><p>不要闭目塞听，要接触不同的文化</p>
+</li>
+<li><p>会写代码的程序员更受青睐</p>
+</li>
+<li><p>GitHub 最大的特征是”面向人”<br>您可以将注意力聚集到感兴趣的人身上。他既可以崇拜已久的超级黑客，也可以是同校同学或公司的同事。<br>能同时关注人和代码，是GitHub为我们带来的一个新的世界。</p>
+</li>
+</ul>
+<h3 id="GitHub-提供的主要功能"><a href="#GitHub-提供的主要功能" class="headerlink" title="GitHub 提供的主要功能"></a>GitHub 提供的主要功能</h3><ul>
+<li><p>Git 仓库<br>一般情况下，我们可以免费建立任意个GitHub提供的Git仓库。但如果需要建立只对特定人物或只对自己公开的私有仓库，则需要依照套餐类型支付每月7美元的使用费。</p>
+</li>
+<li><p>Organization<br>通常来说，个人使用时只要使用个人账户就足够了，但如果是公司，建议使用Organization。</p>
+</li>
+<li><p>lssue<br>Issue 功能，是将一个任务或问题分配给一个 Issue 进行追踪和管理的功能。</p>
+</li>
+<li><p>Pull Request<br>开发者向GitHub的仓库推送更改或功能添加后，可以通过Pull Request功能向别人的仓库提出申请，请求对方合并。</p>
+</li>
+</ul>
+<h2 id="第2章-Git的导入"><a href="#第2章-Git的导入" class="headerlink" title="第2章 Git的导入"></a>第2章 Git的导入</h2><p>Git 仓库管理功能是GitHub的核心。</p>
+<h3 id="诞生背景"><a href="#诞生背景" class="headerlink" title="诞生背景"></a>诞生背景</h3><p>Git 属于分散型版本管理系统，是为版本管理而设计的程序。<br>Linux 的创始人 Linux Torvalds 在2005年开发了Git的原型程序。</p>
+<h3 id="什么是版本管理"><a href="#什么是版本管理" class="headerlink" title="什么是版本管理"></a>什么是版本管理</h3><p>版本管理就是管理更新的历史记录。</p>
+<ul>
+<li><p>集中型与分散型<br>版本管理系统分为Subversion 这类集中型的与 Git 这类分散型的。</p>
+</li>
+<li><p>…… 集中型<br>以 Subversion 为代表的集中型，仓库集中存放在服务器之中，所以只存在一个仓库。</p>
+</li>
+</ul>
+<p><img src="2.1.png" alt="图2.1"></p>
+<ul>
+<li>…… 分散型</li>
+</ul>
+<p><img src="2.2.png" alt="图2.2"></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
+<li><p>Mac 与Linux<br>最近的 Mac 中都已预装了Git。而各版本的Linux中也都以软件包(Package)的形式提供给用户了。</p>
+</li>
+<li><p>Windows<br>在 Windows 环境中，最简单快捷的方法是使用 <a href="https://git-for-windows.github.io/" target="_blank" rel="external">msysGit</a> 。</p>
+</li>
+<li><p>……组件的选择<br>在图2.3的页面中选择需要的组件。</p>
+</li>
+<li><p>……设置环境变量<br>在图2.4的页面中，可以设置调用Git的环境变量。<br><img src="2.3.png" alt="图2.3"><br><img src="2.4.png" alt="图2.4"></p>
+</li>
+<li><p>……换行符的处理<br>使用Windows环境的各位，请选择推荐的图2.5选项。<br><img src="2.5.png" alt="图2.5"></p>
+</li>
+<li><p>…… Git Bash<br>顺利安装好msysGit之后，Git Bash会作为一个应用程序添加进系统，接下来请启动它。<br><img src="2.6.png" alt="图2.6"></p>
+</li>
+</ul>
+<h3 id="初始设置"><a href="#初始设置" class="headerlink" title="初始设置"></a>初始设置</h3><ul>
+<li>设置姓名和邮箱地址<br>首先来设置使用Git时的姓名和邮箱地址。名字请用英文输入。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name &quot;Firstname Lastname&quot;</div><div class="line">$ git config --global user.email &quot;Your_email@example.com&quot;</div></pre></td></tr></table></figure>
+<p>这个命令，会在”~/.gitconfig”中以如下形式输出设置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[user]</div><div class="line">	name = Firstname Lastname</div><div class="line">	email = Your_email@example.com</div></pre></td></tr></table></figure>
+<ul>
+<li>提高命令输出的可读性</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git config --global color.ui auto</div></pre></td></tr></table></figure>
+<p>“~/.gitconfig”中会增加下面一行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[color]</div><div class="line">	ui = auto</div></pre></td></tr></table></figure>
+<p>这样一来，各种命令的输出就会变得更容易分辨。</p>
+<h2 id="第3章-使用GitHub的前期准备"><a href="#第3章-使用GitHub的前期准备" class="headerlink" title="第3章 使用GitHub的前期准备"></a>第3章 使用GitHub的前期准备</h2><h3 id="使用前的准备"><a href="#使用前的准备" class="headerlink" title="使用前的准备"></a>使用前的准备</h3><ul>
+<li><p>创建账户<br>在<a href="http://github.com" target="_blank" rel="external">GitHub</a>来创建账户</p>
+</li>
+<li><p>设置SSH Key</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>会在 ~/.ssh 目录下生成二个文件 id_rsa 文件是私有密钥，id_rsa.pub 是公开密钥。</p>
+</blockquote>
+<p>– 后续完善中 –</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>http://yoursite.com/2016/07/01/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 ]]></content>
     </entry>
     
