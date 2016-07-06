@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>老男孩的技术笔记</title>
+  <title>Job的技术笔记</title>
   <subtitle>最专业的互联网技能知识分享</subtitle>
   <link href="/atom.xml" rel="self"/>
   
@@ -9,7 +9,7 @@
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>老蒋</name>
+    <name>Job</name>
     
   </author>
   
