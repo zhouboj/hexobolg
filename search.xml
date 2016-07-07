@@ -23,49 +23,41 @@
 <td style="text-align:center">1</td>
 <td>⌘T</td>
 <td>前往文件</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">2</td>
 <td>⌘⌃P</td>
 <td>前往项目</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">3</td>
 <td>⌘R</td>
 <td>前往 method</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">4</td>
 <td>⌘⇧P</td>
 <td>命令提示</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">5</td>
 <td>⌃G</td>
 <td>前往行</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">6</td>
 <td>⌘KB</td>
 <td>开关侧栏</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">7</td>
 <td>⌃ `</td>
 <td>python 控制台</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">8</td>
 <td>⌘⇧N</td>
 <td>新建窗口</td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -83,121 +75,101 @@
 <td style="text-align:center">1</td>
 <td>⌘L</td>
 <td>选择行 (重复按下将下一行加入选择)</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">2</td>
 <td>⌘D</td>
 <td>选择词 (重复按下时多重选择相同的词进行多重编辑)</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">3</td>
 <td>⌃⇧M</td>
 <td>选择括号内的内容</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">4</td>
 <td>⌘⇧↩</td>
 <td>在当前行前插入新行</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">5</td>
 <td>⌘↩</td>
 <td>在当前行后插入新行</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">6</td>
 <td>⌃⇧K</td>
 <td>删除行</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">7</td>
 <td>⌘KK</td>
 <td>从光标处删除至行尾</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">8</td>
 <td>⌘K⌫</td>
 <td>从光标处删除至行首</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">9</td>
 <td>⌘⇧D</td>
 <td>复制(多)行</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">10</td>
 <td>⌘J</td>
 <td>合并(多)行</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">11</td>
 <td>⌘KU</td>
 <td>改为大写</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">12</td>
 <td>⌘KL</td>
 <td>改为小写</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">13</td>
 <td>⌘ /</td>
 <td>注释</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">14</td>
 <td>⌘⌥ /</td>
 <td>块注释</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">15</td>
 <td>⌘Y</td>
 <td>恢复或重复</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">16</td>
 <td>⌘⇧V</td>
 <td>粘贴并自动缩进</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">17</td>
 <td>⌃ space</td>
 <td>自动完成(重复按下选择下一个提示)</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">18</td>
 <td>⌃M</td>
 <td>跳转至对应的括号</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">19</td>
 <td>⌘U</td>
 <td>软撤销（可撤销光标移动）</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">20</td>
 <td>⌘⇧U</td>
 <td>软重做（可重做光标移动）</td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -215,13 +187,11 @@
 <td style="text-align:center">1</td>
 <td>⌘⇧A</td>
 <td>选择标签内的内容</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">2</td>
 <td>⌘⌥ .</td>
 <td>闭合当前标签</td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -239,31 +209,26 @@
 <td style="text-align:center">1</td>
 <td>⌘F</td>
 <td>查找</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">2</td>
 <td>⌘⌥F</td>
 <td>替换</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">3</td>
 <td>⌘⌥G</td>
 <td>查找下一个符合当前所选的内容</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">4</td>
 <td>⌘⌃G</td>
 <td>查找所有符合当前所选的内容进行多重编辑</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">5</td>
 <td>⌘⇧F</td>
 <td>在所有打开的文件中进行查找</td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -281,37 +246,31 @@
 <td style="text-align:center">1</td>
 <td>⌘⌥1</td>
 <td>单列</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">2</td>
 <td>⌘⌥2</td>
 <td>双列</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">3</td>
 <td>⌘⌥5</td>
 <td>网格 (4组)</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">4</td>
 <td>⌃[1,2,3,4]</td>
 <td>焦点移动至相应组</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">5</td>
 <td>⌃⇧[1,2,3,4]</td>
 <td>将当前文件移动至相应组</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">6</td>
 <td>⌘[1,2,3…]</td>
 <td>选择相应标签页</td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -329,25 +288,21 @@
 <td style="text-align:center">1</td>
 <td>⌘F2</td>
 <td>添加/去除书签</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">2</td>
 <td>F2</td>
 <td>下一个书签</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">3</td>
 <td>⇧F2</td>
 <td>前一个书签</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">4</td>
 <td>⌘⇧F2</td>
 <td>清除书签</td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -365,25 +320,21 @@
 <td style="text-align:center">1</td>
 <td>⌘K space</td>
 <td>设置标记</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">2</td>
 <td>⌘KW</td>
 <td>从光标位置删除至标记</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">3</td>
 <td>⌘KA</td>
 <td>从光标位置选择至标记</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">4</td>
 <td>⌘KG</td>
 <td>清除标记</td>
-<td></td>
 </tr>
 </tbody>
 </table>
