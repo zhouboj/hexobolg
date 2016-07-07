@@ -4,6 +4,289 @@
   
     
     <entry>
+      <title><![CDATA[Sublime Text2的Mac实用快捷键]]></title>
+      <url>http://yoursite.com/2016/07/07/Mac-Sublime%20Text/</url>
+      <content type="html"><![CDATA[<p><a href="https://gist.github.com/lucasfais" target="_blank" rel="external">lucasfais</a> 总结了一些非常实用的 Sublime Text 2 <a href="https://gist.github.com/lucasfais/1207002" target="_blank" rel="external">快捷键</a>，Job 将它们翻译成了中文，以方便查阅。</p>
+<a id="more"></a>
+<p><strong>注意</strong>：修饰键（如⌘）后跟多个按键的情况表示在按住修饰键的情况下依次按下相应键。</p>
+<p><strong>打开/前往</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">快捷键</th>
+<th style="text-align:right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">⌘T</td>
+<td style="text-align:right">前往文件</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘⌃P</td>
+<td style="text-align:right">前往项目</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘R</td>
+<td style="text-align:right">前往 method</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘⇧P</td>
+<td style="text-align:right">命令提示</td>
+</tr>
+<tr>
+<td style="text-align:center">⌃G</td>
+<td style="text-align:right">前往行</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘KB</td>
+<td style="text-align:right">开关侧栏</td>
+</tr>
+<tr>
+<td style="text-align:center">⌃ `</td>
+<td style="text-align:right">python 控制台</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘⇧N</td>
+<td style="text-align:right">新建窗口</td>
+</tr>
+</tbody>
+</table>
+<p><strong>编辑</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">快捷键</th>
+<th style="text-align:right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">⌘L</td>
+<td style="text-align:right">选择行 (重复按下将下一行加入选择)</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘D</td>
+<td style="text-align:right">选择词 (重复按下时多重选择相同的词进行多重编辑)</td>
+</tr>
+<tr>
+<td style="text-align:center">⌃⇧M</td>
+<td style="text-align:right">选择括号内的内容</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘⇧↩</td>
+<td style="text-align:right">在当前行前插入新行</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘↩</td>
+<td style="text-align:right">在当前行后插入新行</td>
+</tr>
+<tr>
+<td style="text-align:center">⌃⇧K</td>
+<td style="text-align:right">删除行</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘KK</td>
+<td style="text-align:right">从光标处删除至行尾</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘K⌫</td>
+<td style="text-align:right">从光标处删除至行首</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘⇧D</td>
+<td style="text-align:right">复制(多)行</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘J</td>
+<td style="text-align:right">合并(多)行</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘KU</td>
+<td style="text-align:right">改为大写</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘KL</td>
+<td style="text-align:right">改为小写</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘ /</td>
+<td style="text-align:right">注释</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘⌥ /</td>
+<td style="text-align:right">块注释</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘Y</td>
+<td style="text-align:right">恢复或重复</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘⇧V</td>
+<td style="text-align:right">粘贴并自动缩进</td>
+</tr>
+<tr>
+<td style="text-align:center">⌃ space</td>
+<td style="text-align:right">自动完成(重复按下选择下一个提示)</td>
+</tr>
+<tr>
+<td style="text-align:center">⌃M</td>
+<td style="text-align:right">跳转至对应的括号</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘U</td>
+<td style="text-align:right">软撤销（可撤销光标移动）</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘⇧U</td>
+<td style="text-align:right">软重做（可重做光标移动）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>XML/HTML</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">快捷键</th>
+<th style="text-align:right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">⌘⇧A</td>
+<td style="text-align:right">选择标签内的内容</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘⌥ .</td>
+<td style="text-align:right">闭合当前标签</td>
+</tr>
+</tbody>
+</table>
+<p><strong>查找/替换</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">快捷键</th>
+<th style="text-align:right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">⌘F</td>
+<td style="text-align:right">查找</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘⌥F</td>
+<td style="text-align:right">替换</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘⌥G</td>
+<td style="text-align:right">查找下一个符合当前所选的内容</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘⌃G</td>
+<td style="text-align:right">查找所有符合当前所选的内容进行多重编辑</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘⇧F</td>
+<td style="text-align:right">在所有打开的文件中进行查找</td>
+</tr>
+</tbody>
+</table>
+<p><strong>拆分窗口/标签页</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">快捷键</th>
+<th style="text-align:right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">⌘⌥1</td>
+<td style="text-align:right">单列</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘⌥2</td>
+<td style="text-align:right">双列</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘⌥5</td>
+<td style="text-align:right">网格 (4组)</td>
+</tr>
+<tr>
+<td style="text-align:center">⌃[1,2,3,4]</td>
+<td style="text-align:right">焦点移动至相应组</td>
+</tr>
+<tr>
+<td style="text-align:center">⌃⇧[1,2,3,4]</td>
+<td style="text-align:right">将当前文件移动至相应组</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘[1,2,3…]</td>
+<td style="text-align:right">选择相应标签页</td>
+</tr>
+</tbody>
+</table>
+<p><strong>书签</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">快捷键</th>
+<th style="text-align:right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">⌘F2</td>
+<td style="text-align:right">添加/去除书签</td>
+</tr>
+<tr>
+<td style="text-align:center">F2</td>
+<td style="text-align:right">下一个书签</td>
+</tr>
+<tr>
+<td style="text-align:center">⇧F2</td>
+<td style="text-align:right">前一个书签</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘⇧F2</td>
+<td style="text-align:right">清除书签</td>
+</tr>
+</tbody>
+</table>
+<p><strong>标记</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">快捷键</th>
+<th style="text-align:right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">⌘K space</td>
+<td style="text-align:right">设置标记</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘KW</td>
+<td style="text-align:right">从光标位置删除至标记</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘KA</td>
+<td style="text-align:right">从光标位置选择至标记</td>
+</tr>
+<tr>
+<td style="text-align:center">⌘KG</td>
+<td style="text-align:right">清除标记</td>
+</tr>
+</tbody>
+</table>
+<p>This is a Chinese version of lucasfais’s Sublime Text 2 – Useful Shortcuts (Mac OS X) translated by Lucifr</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Anki 自用卡片模板分享]]></title>
       <url>http://yoursite.com/2016/07/06/anki-templates/</url>
       <content type="html"><![CDATA[<p></p><h2 id="intro">前言</h2><a href="http://ankisrs.net/" target="_blank" rel="external">Anki</a> 是一款卡片式的记忆辅助软件。软件在保持轻巧简洁的同时，各种设置也很丰富。另外， Anki 通过嵌入式的网页来展示卡片，大大增强了卡片样式的自定义功能。下面是目前自己常用的卡片样式代码，有折腾闲情的可以试试。<p></p>
