@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-07-07T14:44:23.000Z</updated>
+  <updated>2016-07-08T20:09:03.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,154 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Emmet：HTML/CSS代码快速编写神器 - Web前端</title>
+    <link href="http://yoursite.com/2016/07/09/emmet-html-css/"/>
+    <id>http://yoursite.com/2016/07/09/emmet-html-css/</id>
+    <published>2016-07-08T16:24:45.000Z</published>
+    <updated>2016-07-08T20:09:03.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;/p&gt;&lt;h2 id=&quot;intro&quot;&gt;前言&lt;/h2&gt; Emmet的前身是大名鼎鼎的Zen coding，如果你从事Web前端开发的话，对该插件一定不会陌生。它使用仿CSS选择器的语法来生成代码，大大提高了HTML/CSS代码编写的速度。&lt;em&gt;注：版权属于ITeye网站所有, &lt;a href=&quot;/about&quot;&gt;Job&lt;/a&gt; 借此感谢！&lt;/em&gt; &lt;p&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;比如下面的演示：&lt;/p&gt;
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/resources/emmet1.gif&quot; alt=&quot;emmet1&quot;&gt; &lt;/div&gt;
+
+&lt;p&gt;Zen coding下的编码演示&lt;br&gt;去年年底，该插件已经改名为Emmet。但Emmet不只改名，还带来了一些新特性。本文就来直观地演示给你。&lt;/p&gt;
+&lt;h2 id=&quot;一、快速编写HTML代码&quot;&gt;&lt;a href=&quot;#一、快速编写HTML代码&quot; class=&quot;headerlink&quot; title=&quot;一、快速编写HTML代码&quot;&gt;&lt;/a&gt;一、快速编写HTML代码&lt;/h2&gt;&lt;h3 id=&quot;1、-初始化&quot;&gt;&lt;a href=&quot;#1、-初始化&quot; class=&quot;headerlink&quot; title=&quot;1、 初始化&quot;&gt;&lt;/a&gt;1、 初始化&lt;/h3&gt;&lt;p&gt;HTML文档需要包含一些固定的标签，比如&amp;lt;html&amp;gt;、&amp;lt;head&amp;gt;、&amp;lt;body&amp;gt;等，现在你只需要1秒钟就可以输入这些标签。比如输入“!”或“html:5”，然后按Tab键：&lt;/p&gt;
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/resources/emmet2.gif&quot; alt=&quot;emmet2&quot;&gt; &lt;/div&gt;
+
+&lt;ul&gt;&lt;br&gt;&lt;li&gt;html:5 或!：用于HTML5文档类型&lt;/li&gt;&lt;br&gt;&lt;li&gt;html:xt：用于XHTML过渡文档类型&lt;/li&gt;&lt;br&gt;&lt;li&gt;html:4s：用于HTML4严格文档类型&lt;/li&gt;&lt;br&gt;&lt;/ul&gt;
+
+
+
+&lt;h3 id=&quot;2、-轻松添加类、id、文本和属性&quot;&gt;&lt;a href=&quot;#2、-轻松添加类、id、文本和属性&quot; class=&quot;headerlink&quot; title=&quot;2、 轻松添加类、id、文本和属性&quot;&gt;&lt;/a&gt;2、 轻松添加类、id、文本和属性&lt;/h3&gt;&lt;p&gt;连续输入元素名称和ID，Emmet会自动为你补全，比如输入p#foo：&lt;/p&gt;
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/resources/emmet3.gif&quot; alt=&quot;emmet3&quot;&gt; &lt;/div&gt;
+
+&lt;p&gt;连续输入类和id，比如p.bar#foo，会自动生成：&lt;/p&gt;
+&lt;p&gt;Html代码&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;bar&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;foo&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;下面来看看如何定义HTML元素的内容和属性。你可以通过输入h1{foo}和a[href=#]，就可以自动生成如下代码：&lt;/p&gt;
+&lt;p&gt;Html代码&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;h1&lt;/span&gt;&amp;gt;&lt;/span&gt;foo&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;h1&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;#&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/resources/emmet4.gif&quot; alt=&quot;emmet4&quot;&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;3-嵌套&quot;&gt;&lt;a href=&quot;#3-嵌套&quot; class=&quot;headerlink&quot; title=&quot;3.  嵌套&quot;&gt;&lt;/a&gt;3.  嵌套&lt;/h3&gt;&lt;p&gt;现在你只需要1行代码就可以实现标签的嵌套。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;gt;：子元素符号，表示嵌套的元素&lt;/li&gt;
+&lt;li&gt;+：同级标签符号&lt;/li&gt;
+&lt;li&gt;^：可以使该符号前的标签提升一行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;效果如下图所示：&lt;/p&gt;
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/resources/emmet5.gif&quot; alt=&quot;emmet5&quot;&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;4-分组&quot;&gt;&lt;a href=&quot;#4-分组&quot; class=&quot;headerlink&quot; title=&quot;4.  分组&quot;&gt;&lt;/a&gt;4.  分组&lt;/h3&gt;&lt;p&gt;你可以通过嵌套和括号来快速生成一些代码块，比如输入(.foo&amp;gt;h1)+(.bar&amp;gt;h2)，会自动生成如下代码：&lt;br&gt;Html代码&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;foo&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;h1&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;h1&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;bar&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;h2&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;h2&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;div align=&quot;center&quot;&gt; &lt;img src=&quot;/resources/emmet6.gif&quot; alt=&quot;emmet6&quot;&gt; &lt;/div&gt;
+
+&lt;h3 id=&quot;5-隐式标签&quot;&gt;&lt;a href=&quot;#5-隐式标签&quot; class=&quot;headerlink&quot; title=&quot;5.  隐式标签&quot;&gt;&lt;/a&gt;5.  隐式标签&lt;/h3&gt;&lt;p&gt;声明一个带类的标签，只需输入div.item，就会生成&amp;lt;div class=”item”&amp;gt;&amp;lt;/div&amp;gt;。&lt;/p&gt;
+&lt;p&gt;在过去版本中，可以省略掉div，即输入.item即可生成&amp;lt;div class=”item”&amp;gt;&amp;lt;/div&amp;gt;。现在如果只输入.item，则Emmet会根据父标签进行判定。比如在&amp;lt;ul&amp;gt;中输入.item，就会生成&amp;lt;li class=”item”&amp;gt;&amp;lt;/li&amp;gt;。&lt;/p&gt;
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/resources/emmet7.gif&quot; alt=&quot;emmet7&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;下面是所有的隐式标签名称：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;li：用于ul和ol中&lt;/li&gt;
+&lt;li&gt;tr：用于table、tbody、thead和tfoot中&lt;/li&gt;
+&lt;li&gt;td：用于tr中&lt;/li&gt;
+&lt;li&gt;option：用于select和optgroup中&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;6-定义多个元素&quot;&gt;&lt;a href=&quot;#6-定义多个元素&quot; class=&quot;headerlink&quot; title=&quot;6.  定义多个元素&quot;&gt;&lt;/a&gt;6.  定义多个元素&lt;/h3&gt;&lt;p&gt;要定义多个元素，可以使用*符号。比如，ul&amp;gt;li *3 可以生成如下代码：&lt;br&gt;Html代码&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;ul&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;li&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;li&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;li&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;li&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;li&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;li&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;ul&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/resources/emmet8.gif&quot; alt=&quot;emmet8&quot;&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;7-定义多个带属性的元素&quot;&gt;&lt;a href=&quot;#7-定义多个带属性的元素&quot; class=&quot;headerlink&quot; title=&quot;7.  定义多个带属性的元素&quot;&gt;&lt;/a&gt;7.  定义多个带属性的元素&lt;/h3&gt;&lt;p&gt;如果输入 ul&amp;gt;li.item$*3，将会生成如下代码：&lt;/p&gt;
+&lt;p&gt;Html代码&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;ul&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;item1&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;li&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;item2&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;li&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;item3&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;li&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;ul&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/resources/emmet9.gif&quot; alt=&quot;emmet9&quot;&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;二、CSS缩写&quot;&gt;&lt;a href=&quot;#二、CSS缩写&quot; class=&quot;headerlink&quot; title=&quot;二、CSS缩写&quot;&gt;&lt;/a&gt;二、CSS缩写&lt;/h2&gt;&lt;h3 id=&quot;1-值&quot;&gt;&lt;a href=&quot;#1-值&quot; class=&quot;headerlink&quot; title=&quot;1.  值&quot;&gt;&lt;/a&gt;1.  值&lt;/h3&gt;&lt;p&gt;比如要定义元素的宽度，只需输入w100，即可生成Css代码&lt;/p&gt;
+&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;width: &lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;px;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;`&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/resources/emmet10.gif&quot; alt=&quot;emmet10&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;除了px，也可以生成其他单位，比如输入h10p+m5e，结果如下：&lt;/p&gt;
+&lt;p&gt;Css代码&lt;/p&gt;
+&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;height: &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;%;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;margin: &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;em;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;单位别名列表：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;p 表示%&lt;/li&gt;
+&lt;li&gt;e 表示 em&lt;/li&gt;
+&lt;li&gt;x 表示 ex&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;2-附加属性&quot;&gt;&lt;a href=&quot;#2-附加属性&quot; class=&quot;headerlink&quot; title=&quot;2.  附加属性&quot;&gt;&lt;/a&gt;2.  附加属性&lt;/h3&gt;&lt;p&gt;可能你之前已经了解了一些缩写，比如 @f，可以生成：&lt;br&gt;Css代码&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;font-face&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;font-family&lt;/span&gt;:;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;src&lt;/span&gt;:&lt;span class=&quot;built_in&quot;&gt;url&lt;/span&gt;();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;一些其他的属性，比如background-image、border-radius、font、@font-face,text-outline、text-shadow等额外的选项，可以通过“+”符号来生成，比如输入@f+，将生成：&lt;/p&gt;
+&lt;p&gt;Css代码&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;font-face&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;font-family&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;FontName&#39;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;src&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;url&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;FileName.eot&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;src&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;url&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;FileName.eot?#iefix&#39;&lt;/span&gt;) &lt;span class=&quot;built_in&quot;&gt;format&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;embedded-opentype&#39;&lt;/span&gt;),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;url&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;FileName.woff&#39;&lt;/span&gt;) &lt;span class=&quot;built_in&quot;&gt;format&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;woff&#39;&lt;/span&gt;),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;url&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;FileName.ttf&#39;&lt;/span&gt;) &lt;span class=&quot;built_in&quot;&gt;format&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;truetype&#39;&lt;/span&gt;),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;url&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;FileName.svg#FontName&#39;&lt;/span&gt;) &lt;span class=&quot;built_in&quot;&gt;format&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;svg&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;font-style&lt;/span&gt;: normal;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;font-weight&lt;/span&gt;: normal;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/resources/emmet11.gif&quot; alt=&quot;emmet11&quot;&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;3-模糊匹配&quot;&gt;&lt;a href=&quot;#3-模糊匹配&quot; class=&quot;headerlink&quot; title=&quot;3.  模糊匹配&quot;&gt;&lt;/a&gt;3.  模糊匹配&lt;/h3&gt;&lt;p&gt;如果有些缩写你拿不准，Emmet会根据你的输入内容匹配最接近的语法，比如输入ov:h、ov-h、ovh和oh，生成的代码是相同的：&lt;/p&gt;
+&lt;p&gt;Css代码&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;overflow&lt;/span&gt;: &lt;span class=&quot;selector-tag&quot;&gt;hidden&lt;/span&gt;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/resources/emmet12.gif&quot; alt=&quot;emmet12&quot;&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;4-供应商前缀&quot;&gt;&lt;a href=&quot;#4-供应商前缀&quot; class=&quot;headerlink&quot; title=&quot;4.  供应商前缀&quot;&gt;&lt;/a&gt;4.  供应商前缀&lt;/h3&gt;&lt;p&gt;如果输入非W3C标准的CSS属性，Emmet会自动加上供应商前缀，比如输入trs，则会生成：&lt;/p&gt;
+&lt;p&gt;Css代码&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;-webkit-transform&lt;/span&gt;: ;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;-moz-transform&lt;/span&gt;: ;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;-ms-transform&lt;/span&gt;: ;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;-o-transform&lt;/span&gt;: ;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;transform&lt;/span&gt;: ;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/resources/emmet13.gif&quot; alt=&quot;emmet13&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;你也可以在任意属性前加上“-”符号，也可以为该属性加上前缀。比如输入-super-foo：&lt;/p&gt;
+&lt;p&gt;Css代码&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-webkit-super-foo: ;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-moz-super-foo: ;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-ms-super-foo: ;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-o-super-foo: ;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;super-foo: ;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;如果不希望加上所有前缀，可以使用缩写来指定，比如-wm-trf表示只加上-webkit和-moz前缀：&lt;/p&gt;
+&lt;p&gt;Css代码&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;-webkit-transform&lt;/span&gt;: ;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;-moz-transform&lt;/span&gt;: ;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;transform&lt;/span&gt;: ;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;前缀缩写如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;w 表示 -webkit-&lt;/li&gt;
+&lt;li&gt;m 表示 -moz-&lt;/li&gt;
+&lt;li&gt;s 表示 -ms-&lt;/li&gt;
+&lt;li&gt;o 表示 -o-&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;5-渐变&quot;&gt;&lt;a href=&quot;#5-渐变&quot; class=&quot;headerlink&quot; title=&quot;5.  渐变&quot;&gt;&lt;/a&gt;5.  渐变&lt;/h3&gt;&lt;p&gt;输入lg(left, #fff 50%, #000)，会生成如下代码：&lt;/p&gt;
+&lt;p&gt;Css代码&lt;/p&gt;
+&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;background-image: -webkit-gradient(linear, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;% &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, color-stop(&lt;span class=&quot;number&quot;&gt;0.5&lt;/span&gt;, #fff), to(#&lt;span class=&quot;number&quot;&gt;000&lt;/span&gt;));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;background-image: -webkit-linear-gradient(left, #fff &lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;%, #&lt;span class=&quot;number&quot;&gt;000&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;background-image: -moz-linear-gradient(left, #fff &lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;%, #&lt;span class=&quot;number&quot;&gt;000&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;background-image: -o-linear-gradient(left, #fff &lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;%, #&lt;span class=&quot;number&quot;&gt;000&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;background-image: linear-gradient(left, #fff &lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;%, #&lt;span class=&quot;number&quot;&gt;000&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/resources/emmet14.gif&quot; alt=&quot;emmet14&quot;&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;三、附加功能&quot;&gt;&lt;a href=&quot;#三、附加功能&quot; class=&quot;headerlink&quot; title=&quot;三、附加功能&quot;&gt;&lt;/a&gt;三、附加功能&lt;/h2&gt;&lt;p&gt;生成Lorem ipsum文本&lt;/p&gt;
+&lt;p&gt;Lorem ipsum指一篇常用于排版设计领域的拉丁文文章，主要目的是测试文章或文字在不同字型、版型下看起来的效果。通过Emmet，你只需输入lorem 或 lipsum即可生成这些文字。还可以指定文字的个数，比如lorem10，将生成：&lt;/p&gt;
+&lt;p&gt;引用 &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.
+&lt;/code&gt;&lt;/pre&gt;&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/resources/emmet15.gif&quot; alt=&quot;emmet15&quot;&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;四、定制&quot;&gt;&lt;a href=&quot;#四、定制&quot; class=&quot;headerlink&quot; title=&quot;四、定制&quot;&gt;&lt;/a&gt;四、定制&lt;/h2&gt;&lt;p&gt;你还可以定制Emmet插件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;添加新缩写或更新现有缩写，可修改&lt;a href=&quot;http://docs.emmet.io/customization/snippets/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;snippets.json&lt;/a&gt;文件&lt;/li&gt;
+&lt;li&gt;更改Emmet过滤器和操作的行为，可修改&lt;a href=&quot;http://docs.emmet.io/customization/preferences/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;preferences.json&lt;/a&gt;文件&lt;/li&gt;
+&lt;li&gt;定义如何生成HTML或XML代码，可修改&lt;a href=&quot;http://docs.emmet.io/customization/syntax-profiles/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;syntaxProfiles.json&lt;/a&gt;文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;五、针对不同编辑器的插件&quot;&gt;&lt;a href=&quot;#五、针对不同编辑器的插件&quot; class=&quot;headerlink&quot; title=&quot;五、针对不同编辑器的插件&quot;&gt;&lt;/a&gt;五、针对不同编辑器的插件&lt;/h2&gt;&lt;p&gt;Emmet支持的编辑器如下（略）&lt;/p&gt;
+&lt;p&gt;相关文档：&lt;a href=&quot;http://docs.emmet.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://docs.emmet.io/&lt;/a&gt;（其中包含了一个Demo，你可以试验文中所提到的这些缩写）&lt;/p&gt;
+&lt;p&gt;Via &lt;a href=&quot;https://www.smashingmagazine.com/2013/03/goodbye-zen-coding-hello-emmet/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;smashingmagazine&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;h2 id=&quot;intro&quot;&gt;前言&lt;/h2&gt; Emmet的前身是大名鼎鼎的Zen coding，如果你从事Web前端开发的话，对该插件一定不会陌生。它使用仿CSS选择器的语法来生成代码，大大提高了HTML/CSS代码编写的速度。&lt;em&gt;注：版权属于ITeye网站所有, &lt;a href=&quot;/about&quot;&gt;Job&lt;/a&gt; 借此感谢！&lt;/em&gt; &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="应用插件" scheme="http://yoursite.com/categories/%E5%BA%94%E7%94%A8%E6%8F%92%E4%BB%B6/"/>
+    
+    
+      <category term="Html" scheme="http://yoursite.com/tags/Html/"/>
+    
+      <category term="Css" scheme="http://yoursite.com/tags/Css/"/>
+    
+      <category term="Sublime Text" scheme="http://yoursite.com/tags/Sublime-Text/"/>
+    
+      <category term="Phpstorm" scheme="http://yoursite.com/tags/Phpstorm/"/>
+    
+  </entry>
   
   <entry>
     <title>Sublime Text2的Mac实用快捷键</title>
@@ -366,9 +514,9 @@
       <category term="触类旁通" scheme="http://yoursite.com/categories/%E8%A7%A6%E7%B1%BB%E6%97%81%E9%80%9A/"/>
     
     
-      <category term="Mac" scheme="http://yoursite.com/tags/Mac/"/>
-    
       <category term="Sublime Text" scheme="http://yoursite.com/tags/Sublime-Text/"/>
+    
+      <category term="Mac" scheme="http://yoursite.com/tags/Mac/"/>
     
   </entry>
   
