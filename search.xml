@@ -4,6 +4,119 @@
   
     
     <entry>
+      <title><![CDATA[Mac OS使用brew安装Nginx、MySQL、PHP-FPM的LAMP开发环境]]></title>
+      <url>http://yoursite.com/2016/07/13/emmet-html-css/</url>
+      <content type="html"><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>新版的 Mac OS 内置了Apache 和 PHP，我的系统版本是OS X EI Capitan 10.11.5，可以通过以下命令查看Apache和PHP的版本号：（php –version显示7.0.7，因我的MAC已安装了brew install php70）</p>
+<pre><code class="Nginx"><span class="attribute">httpd</span> -v
+Server version: Apache/<span class="number">2</span>.<span class="number">4</span>.<span class="number">18</span> (Unix)
+Server built:   Feb <span class="number">20</span> <span class="number">2016</span> <span class="number">20</span>:<span class="number">03</span>:<span class="number">19</span>
+
+php --version
+PHP <span class="number">7</span>.<span class="number">0</span>.<span class="number">7</span> (cli) (built: May <span class="number">27</span> <span class="number">2016</span> <span class="number">11</span>:<span class="number">13</span>:<span class="number">44</span>) ( NTS )
+Copyright (c) <span class="number">1997</span>-<span class="number">2016</span> The PHP Group
+Zend Engine v3.<span class="number">0</span>.<span class="number">0</span>, Copyright (c) <span class="number">1998</span>-<span class="number">2016</span> Zend Technologies
+</code></pre>
+<p>因为我们要自己动手来安装 Nginx，因此首先来关闭系统自带的apache：</p>
+<pre><code>sudo apachectl stop  #关闭apache，如果事先没开启过，可以忽略报错信息
+</code></pre><p>如果你的apache已经加入了launchctl，使用下面的命令来关闭：</p>
+<pre><code>sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist
+</code></pre><p>为什么选择关闭apache？因为mac os x系统自带的apache是没有优雅的remove/uninstall 的方式的… 对于“洁癖”比较严重的童鞋，可以选择直接删除相关的文件！（千万不要手抖删错目录…）</p>
+<pre><code>sudo rm /usr/sbin/apachectl
+sudo rm /usr/sbin/httpd
+sudo rm -r /etc/apache2/        
+</code></pre><p>删除自带的php</p>
+<pre><code>sudo rm -r /usr/bin/php    
+</code></pre><p>如果没有安装brew，可以按照官网的步骤安装</p>
+<pre><code>http://brew.sh/
+</code></pre><h2 id="nginx的安装与配置"><a href="#nginx的安装与配置" class="headerlink" title="nginx的安装与配置"></a>nginx的安装与配置</h2><p>安装nginx</p>
+<pre><code>brew install nginx
+</code></pre><p>修改配置文件</p>
+<pre><code>sudo vim /usr/local/etc/nginx/nginx.conf
+#修改默认的8080端口为80
+</code></pre><p>给予管理员权限</p>
+<pre><code>sudo chown root:wheel/usr/local/opt/nginx/bin/nginx
+sudo chmod u+s/usr/local/opt/nginx/bin/nginx
+</code></pre><p>加入launchctl启动控制</p>
+<pre><code>mkdir -p ~/Library/LaunchAgents
+cp /usr/local/opt/nginx/homebrew.mxcl.nginx.plist ~/Library/LaunchAgents/
+launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist
+</code></pre><p>运行nginx</p>
+<pre><code>sudo nginx #打开 nginx
+nginx -s reload|reopen|stop|quit  #重新加载配置|重启|停止|退出 nginx
+nginx -t   #测试配置是否有语法错误
+</code></pre><p>用法详解</p>
+<pre><code>nginx [-?hvVtq] [-s signal] [-c filename] [-p prefix] [-g directives]
+</code></pre><p>选项列表</p>
+<pre><code>-?,-h           : 打开帮助信息
+-v              : 显示版本信息并退出
+-V              : 显示版本和配置选项信息，然后退出
+-t              : 检测配置文件是否有语法错误，然后退出
+-q              : 在检测配置文件期间屏蔽非错误信息
+-s signal       : 给一个 nginx 主进程发送信号：stop（停止）, quit（退出）, reopen（重启）,     reload（重新加载配置文件）
+-p prefix       : 设置前缀路径（默认是：/usr/local/Cellar/nginx/1.2.6/）
+-c filename     : 设置配置文件（默认是：/usr/local/etc/nginx/nginx.conf）
+-g directives   : 设置配置文件外的全局指令    
+</code></pre><h2 id="mysql的安装与配置"><a href="#mysql的安装与配置" class="headerlink" title="mysql的安装与配置"></a>mysql的安装与配置</h2><p>安装mysql</p>
+<pre><code>brew install mysql
+cd /usr/local/opt/mysql/
+</code></pre><p>修改配置文件</p>
+<pre><code>sudo vim my.cnf
+#如果出现无法启动mysql，rm my.cnf     
+</code></pre><p>加入launchctl启动控制</p>
+<pre><code>mkdir -p ~/Library/LaunchAgents/
+cp /usr/local/opt/mysql/homebrew.mxcl.mysql.plist ~/Library/LaunchAgents/
+launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+#取消启动
+#launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist    
+</code></pre><p>初始化 mysql</p>
+<pre><code>./bin/mysql_install_db 
+</code></pre><p>执行安全设置脚本,设置root账号密码</p>
+<pre><code>./bin/mysql_secure_installation
+</code></pre><p>命令行连接mysql</p>
+<pre><code>mysql -uroot -p
+</code></pre><h2 id="php的安装与配置"><a href="#php的安装与配置" class="headerlink" title="php的安装与配置"></a>php的安装与配置</h2><p>brew 默认没有 php 安装包：</p>
+<pre><code>brew tap homebrew/dupes
+brew tap josegonzalez/homebrew-php        
+</code></pre><p>现在可以安装php了：</p>
+<pre><code>brew install php54 --with-imap --with-tidy --with-debug --with-mysql --with-fpm
+</code></pre><p>将php路径加入PATH</p>
+<pre><code>sudo vim ~/.bash_profile    
+export PATH=&quot;$(brew --prefix php54)/bin:$PATH&quot;
+
+source ~/.bash_profile        
+</code></pre><p>加入launchctl启动控制</p>
+<pre><code>mkdir -p ~/Library/LaunchAgents
+cp /usr/local/opt/php54/homebrew.mxcl.php54.plist ~/Library/LaunchAgents/
+launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php54.plist
+</code></pre><p>配置路径</p>
+<pre><code>/usr/local/etc/php/5.4/php.ini
+/usr/local/etc/php/5.4/php-fpm.conf        
+</code></pre><p>配置 Nginx 支持 PHP-FPM</p>
+<pre><code>sudo vim /usr/local/etc/nginx/nginx.conf    
+
+# 添加默认首页 php
+index  index.php index.html index.htm;
+
+# 取消以下内容的注释，并做修改
+location ~ \.php$ {
+    fastcgi_intercept_errors on;
+    fastcgi_pass   127.0.0.1:9000;
+    fastcgi_index  index.php;
+    fastcgi_param  SCRIPT_FILENAME  /usr/local/Cellar/nginx/1.6.0_1/html$fastcgi_script_name;
+    include        /usr/local/etc/nginx/fastcgi_params;
+}
+</code></pre><h2 id="测试环境"><a href="#测试环境" class="headerlink" title="测试环境"></a>测试环境</h2><pre><code class="php">sudo vim /usr/local/Cellar/nginx/<span class="number">1.6</span><span class="number">.0</span>_1/html/index.php
+
+<span class="comment">#添加测试代码</span>
+<span class="meta">&lt;?php</span> 
+    phpinfo();
+<span class="meta">?&gt;</span>
+</code></pre>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>到目前为止，我们的Nginx、MySQL、PHP-FPM三大软件已经安装好了，针对不同的系统版本和软件版本，可能会遇到一些问题，欢迎留言探讨。            </p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Emmet：HTML/CSS代码快速编写神器 - Web前端]]></title>
       <url>http://yoursite.com/2016/07/09/emmet-html-css/</url>
       <content type="html"><![CDATA[<p></p><h2 id="intro">前言</h2> Emmet的前身是大名鼎鼎的Zen coding，如果你从事Web前端开发的话，对该插件一定不会陌生。它使用仿CSS选择器的语法来生成代码，大大提高了HTML/CSS代码编写的速度。<em>注：版权属于ITeye网站所有, <a href="/about">Job</a> 借此感谢！</em> <p></p>
