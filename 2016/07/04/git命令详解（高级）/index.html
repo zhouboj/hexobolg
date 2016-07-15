@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/07/04/git命令详解（高级）/index.html">
 <meta property="og:site_name" content="Job Notes">
 <meta property="og:description" content="Git日常应用中的命令，最基本的操作详解。">
-<meta property="og:updated_time" content="2016-07-15T20:26:23.000Z">
+<meta property="og:updated_time" content="2016-07-15T21:54:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git命令详解（高级）">
 <meta name="twitter:description" content="Git日常应用中的命令，最基本的操作详解。">
@@ -353,10 +353,10 @@
 
       
         <p>Git日常应用中的命令，最基本的操作详解。<br><a id="more"></a></p>
-<h2 id="Git详解高级"><a href="#Git详解高级" class="headerlink" title="Git详解高级"></a>Git详解高级</h2><h3 id="什么是分支？为何存在？如何创建？如何切换？"><a href="#什么是分支？为何存在？如何创建？如何切换？" class="headerlink" title="什么是分支？为何存在？如何创建？如何切换？"></a>什么是分支？为何存在？如何创建？如何切换？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">git pull //更新代码</div><div class="line">git branch //查看本地分支，以*开头</div><div class="line">git branch -a //查看所有分支</div><div class="line">git branch new-branch-name //在当前分支的基础上创建新分支</div><div class="line">git checkout new-branch-name //切换到新分支</div><div class="line">git push -u origin new-branch-name //把本地的新分支推送到远程库</div></pre></td></tr></table></figure>
-<h3 id="代码如何合并？遇到冲突怎么解决？"><a href="#代码如何合并？遇到冲突怎么解决？" class="headerlink" title="代码如何合并？遇到冲突怎么解决？"></a>代码如何合并？遇到冲突怎么解决？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git checkout new-branch-name</div><div class="line">git pull</div><div class="line">git merge master //把主干的新代码合并到本地，有冲突解决冲突</div><div class="line">git add . //添加新增文件</div><div class="line">git commit -am //添加修改文件，去掉删除文件，提交</div></pre></td></tr></table></figure>
-<h3 id="查看代码提交记录？回溯代码？"><a href="#查看代码提交记录？回溯代码？" class="headerlink" title="查看代码提交记录？回溯代码？"></a>查看代码提交记录？回溯代码？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">git log -l 5</div><div class="line">git reset HEAD</div><div class="line">git reset -- hard @a232fdfsf334</div><div class="line">git commit -am &quot;message&quot;</div><div class="line">git push -f origin new-branch-name</div><div class="line">git revert @a232fdfsf334</div><div class="line">git push origin new-branch-name</div></pre></td></tr></table></figure>
-<h3 id="gitlab-github-多个git库帐号？推送到多个库"><a href="#gitlab-github-多个git库帐号？推送到多个库" class="headerlink" title="gitlab,github,多个git库帐号？推送到多个库?"></a>gitlab,github,多个git库帐号？推送到多个库?</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git remote -v</div><div class="line">git remote add gitlab git@gitlab.com/XXX</div><div class="line">git push -u origin gitlab</div></pre></td></tr></table></figure>
+<h2 id="Git详解高级"><a href="#Git详解高级" class="headerlink" title="Git详解高级"></a>Git详解高级</h2><h3 id="什么是分支？为何存在？如何创建？如何切换？"><a href="#什么是分支？为何存在？如何创建？如何切换？" class="headerlink" title="什么是分支？为何存在？如何创建？如何切换？"></a>什么是分支？为何存在？如何创建？如何切换？</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">git pull //更新代码</div><div class="line">git branch //查看本地分支，以*开头</div><div class="line">git branch <span class="_">-a</span> //查看所有分支</div><div class="line">git branch new-branch-name //在当前分支的基础上创建新分支</div><div class="line">git checkout new-branch-name //切换到新分支</div><div class="line">git push -u origin new-branch-name //把本地的新分支推送到远程库</div></pre></td></tr></table></figure>
+<h3 id="代码如何合并？遇到冲突怎么解决？"><a href="#代码如何合并？遇到冲突怎么解决？" class="headerlink" title="代码如何合并？遇到冲突怎么解决？"></a>代码如何合并？遇到冲突怎么解决？</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git checkout new-branch-name</div><div class="line">git pull</div><div class="line">git merge master //把主干的新代码合并到本地，有冲突解决冲突</div><div class="line">git add . //添加新增文件</div><div class="line">git commit -am //添加修改文件，去掉删除文件，提交</div></pre></td></tr></table></figure>
+<h3 id="查看代码提交记录？回溯代码？"><a href="#查看代码提交记录？回溯代码？" class="headerlink" title="查看代码提交记录？回溯代码？"></a>查看代码提交记录？回溯代码？</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">log</span> <span class="_">-l</span> 5</div><div class="line">git reset HEAD</div><div class="line">git reset -- hard @a232fdfsf334</div><div class="line">git commit -am <span class="string">"message"</span></div><div class="line">git push <span class="_">-f</span> origin new-branch-name</div><div class="line">git revert @a232fdfsf334</div><div class="line">git push origin new-branch-name</div></pre></td></tr></table></figure>
+<h3 id="gitlab-github-多个git库帐号？推送到多个库"><a href="#gitlab-github-多个git库帐号？推送到多个库" class="headerlink" title="gitlab,github,多个git库帐号？推送到多个库?"></a>gitlab,github,多个git库帐号？推送到多个库?</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git remote -v</div><div class="line">git remote add gitlab git@gitlab.com/XXX</div><div class="line">git push -u origin gitlab</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -397,8 +397,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/07/04/Markdown编辑器Mou中的代码高亮方法/" rel="prev" title="Markdown编辑器Mou中的代码高亮方法">
-                Markdown编辑器Mou中的代码高亮方法 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/07/04/markdown-table-style/" rel="prev" title="Markdown 表格样式调整与自适应优化">
+                Markdown 表格样式调整与自适应优化 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -467,7 +467,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -475,7 +475,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -484,7 +484,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

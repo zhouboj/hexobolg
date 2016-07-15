@@ -1467,17 +1467,90 @@ location ~ \.php$ {
   </entry>
   
   <entry>
+    <title>Markdown 表格样式调整与自适应优化</title>
+    <link href="http://yoursite.com/2016/07/04/markdown-table-style/"/>
+    <id>http://yoursite.com/2016/07/04/markdown-table-style/</id>
+    <published>2016-07-04T12:39:17.000Z</published>
+    <updated>2016-07-15T21:46:59.000Z</updated>
+    
+    <content type="html">&lt;p&gt;　　Markdown 写的表格最终会被解析成 HTML 代码，如果使用的编辑器支持自定义 CSS，就能方便的调整样式。如果可以引入 JavaScript，样式自适应也能较好地实现。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p data-height=&quot;300&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;ONyKqb&quot; data-default-tab=&quot;css&quot; data-user=&quot;MOxFIVE&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/MOxFIVE/pen/ONyKqb/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Table style&lt;/a&gt; by MOxFIVE (&lt;a href=&quot;http://codepen.io/MOxFIVE&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;@MOxFIVE&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;
+&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
+
+&lt;h2 id=&quot;样式调整&quot;&gt;&lt;a href=&quot;#样式调整&quot; class=&quot;headerlink&quot; title=&quot;样式调整&quot;&gt;&lt;/a&gt;样式调整&lt;/h2&gt;&lt;h3 id=&quot;基础概念&quot;&gt;&lt;a href=&quot;#基础概念&quot; class=&quot;headerlink&quot; title=&quot;基础概念&quot;&gt;&lt;/a&gt;基础概念&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;table&amp;gt;: 表格
+&amp;lt;thead&amp;gt;: table header 表头区
+&amp;lt;th&amp;gt;: table headings 表头单元格内容
+&amp;lt;tbody&amp;gt;: table body 表格内容区
+&amp;lt;tr&amp;gt;: table row 表行
+&amp;lt;td&amp;gt;: table data 单元格内容
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;基本样式&quot;&gt;&lt;a href=&quot;#基本样式&quot; class=&quot;headerlink&quot; title=&quot;基本样式&quot;&gt;&lt;/a&gt;基本样式&lt;/h3&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;table&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;100%&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;/*表格宽度*/&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;max-width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;65em&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;/*表格最大宽度，避免表格过宽*/&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;border&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1px&lt;/span&gt; solid &lt;span class=&quot;number&quot;&gt;#dedede&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;/*表格外边框设置*/&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;margin&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;15px&lt;/span&gt; auto; &lt;span class=&quot;comment&quot;&gt;/*外边距*/&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;border-collapse&lt;/span&gt;: collapse; &lt;span class=&quot;comment&quot;&gt;/*使用单一线条的边框*/&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;empty-cells&lt;/span&gt;: show; &lt;span class=&quot;comment&quot;&gt;/*单元格无内容依旧绘制边框*/&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;th&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;td&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;35px&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;/*统一每一行的默认高度*/&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;border&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1px&lt;/span&gt; solid &lt;span class=&quot;number&quot;&gt;#dedede&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;/*内部边框样式*/&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;padding&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;10px&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;/*内边距*/&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;表头样式&quot;&gt;&lt;a href=&quot;#表头样式&quot; class=&quot;headerlink&quot; title=&quot;表头样式&quot;&gt;&lt;/a&gt;表头样式&lt;/h3&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;th&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;font-weight&lt;/span&gt;: bold; &lt;span class=&quot;comment&quot;&gt;/*加粗*/&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;text-align&lt;/span&gt;: center &lt;span class=&quot;meta&quot;&gt;!important&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;/*内容居中，加上 !important 避免被 Markdown 样式覆盖*/&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;background&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rgba&lt;/span&gt;(158,188,226,0.2); &lt;span class=&quot;comment&quot;&gt;/*背景色*/&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;隔行变色&quot;&gt;&lt;a href=&quot;#隔行变色&quot; class=&quot;headerlink&quot; title=&quot;隔行变色&quot;&gt;&lt;/a&gt;隔行变色&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;使用选择器选取复数行设置背景色。一般 Markdown 表格编译后都有 &lt;code&gt;&amp;lt;tbody&amp;gt;&lt;/code&gt; 包裹内容，那下面就相当于从表格第二行开始计数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;tbody&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;tr&lt;/span&gt;&lt;span class=&quot;selector-pseudo&quot;&gt;:nth-child(2n)&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;background&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rgba&lt;/span&gt;(158,188,226,0.12); &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;悬浮变色&quot;&gt;&lt;a href=&quot;#悬浮变色&quot; class=&quot;headerlink&quot; title=&quot;悬浮变色&quot;&gt;&lt;/a&gt;悬浮变色&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;鼠标悬浮时该行改变背景色&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;tr&lt;/span&gt;&lt;span class=&quot;selector-pseudo&quot;&gt;:hover&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;background&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;#efefef&lt;/span&gt;; &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;自适应优化&quot;&gt;&lt;a href=&quot;#自适应优化&quot; class=&quot;headerlink&quot; title=&quot;自适应优化&quot;&gt;&lt;/a&gt;自适应优化&lt;/h2&gt;&lt;p&gt;表格用 Markdown 书写，编辑器解析，因而只能在已经生成好的代码上进行自适应优化。&lt;/p&gt;
+&lt;h3 id=&quot;表头不换行&quot;&gt;&lt;a href=&quot;#表头不换行&quot; class=&quot;headerlink&quot; title=&quot;表头不换行&quot;&gt;&lt;/a&gt;表头不换行&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;设置表头单元格内容不换行，这样可以通过表头控制该列的最小宽度，避免浏览器窗口缩小时内容被压缩得太紧&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;th&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;white-space&lt;/span&gt;: nowrap; &lt;span class=&quot;comment&quot;&gt;/*表头内容强制在一行显示*/&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;首列不换行&quot;&gt;&lt;a href=&quot;#首列不换行&quot; class=&quot;headerlink&quot; title=&quot;首列不换行&quot;&gt;&lt;/a&gt;首列不换行&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;表格第一列单元格内容不换行，多数情况下表格首列不应该被压缩换行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;td&lt;/span&gt;&lt;span class=&quot;selector-pseudo&quot;&gt;:nth-child(1)&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;white-space&lt;/span&gt;: nowrap; &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;表格滚动条&quot;&gt;&lt;a href=&quot;#表格滚动条&quot; class=&quot;headerlink&quot; title=&quot;表格滚动条&quot;&gt;&lt;/a&gt;表格滚动条&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;添加 JavaScript 代码，用一个 &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 把表格包裹起来，父元素宽度不足时显示横向滚动条，避免表格撑破布局&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;[].slice.call(&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.querySelectorAll(&lt;span class=&quot;string&quot;&gt;&#39;table&#39;&lt;/span&gt;)).forEach(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;el&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; wrapper = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.createElement(&lt;span class=&quot;string&quot;&gt;&#39;div&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    wrapper.className = &lt;span class=&quot;string&quot;&gt;&#39;table-area&#39;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    el.parentNode.insertBefore(wrapper, el);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    el.parentNode.removeChild(el);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    wrapper.appendChild(el);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;jQuery&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$(&lt;span class=&quot;string&quot;&gt;&quot;table&quot;&lt;/span&gt;).wrap(&lt;span class=&quot;string&quot;&gt;&quot;&amp;lt;div class=&#39;table-area&#39;&amp;gt;&amp;lt;/div&amp;gt;&quot;&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;同时添加如下 CSS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.table-area&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;overflow&lt;/span&gt;: auto;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;To be added&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;　　Markdown 写的表格最终会被解析成 HTML 代码，如果使用的编辑器支持自定义 CSS，就能方便的调整样式。如果可以引入 JavaScript，样式自适应也能较好地实现。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="术业专攻" scheme="http://yoursite.com/categories/%E6%9C%AF%E4%B8%9A%E4%B8%93%E6%94%BB/"/>
+    
+    
+      <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
+    
+      <category term="Markdown" scheme="http://yoursite.com/tags/Markdown/"/>
+    
+      <category term="Table" scheme="http://yoursite.com/tags/Table/"/>
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>git命令详解（高级）</title>
     <link href="http://yoursite.com/2016/07/04/git%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3%EF%BC%88%E9%AB%98%E7%BA%A7%EF%BC%89/"/>
     <id>http://yoursite.com/2016/07/04/git命令详解（高级）/</id>
     <published>2016-07-04T04:00:11.000Z</published>
-    <updated>2016-07-15T20:26:23.000Z</updated>
+    <updated>2016-07-15T21:54:23.000Z</updated>
     
     <content type="html">&lt;p&gt;Git日常应用中的命令，最基本的操作详解。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Git详解高级&quot;&gt;&lt;a href=&quot;#Git详解高级&quot; class=&quot;headerlink&quot; title=&quot;Git详解高级&quot;&gt;&lt;/a&gt;Git详解高级&lt;/h2&gt;&lt;h3 id=&quot;什么是分支？为何存在？如何创建？如何切换？&quot;&gt;&lt;a href=&quot;#什么是分支？为何存在？如何创建？如何切换？&quot; class=&quot;headerlink&quot; title=&quot;什么是分支？为何存在？如何创建？如何切换？&quot;&gt;&lt;/a&gt;什么是分支？为何存在？如何创建？如何切换？&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git pull //更新代码&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git branch //查看本地分支，以*开头&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git branch -a //查看所有分支&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git branch new-branch-name //在当前分支的基础上创建新分支&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git checkout new-branch-name //切换到新分支&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git push -u origin new-branch-name //把本地的新分支推送到远程库&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;代码如何合并？遇到冲突怎么解决？&quot;&gt;&lt;a href=&quot;#代码如何合并？遇到冲突怎么解决？&quot; class=&quot;headerlink&quot; title=&quot;代码如何合并？遇到冲突怎么解决？&quot;&gt;&lt;/a&gt;代码如何合并？遇到冲突怎么解决？&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git checkout new-branch-name&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git pull&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git merge master //把主干的新代码合并到本地，有冲突解决冲突&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git add . //添加新增文件&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git commit -am //添加修改文件，去掉删除文件，提交&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;查看代码提交记录？回溯代码？&quot;&gt;&lt;a href=&quot;#查看代码提交记录？回溯代码？&quot; class=&quot;headerlink&quot; title=&quot;查看代码提交记录？回溯代码？&quot;&gt;&lt;/a&gt;查看代码提交记录？回溯代码？&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git log -l 5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git reset HEAD&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git reset -- hard @a232fdfsf334&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git commit -am &amp;quot;message&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git push -f origin new-branch-name&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git revert @a232fdfsf334&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git push origin new-branch-name&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;gitlab-github-多个git库帐号？推送到多个库&quot;&gt;&lt;a href=&quot;#gitlab-github-多个git库帐号？推送到多个库&quot; class=&quot;headerlink&quot; title=&quot;gitlab,github,多个git库帐号？推送到多个库?&quot;&gt;&lt;/a&gt;gitlab,github,多个git库帐号？推送到多个库?&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git remote -v&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git remote add gitlab git@gitlab.com/XXX&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git push -u origin gitlab&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+&lt;h2 id=&quot;Git详解高级&quot;&gt;&lt;a href=&quot;#Git详解高级&quot; class=&quot;headerlink&quot; title=&quot;Git详解高级&quot;&gt;&lt;/a&gt;Git详解高级&lt;/h2&gt;&lt;h3 id=&quot;什么是分支？为何存在？如何创建？如何切换？&quot;&gt;&lt;a href=&quot;#什么是分支？为何存在？如何创建？如何切换？&quot; class=&quot;headerlink&quot; title=&quot;什么是分支？为何存在？如何创建？如何切换？&quot;&gt;&lt;/a&gt;什么是分支？为何存在？如何创建？如何切换？&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git pull //更新代码&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git branch //查看本地分支，以*开头&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git branch &lt;span class=&quot;_&quot;&gt;-a&lt;/span&gt; //查看所有分支&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git branch new-branch-name //在当前分支的基础上创建新分支&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git checkout new-branch-name //切换到新分支&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git push -u origin new-branch-name //把本地的新分支推送到远程库&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;代码如何合并？遇到冲突怎么解决？&quot;&gt;&lt;a href=&quot;#代码如何合并？遇到冲突怎么解决？&quot; class=&quot;headerlink&quot; title=&quot;代码如何合并？遇到冲突怎么解决？&quot;&gt;&lt;/a&gt;代码如何合并？遇到冲突怎么解决？&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git checkout new-branch-name&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git pull&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git merge master //把主干的新代码合并到本地，有冲突解决冲突&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git add . //添加新增文件&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git commit -am //添加修改文件，去掉删除文件，提交&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;查看代码提交记录？回溯代码？&quot;&gt;&lt;a href=&quot;#查看代码提交记录？回溯代码？&quot; class=&quot;headerlink&quot; title=&quot;查看代码提交记录？回溯代码？&quot;&gt;&lt;/a&gt;查看代码提交记录？回溯代码？&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git &lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt; &lt;span class=&quot;_&quot;&gt;-l&lt;/span&gt; 5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git reset HEAD&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git reset -- hard @a232fdfsf334&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git commit -am &lt;span class=&quot;string&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git push &lt;span class=&quot;_&quot;&gt;-f&lt;/span&gt; origin new-branch-name&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git revert @a232fdfsf334&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git push origin new-branch-name&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;gitlab-github-多个git库帐号？推送到多个库&quot;&gt;&lt;a href=&quot;#gitlab-github-多个git库帐号？推送到多个库&quot; class=&quot;headerlink&quot; title=&quot;gitlab,github,多个git库帐号？推送到多个库?&quot;&gt;&lt;/a&gt;gitlab,github,多个git库帐号？推送到多个库?&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git remote -v&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git remote add gitlab git@gitlab.com/XXX&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git push -u origin gitlab&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
     
     <summary type="html">
     
@@ -1615,37 +1688,347 @@ location ~ \.php$ {
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2016/07/01/hello-world/"/>
-    <id>http://yoursite.com/2016/07/01/hello-world/</id>
-    <published>2016-07-01T03:44:03.000Z</published>
-    <updated>2016-07-15T20:25:11.000Z</updated>
+    <title>前端工程化工具初选</title>
+    <link href="http://yoursite.com/2016/07/01/front-end-tools/"/>
+    <id>http://yoursite.com/2016/07/01/front-end-tools/</id>
+    <published>2016-06-30T23:51:28.000Z</published>
+    <updated>2016-07-15T21:39:37.000Z</updated>
     
-    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo server&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo generate&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo deploy&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;　　面对日益纷杂的前端工具，作为新人常感无从下手。经过一番检索和简单对比，再结合自己的喜好，筛选了将要学习和使用的工具，以适应日益工程化、专业化的 Web 前端开发工作。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;Library-amp-Framework-库与框架&quot;&gt;&lt;a href=&quot;#Library-amp-Framework-库与框架&quot; class=&quot;headerlink&quot; title=&quot;Library &amp;amp; Framework | 库与框架&quot;&gt;&lt;/a&gt;Library &amp;amp; Framework | 库与框架&lt;/h2&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://jquery.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;jQuery&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://jqueryui.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;jQuery UI&lt;/a&gt;: A curated set of user interface interactions, effects, widgets, and themes&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://cn.vuejs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Vue.js&lt;/a&gt;: 数据驱动的组件，为现代化的 Web 界面而生&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React.js&lt;/a&gt;: A JavaScript library for building user interfaces&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://facebook.github.io/react-native/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React Native&lt;/a&gt;: A framework for building native apps using React&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;The-Build-System-构建工具&quot;&gt;&lt;a href=&quot;#The-Build-System-构建工具&quot; class=&quot;headerlink&quot; title=&quot;The Build System | 构建工具&quot;&gt;&lt;/a&gt;The Build System | 构建工具&lt;/h2&gt;&lt;p&gt;The Build System is used to build, preview and test your project.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://gulpjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;gulp.js&lt;/a&gt;: Automate and enhance your workflow&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;The-Module-Bundler-模块打包器&quot;&gt;&lt;a href=&quot;#The-Module-Bundler-模块打包器&quot; class=&quot;headerlink&quot; title=&quot;The Module Bundler | 模块打包器&quot;&gt;&lt;/a&gt;The Module Bundler | 模块打包器&lt;/h2&gt;&lt;p&gt;Packs many modules into a few bundled assets.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://webpack.github.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;webpack&lt;/a&gt;: Take modules with dependencies and generate static assets representing those modules&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;The-Package-Manager-包管理&quot;&gt;&lt;a href=&quot;#The-Package-Manager-包管理&quot; class=&quot;headerlink&quot; title=&quot;The Package Manager | 包管理&quot;&gt;&lt;/a&gt;The Package Manager | 包管理&lt;/h2&gt;&lt;p&gt;The Package Manager is used for dependency management, so that you no longer have to manually download and manage your scripts.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;npm&lt;/a&gt;: Node Package Manager.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;CSS-Extension-CSS-处理&quot;&gt;&lt;a href=&quot;#CSS-Extension-CSS-处理&quot; class=&quot;headerlink&quot; title=&quot;CSS Extension | CSS 处理&quot;&gt;&lt;/a&gt;CSS Extension | CSS 处理&lt;/h2&gt;&lt;p&gt;Provide an efficient, dynamic, and expressive way to generate CSS.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/stylus/stylus&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Stylus&lt;/a&gt;: Expressive, robust, feature-rich CSS language built for nodejs&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/postcss/postcss&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;PostCSS&lt;/a&gt;: Transforming styles with JS plugins&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;JavaScript-Module-JavaScript-模块化&quot;&gt;&lt;a href=&quot;#JavaScript-Module-JavaScript-模块化&quot; class=&quot;headerlink&quot; title=&quot;JavaScript Module | JavaScript 模块化&quot;&gt;&lt;/a&gt;JavaScript Module | JavaScript 模块化&lt;/h2&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://exploringjs.com/es6/ch_modules.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ECMAScript 6 Module&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;JavaScript-Template-JavaScript-模板引擎&quot;&gt;&lt;a href=&quot;#JavaScript-Template-JavaScript-模板引擎&quot; class=&quot;headerlink&quot; title=&quot;JavaScript Template | JavaScript 模板引擎&quot;&gt;&lt;/a&gt;JavaScript Template | JavaScript 模板引擎&lt;/h2&gt;&lt;p&gt;Generate HTML markup with plain JavaScript.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://ejs.co/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;EJS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Test-Framework-测试框架&quot;&gt;&lt;a href=&quot;#Test-Framework-测试框架&quot; class=&quot;headerlink&quot; title=&quot;Test Framework | 测试框架&quot;&gt;&lt;/a&gt;Test Framework | 测试框架&lt;/h2&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://mochajs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Mocha&lt;/a&gt;: a simple, flexible, fun JavaScript test framework for node.js and the browser&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://chaijs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Chai&lt;/a&gt;: a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;The-scaffolding-tool-手脚架&quot;&gt;&lt;a href=&quot;#The-scaffolding-tool-手脚架&quot; class=&quot;headerlink&quot; title=&quot;The scaffolding tool | 手脚架&quot;&gt;&lt;/a&gt;The scaffolding tool | 手脚架&lt;/h2&gt;&lt;p&gt;Scaffolds out a new application, writing your build configuration and pulling in relevant build tasks and package manager dependencies that you might need for your build.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://yeoman.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Yeoman&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;集成方案&quot;&gt;&lt;a href=&quot;#集成方案&quot; class=&quot;headerlink&quot; title=&quot;集成方案&quot;&gt;&lt;/a&gt;集成方案&lt;/h2&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://fis.baidu.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;FIS&lt;/a&gt;: 解决前端开发中自动化工具、性能优化、模块化框架、开发规范、代码部署、开发流程等问题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Container-容器&quot;&gt;&lt;a href=&quot;#Container-容器&quot; class=&quot;headerlink&quot; title=&quot;Container | 容器&quot;&gt;&lt;/a&gt;Container | 容器&lt;/h2&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.docker.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Docker&lt;/a&gt;: Build, Ship, and Run Any App, Anywhere&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;br&gt;
+      &lt;p&gt;　　面对日益纷杂的前端工具，作为新人常感无从下手。经过一番检索和简单对比，再结合自己的喜好，筛选了将要学习和使用的工具，以适应日益工程化、专业化的 Web 前端开发工作。&lt;/p&gt;
     
     </summary>
     
-      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="自用笔记" scheme="http://yoursite.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="javescript" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/javescript/"/>
+      <category term="术业专攻" scheme="http://yoursite.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/%E6%9C%AF%E4%B8%9A%E4%B8%93%E6%94%BB/"/>
     
     
-      <category term="前端" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF/"/>
+  </entry>
+  
+  <entry>
+    <title>Web Style Guide 前端代码规范</title>
+    <link href="http://yoursite.com/2016/07/01/web-style-guide/"/>
+    <id>http://yoursite.com/2016/07/01/web-style-guide/</id>
+    <published>2016-06-30T23:51:28.000Z</published>
+    <updated>2016-07-15T22:12:31.000Z</updated>
     
-      <category term="后端" scheme="http://yoursite.com/tags/%E5%90%8E%E7%AB%AF/"/>
+    <content type="html">&lt;p&gt;　　在此记录自己已理解并开始遵循的前端代码规范。What How Why&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;General-style-rules&quot;&gt;&lt;a href=&quot;#General-style-rules&quot; class=&quot;headerlink&quot; title=&quot;General style rules&quot;&gt;&lt;/a&gt;General style rules&lt;/h2&gt;&lt;h3 id=&quot;Filename&quot;&gt;&lt;a href=&quot;#Filename&quot; class=&quot;headerlink&quot; title=&quot;Filename&quot;&gt;&lt;/a&gt;Filename&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Start a file name with a letter and avoid numbers:&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;thousand-and-one-scripts.js&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Start a filename with a special sign in order to flag it for a special purpose.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Lower case in filename:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Some operating systems support case sensitive file names and we should not mix the cases to minimize confusion and possible sources for human errors.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;Separator&quot;&gt;&lt;a href=&quot;#Separator&quot; class=&quot;headerlink&quot; title=&quot;Separator&quot;&gt;&lt;/a&gt;Separator&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Use minus (-) sign as separating parts:&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;my-script.js&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;my-camel-case-name.css&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;i-love-underscores.html&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;my-script.js&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;For readability purpose. Users may mistake the underscores for spaces, as the underlining in the link hides the underscores;&lt;/li&gt;
+&lt;li&gt;It’s a common separator in canonical URL and URL slugs;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Use dot’s to separate the clear purpose of this additional meta-data in a filename:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;my-file.min.css&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Protocol&quot;&gt;&lt;a href=&quot;#Protocol&quot; class=&quot;headerlink&quot; title=&quot;Protocol&quot;&gt;&lt;/a&gt;Protocol&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Omit the protocol portion (http:, https:):&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;//cdn.com/foundation.min.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;background: url(//static.example.com/images/bg.jpg)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;Makes the URL relative—prevents mixed content issues;&lt;/li&gt;
+&lt;li&gt;Saves file size.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;Text-indentation&quot;&gt;&lt;a href=&quot;#Text-indentation&quot; class=&quot;headerlink&quot; title=&quot;Text indentation&quot;&gt;&lt;/a&gt;Text indentation&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Indent by 4 spaces at a time. Hitting the Tab key in your text editor should generate four space characters rather than one tab character:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;ul&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;li&lt;/span&gt;&amp;gt;&lt;/span&gt;Fantastic&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;li&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;li&lt;/span&gt;&amp;gt;&lt;/span&gt;Great&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;li&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;li&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;#&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;Test&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;li&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;ul&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;Make code appearing identical across platforms;&lt;/li&gt;
+&lt;li&gt;Developers can make adjustments to their editing environments a single time.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;Comments&quot;&gt;&lt;a href=&quot;#Comments&quot; class=&quot;headerlink&quot; title=&quot;Comments&quot;&gt;&lt;/a&gt;Comments&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Comment why it was coded this way and comment the thinking behind. Also include links in your comments to open issues, specifications etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; offset = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(includeLabels) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;// If the labels are included we need to have a minimum offset of 20 pixels&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;// We need to set it explicitly because of the following bug: http://somebrowservendor.com/issue-tracker/ISSUE-1&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  offset = &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;Use tools to generates API documentation from comments. &lt;a href=&quot;http://usejsdoc.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;JSDoc&lt;/a&gt; or &lt;a href=&quot;http://yui.github.io/yuidoc/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;YUIDoc&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Code-linting&quot;&gt;&lt;a href=&quot;#Code-linting&quot; class=&quot;headerlink&quot; title=&quot;Code linting&quot;&gt;&lt;/a&gt;Code linting&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Writing and following a style guide is a good practice but having an automated process that is enforcing it is even better. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;HTML-style-rules&quot;&gt;&lt;a href=&quot;#HTML-style-rules&quot; class=&quot;headerlink&quot; title=&quot;HTML style rules&quot;&gt;&lt;/a&gt;HTML style rules&lt;/h2&gt;&lt;h3 id=&quot;Document-type&quot;&gt;&lt;a href=&quot;#Document-type&quot; class=&quot;headerlink&quot; title=&quot;Document type&quot;&gt;&lt;/a&gt;Document type&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;HTML5 (HTML syntax) is preferred for all HTML documents:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Script-loading&quot;&gt;&lt;a href=&quot;#Script-loading&quot; class=&quot;headerlink&quot; title=&quot;Script loading&quot;&gt;&lt;/a&gt;Script loading&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Add your script element just before the body close tag and add them with a async attribute:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;rel&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;main.css&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- body goes here --&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;main.js&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;async&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;On modern browsers, this will asynchronously load the script and don’t wait for CSSOM to complete before loading;&lt;/li&gt;
+&lt;li&gt;On older browsers (IE9-), prevent DOM parser blocking, not affecting the user experience too much.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;Type-attributes&quot;&gt;&lt;a href=&quot;#Type-attributes&quot; class=&quot;headerlink&quot; title=&quot;Type attributes&quot;&gt;&lt;/a&gt;Type attributes&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Omit type attributes for style sheets and scripts:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;rel&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;main.css&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;main.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;HTML5 implies text/css and text/javascript as defaults;&lt;br&gt;This can be safely done even for older browsers.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;ID-in-Headings&quot;&gt;&lt;a href=&quot;#ID-in-Headings&quot; class=&quot;headerlink&quot; title=&quot;ID in Headings&quot;&gt;&lt;/a&gt;ID in Headings&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Give all headings a ID:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;h3&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;best-practices&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;Best practices&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;h3&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;IDs for anchors, enter the URL to scroll to the position this element.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;Quotation-marks&quot;&gt;&lt;a href=&quot;#Quotation-marks&quot; class=&quot;headerlink&quot; title=&quot;Quotation marks&quot;&gt;&lt;/a&gt;Quotation marks&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Use double quotation marks (“”) to quote attributes values:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;news-article&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;0-values&quot;&gt;&lt;a href=&quot;#0-values&quot; class=&quot;headerlink&quot; title=&quot;0 values&quot;&gt;&lt;/a&gt;0 values&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Do not use units after 0 values unless they are required:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;padding-bottom&lt;/span&gt;: 0;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;margin&lt;/span&gt;: 0;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Shorthand-Properties&quot;&gt;&lt;a href=&quot;#Shorthand-Properties&quot; class=&quot;headerlink&quot; title=&quot;Shorthand Properties&quot;&gt;&lt;/a&gt;Shorthand Properties&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Should be used whenever possible, even in cases where only one value is explicitly set.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;border-top: 0;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;font: 100%/1.6 palatino, georgia, serif;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;padding: 0 1em 2em;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;Useful for code efficiency and understandability.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;Hexadecimal-Notation&quot;&gt;&lt;a href=&quot;#Hexadecimal-Notation&quot; class=&quot;headerlink&quot; title=&quot;Hexadecimal Notation&quot;&gt;&lt;/a&gt;Hexadecimal Notation&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Use 3 character hexadecimal notation where possible and lower case hex digits:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;color&lt;/span&gt;: &lt;span class=&quot;selector-id&quot;&gt;#f3a&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;color&lt;/span&gt;: &lt;span class=&quot;selector-id&quot;&gt;#d4ddef&lt;/span&gt;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;To-be-continued&quot;&gt;&lt;a href=&quot;#To-be-continued&quot; class=&quot;headerlink&quot; title=&quot;To be continued&quot;&gt;&lt;/a&gt;To be continued&lt;/h2&gt;&lt;h2 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;Web Styleguide - Style guide to harmonize HTML, Javascript and CSS / Sass coding style&lt;/em&gt;&lt;/strong&gt; by &lt;strong&gt;Gion Kunz&lt;/strong&gt; on &lt;code&gt;2014/10/8&lt;/code&gt;: &lt;a href=&quot;https://github.com/gionkunz/chartist-js/blob/develop/CODINGSTYLE.md&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/gionkunz/chartist-js/blob/develop/CODINGSTYLE.md&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;Isobar Front-end Code Standards&lt;/em&gt;&lt;/strong&gt; by &lt;strong&gt;Isobar&lt;/strong&gt; on &lt;code&gt;2015/8/25&lt;/code&gt;: &lt;a href=&quot;http://isobar-idev.github.io/code-standards/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://isobar-idev.github.io/code-standards/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;[译文] Isobar 前端代码规范 及 最佳实践&lt;/em&gt;&lt;/strong&gt; by &lt;strong&gt;老码农&lt;/strong&gt; on &lt;code&gt;2015/8/25&lt;/code&gt;: &lt;a href=&quot;http://coderlmn.github.io/code-standards/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://coderlmn.github.io/code-standards/&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;　　在此记录自己已理解并开始遵循的前端代码规范。What How Why&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="自用笔记" scheme="http://yoursite.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="术业专攻" scheme="http://yoursite.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/%E6%9C%AF%E4%B8%9A%E4%B8%93%E6%94%BB/"/>
+    
+    
+      <category term="HTML" scheme="http://yoursite.com/tags/HTML/"/>
+    
+      <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git 基础命令与相关术语</title>
+    <link href="http://yoursite.com/2015/11/23/git-command/"/>
+    <id>http://yoursite.com/2015/11/23/git-command/</id>
+    <published>2015-11-22T19:01:30.000Z</published>
+    <updated>2016-07-15T22:16:56.000Z</updated>
+    
+    <content type="html">&lt;p&gt;　　笔记基本上整理自网站 &lt;a href=&quot;https://try.github.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Try Git&lt;/a&gt;，一套很不错的 Git 在线入门教程。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;git-init&quot;&gt;&lt;a href=&quot;#git-init&quot; class=&quot;headerlink&quot; title=&quot;git init&quot;&gt;&lt;/a&gt;git init&lt;/h2&gt;&lt;p&gt;To initialize a Git repository here&lt;/p&gt;
+&lt;h3 id=&quot;Directory&quot;&gt;&lt;a href=&quot;#Directory&quot; class=&quot;headerlink&quot; title=&quot;Directory&quot;&gt;&lt;/a&gt;Directory&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;A folder used for storing multiple files.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Repository&quot;&gt;&lt;a href=&quot;#Repository&quot; class=&quot;headerlink&quot; title=&quot;Repository&quot;&gt;&lt;/a&gt;Repository&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;A directory where Git has been initialized to start version controlling your files.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;git-status&quot;&gt;&lt;a href=&quot;#git-status&quot; class=&quot;headerlink&quot; title=&quot;git status&quot;&gt;&lt;/a&gt;git status&lt;/h2&gt;&lt;p&gt;See what the current state of the project is.&lt;/p&gt;
+&lt;h3 id=&quot;staged&quot;&gt;&lt;a href=&quot;#staged&quot; class=&quot;headerlink&quot; title=&quot;staged&quot;&gt;&lt;/a&gt;staged&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Files are ready to be committed.&lt;h3 id=&quot;unstaged&quot;&gt;&lt;a href=&quot;#unstaged&quot; class=&quot;headerlink&quot; title=&quot;unstaged&quot;&gt;&lt;/a&gt;unstaged&lt;/h3&gt;&lt;/li&gt;
+&lt;li&gt;Files with changes that have not been prepared to be committed.&lt;h3 id=&quot;untracked&quot;&gt;&lt;a href=&quot;#untracked&quot; class=&quot;headerlink&quot; title=&quot;untracked&quot;&gt;&lt;/a&gt;untracked&lt;/h3&gt;&lt;/li&gt;
+&lt;li&gt;Files aren’t tracked by Git yet. This usually indicates a newly created file.&lt;h3 id=&quot;deleted&quot;&gt;&lt;a href=&quot;#deleted&quot; class=&quot;headerlink&quot; title=&quot;deleted&quot;&gt;&lt;/a&gt;deleted&lt;/h3&gt;&lt;/li&gt;
+&lt;li&gt;File has been deleted and is waiting to be removed from Git.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;git-add-lt-file-gt&quot;&gt;&lt;a href=&quot;#git-add-lt-file-gt&quot; class=&quot;headerlink&quot; title=&quot;git add &amp;lt;file&amp;gt;&quot;&gt;&lt;/a&gt;git add &lt;code&gt;&amp;lt;file&amp;gt;&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;Add files to the staging area.&lt;/p&gt;
+&lt;h3 id=&quot;Staging-Area&quot;&gt;&lt;a href=&quot;#Staging-Area&quot; class=&quot;headerlink&quot; title=&quot;Staging Area&quot;&gt;&lt;/a&gt;Staging Area&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;A place where we can group files together before we “commit” them to Git.&lt;br&gt;Commit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;add-all&quot;&gt;&lt;a href=&quot;#add-all&quot; class=&quot;headerlink&quot; title=&quot;add all&quot;&gt;&lt;/a&gt;add all&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;You can also type &lt;code&gt;git add -A&lt;/code&gt; . where the dot stands for the current directory, so everything in and beneath it is added. The &lt;code&gt;-A&lt;/code&gt; ensures even file deletions are included.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;git-reset&quot;&gt;&lt;a href=&quot;#git-reset&quot; class=&quot;headerlink&quot; title=&quot;git reset&quot;&gt;&lt;/a&gt;git reset&lt;/h2&gt;&lt;p&gt;You can use &lt;code&gt;git reset &amp;lt;filename&amp;gt;&lt;/code&gt; to remove a file or files from the staging area.&lt;/p&gt;
+&lt;h2 id=&quot;Commit&quot;&gt;&lt;a href=&quot;#Commit&quot; class=&quot;headerlink&quot; title=&quot;Commit&quot;&gt;&lt;/a&gt;Commit&lt;/h2&gt;&lt;p&gt;A “commit” is a snapshot of our repository. This way if we ever need to look back at the changes we’ve made (or if someone else does), we will see a nice timeline of all changes.&lt;/p&gt;
+&lt;h3 id=&quot;git-commit-m-“msg”&quot;&gt;&lt;a href=&quot;#git-commit-m-“msg”&quot; class=&quot;headerlink&quot; title=&quot;git commit -m “msg”&quot;&gt;&lt;/a&gt;git commit -m “msg”&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;To store our staged changes we run the commit command with a message describing what we’ve changed. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;‘-a’-option&quot;&gt;&lt;a href=&quot;#‘-a’-option&quot; class=&quot;headerlink&quot; title=&quot;‘-a’ option&quot;&gt;&lt;/a&gt;‘-a’ option&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Auto removes deleted files with the commit.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git commit -am &lt;span class=&quot;string&quot;&gt;&quot;msg&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;git-log&quot;&gt;&lt;a href=&quot;#git-log&quot; class=&quot;headerlink&quot; title=&quot;git log&quot;&gt;&lt;/a&gt;git log&lt;/h2&gt;&lt;p&gt;a journal that remembers all the changes we’ve committed so far&lt;/p&gt;
+&lt;h3 id=&quot;git-log-–summary&quot;&gt;&lt;a href=&quot;#git-log-–summary&quot; class=&quot;headerlink&quot; title=&quot;git log –summary&quot;&gt;&lt;/a&gt;git log –summary&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;see more information for each commit. You can see where new files were added for the first time or where files were deleted. It’s a good overview of what’s going on in the project.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;git-remote&quot;&gt;&lt;a href=&quot;#git-remote&quot; class=&quot;headerlink&quot; title=&quot;git remote&quot;&gt;&lt;/a&gt;git remote&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git remote add &amp;lt;remote name&amp;gt; &amp;lt;repository URL&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git remote add origin https://github.com/try-git/try_git.git&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Git doesn’t care what you name your remotes, but it’s typical to name your main one &lt;code&gt;origin&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;It’s also a good idea for your main repository to be on a remote server like GitHub in case your machine is lost at sea during a transatlantic boat cruise or crushed by three monkey statues during an earthquake.&lt;/p&gt;
+&lt;h2 id=&quot;git-push&quot;&gt;&lt;a href=&quot;#git-push&quot; class=&quot;headerlink&quot; title=&quot;git push&quot;&gt;&lt;/a&gt;git push&lt;/h2&gt;&lt;p&gt;Tells Git where to put our commits when we’re ready.&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git push -u &amp;lt;remote name&amp;gt; &amp;lt;branch name&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git push -u origin master&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;The &lt;code&gt;-u&lt;/code&gt; tells Git to remember the parameters, so that next time we can simply run &lt;code&gt;git push&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;git-stash&quot;&gt;&lt;a href=&quot;#git-stash&quot; class=&quot;headerlink&quot; title=&quot;git stash&quot;&gt;&lt;/a&gt;git stash&lt;/h2&gt;&lt;p&gt;Sometimes when you go to pull you may have changes you don’t want to commit just yet. One option you have, other than commiting, is to stash the changes.&lt;/p&gt;
+&lt;p&gt;Use the command &lt;code&gt;git stash&lt;/code&gt; to stash your changes, and &lt;code&gt;git stash apply&lt;/code&gt; to re-apply your changes after your pull.&lt;/p&gt;
+&lt;h2 id=&quot;git-pull&quot;&gt;&lt;a href=&quot;#git-pull&quot; class=&quot;headerlink&quot; title=&quot;git pull&quot;&gt;&lt;/a&gt;git pull&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git push &amp;lt;remote name&amp;gt; &amp;lt;branch name&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git pull origin master&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Check for changes on remote repository and pull down any new changes.&lt;/p&gt;
+&lt;h2 id=&quot;git-diff&quot;&gt;&lt;a href=&quot;#git-diff&quot; class=&quot;headerlink&quot; title=&quot;git diff&quot;&gt;&lt;/a&gt;git diff&lt;/h2&gt;&lt;p&gt;A good overview of changes we have made and lets us add files or directories one at a time and commit them separately.&lt;/p&gt;
+&lt;h3 id=&quot;git-diff-HEAD&quot;&gt;&lt;a href=&quot;#git-diff-HEAD&quot; class=&quot;headerlink&quot; title=&quot;git diff HEAD&quot;&gt;&lt;/a&gt;git diff HEAD&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Show what is different from our last commit. &lt;code&gt;HEAD&lt;/code&gt; points to your most recent commit by default.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;git-diff-–staged&quot;&gt;&lt;a href=&quot;#git-diff-–staged&quot; class=&quot;headerlink&quot; title=&quot;git diff –staged&quot;&gt;&lt;/a&gt;git diff –staged&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Look at changes within files that have already been staged.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;git-checkout-–-lt-target-gt&quot;&gt;&lt;a href=&quot;#git-checkout-–-lt-target-gt&quot; class=&quot;headerlink&quot; title=&quot;git checkout – &amp;lt;target&amp;gt;&quot;&gt;&lt;/a&gt;git checkout – &lt;code&gt;&amp;lt;target&amp;gt;&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;Changed files back to how they were at the last commit, namely get rid of all the changes since the last commit.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;--&lt;/code&gt;: promise the command line that there are no more options after the ‘–’, avoid switching to the branch of the same name.&lt;/p&gt;
+&lt;h2 id=&quot;git-branch&quot;&gt;&lt;a href=&quot;#git-branch&quot; class=&quot;headerlink&quot; title=&quot;git branch&quot;&gt;&lt;/a&gt;git branch&lt;/h2&gt;&lt;p&gt;List local branches of now repository.&lt;/p&gt;
+&lt;h3 id=&quot;git-branch-lt-name-gt&quot;&gt;&lt;a href=&quot;#git-branch-lt-name-gt&quot; class=&quot;headerlink&quot; title=&quot;git branch &amp;lt;name&amp;gt;&quot;&gt;&lt;/a&gt;git branch &lt;code&gt;&amp;lt;name&amp;gt;&lt;/code&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Create a new branch.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When developers are working on a feature or bug they’ll often create a copy (aka. branch) of their code they can make separate commits to. Then when they’re done they can merge this branch back into their main master branch.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;git-checkout-lt-branch-gt&quot;&gt;&lt;a href=&quot;#git-checkout-lt-branch-gt&quot; class=&quot;headerlink&quot; title=&quot;git checkout &amp;lt;branch&amp;gt;&quot;&gt;&lt;/a&gt;git checkout &lt;code&gt;&amp;lt;branch&amp;gt;&lt;/code&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Switch to certain branch.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;git-checkout-b-new-branch&quot;&gt;&lt;a href=&quot;#git-checkout-b-new-branch&quot; class=&quot;headerlink&quot; title=&quot;git checkout -b new_branch&quot;&gt;&lt;/a&gt;git checkout -b new_branch&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Checkout and create a branch at the same time. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;git-rm-lt-file-gt&quot;&gt;&lt;a href=&quot;#git-rm-lt-file-gt&quot; class=&quot;headerlink&quot; title=&quot;git rm &amp;lt;file&amp;gt;&quot;&gt;&lt;/a&gt;git rm &lt;code&gt;&amp;lt;file&amp;gt;&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;Not only remove the actual files from disk, but will also stage the removal of the files for us.&lt;/p&gt;
+&lt;h3 id=&quot;git-rm-r-folder&quot;&gt;&lt;a href=&quot;#git-rm-r-folder&quot; class=&quot;headerlink&quot; title=&quot;git rm -r folder&quot;&gt;&lt;/a&gt;git rm -r folder&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Recursively remove all folders and files from the given directory.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;git-merge-lt-branch-gt&quot;&gt;&lt;a href=&quot;#git-merge-lt-branch-gt&quot; class=&quot;headerlink&quot; title=&quot;git merge &amp;lt;branch&amp;gt;&quot;&gt;&lt;/a&gt;git merge &lt;code&gt;&amp;lt;branch&amp;gt;&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;Merge your changes from the given branch into current branch.&lt;/p&gt;
+&lt;h3 id=&quot;Merge-Conflicts&quot;&gt;&lt;a href=&quot;#Merge-Conflicts&quot; class=&quot;headerlink&quot; title=&quot;Merge Conflicts&quot;&gt;&lt;/a&gt;Merge Conflicts&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Merge Conflicts can occur when changes are made to a file at the same time. Reading more on &lt;a href=&quot;http://git-scm.com/docs/git-merge#_how_conflicts_are_presented&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;how conflicts are presented&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Delete-Branch&quot;&gt;&lt;a href=&quot;#Delete-Branch&quot; class=&quot;headerlink&quot; title=&quot;Delete Branch&quot;&gt;&lt;/a&gt;Delete Branch&lt;/h2&gt;&lt;h3 id=&quot;git-branch-d-lt-branch-gt&quot;&gt;&lt;a href=&quot;#git-branch-d-lt-branch-gt&quot; class=&quot;headerlink&quot; title=&quot;git branch -d &amp;lt;branch&amp;gt;&quot;&gt;&lt;/a&gt;git branch -d &lt;code&gt;&amp;lt;branch&amp;gt;&lt;/code&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Delete a local branch. &lt;code&gt;-d&lt;/code&gt; won’t let you delete something that hasn’t been merged.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;f-and-D&quot;&gt;&lt;a href=&quot;#f-and-D&quot; class=&quot;headerlink&quot; title=&quot;-f and -D&quot;&gt;&lt;/a&gt;&lt;code&gt;-f&lt;/code&gt; and &lt;code&gt;-D&lt;/code&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Force delete the branch that hasn’t been merged. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Add the &lt;code&gt;-f&lt;/code&gt;(–force) option or use &lt;code&gt;-D&lt;/code&gt; which combines &lt;code&gt;-d -f&lt;/code&gt; together into one command.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;Delete-Remote-Branch&quot;&gt;&lt;a href=&quot;#Delete-Remote-Branch&quot; class=&quot;headerlink&quot; title=&quot;Delete Remote Branch&quot;&gt;&lt;/a&gt;Delete Remote Branch&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git branch -r &lt;span class=&quot;_&quot;&gt;-d&lt;/span&gt; &amp;lt;remote name&amp;gt;/&amp;lt;branch name&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git push &amp;lt;remote name&amp;gt;: &amp;lt;branch name&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git branch -r &lt;span class=&quot;_&quot;&gt;-d&lt;/span&gt; origin/branch-name&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git push origin :branch-name&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;　　笔记基本上整理自网站 &lt;a href=&quot;https://try.github.io&quot;&gt;Try Git&lt;/a&gt;，一套很不错的 Git 在线入门教程。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="自用笔记" scheme="http://yoursite.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="术业专攻" scheme="http://yoursite.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/%E6%9C%AF%E4%B8%9A%E4%B8%93%E6%94%BB/"/>
+    
+    
+      <category term="Git" scheme="http://yoursite.com/tags/Git/"/>
     
   </entry>
   

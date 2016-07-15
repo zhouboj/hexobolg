@@ -1335,13 +1335,64 @@ location ~ \.php$ {
     </entry>
     
     <entry>
+      <title><![CDATA[Markdown 表格样式调整与自适应优化]]></title>
+      <url>http://yoursite.com/2016/07/04/markdown-table-style/</url>
+      <content type="html"><![CDATA[<p>　　Markdown 写的表格最终会被解析成 HTML 代码，如果使用的编辑器支持自定义 CSS，就能方便的调整样式。如果可以引入 JavaScript，样式自适应也能较好地实现。</p>
+<a id="more"></a>
+<p></p><p data-height="300" data-theme-id="0" data-slug-hash="ONyKqb" data-default-tab="css" data-user="MOxFIVE" class="codepen">See the Pen <a href="http://codepen.io/MOxFIVE/pen/ONyKqb/" target="_blank" rel="external">Table style</a> by MOxFIVE (<a href="http://codepen.io/MOxFIVE" target="_blank" rel="external">@MOxFIVE</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="样式调整"><a href="#样式调整" class="headerlink" title="样式调整"></a>样式调整</h2><h3 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h3><pre><code>&lt;table&gt;: 表格
+&lt;thead&gt;: table header 表头区
+&lt;th&gt;: table headings 表头单元格内容
+&lt;tbody&gt;: table body 表格内容区
+&lt;tr&gt;: table row 表行
+&lt;td&gt;: table data 单元格内容
+</code></pre><h3 id="基本样式"><a href="#基本样式" class="headerlink" title="基本样式"></a>基本样式</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">table</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>; <span class="comment">/*表格宽度*/</span></div><div class="line">    <span class="attribute">max-width</span>: <span class="number">65em</span>; <span class="comment">/*表格最大宽度，避免表格过宽*/</span></div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#dedede</span>; <span class="comment">/*表格外边框设置*/</span></div><div class="line">    <span class="attribute">margin</span>: <span class="number">15px</span> auto; <span class="comment">/*外边距*/</span></div><div class="line">    <span class="attribute">border-collapse</span>: collapse; <span class="comment">/*使用单一线条的边框*/</span></div><div class="line">    <span class="attribute">empty-cells</span>: show; <span class="comment">/*单元格无内容依旧绘制边框*/</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">table</span> <span class="selector-tag">th</span>,</div><div class="line"><span class="selector-tag">table</span> <span class="selector-tag">td</span> &#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">35px</span>; <span class="comment">/*统一每一行的默认高度*/</span></div><div class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#dedede</span>; <span class="comment">/*内部边框样式*/</span></div><div class="line">  <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">10px</span>; <span class="comment">/*内边距*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="表头样式"><a href="#表头样式" class="headerlink" title="表头样式"></a>表头样式</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">table</span> <span class="selector-tag">th</span> &#123;</div><div class="line">    <span class="attribute">font-weight</span>: bold; <span class="comment">/*加粗*/</span></div><div class="line">    <span class="attribute">text-align</span>: center <span class="meta">!important</span>; <span class="comment">/*内容居中，加上 !important 避免被 Markdown 样式覆盖*/</span></div><div class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(158,188,226,0.2); <span class="comment">/*背景色*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="隔行变色"><a href="#隔行变色" class="headerlink" title="隔行变色"></a>隔行变色</h3><ul>
+<li>使用选择器选取复数行设置背景色。一般 Markdown 表格编译后都有 <code>&lt;tbody&gt;</code> 包裹内容，那下面就相当于从表格第二行开始计数</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">table</span> <span class="selector-tag">tbody</span> <span class="selector-tag">tr</span><span class="selector-pseudo">:nth-child(2n)</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(158,188,226,0.12); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="悬浮变色"><a href="#悬浮变色" class="headerlink" title="悬浮变色"></a>悬浮变色</h3><ul>
+<li>鼠标悬浮时该行改变背景色</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">table</span> <span class="selector-tag">tr</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="number">#efefef</span>; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="自适应优化"><a href="#自适应优化" class="headerlink" title="自适应优化"></a>自适应优化</h2><p>表格用 Markdown 书写，编辑器解析，因而只能在已经生成好的代码上进行自适应优化。</p>
+<h3 id="表头不换行"><a href="#表头不换行" class="headerlink" title="表头不换行"></a>表头不换行</h3><ul>
+<li>设置表头单元格内容不换行，这样可以通过表头控制该列的最小宽度，避免浏览器窗口缩小时内容被压缩得太紧</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">table</span> <span class="selector-tag">th</span> &#123;</div><div class="line">    <span class="attribute">white-space</span>: nowrap; <span class="comment">/*表头内容强制在一行显示*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="首列不换行"><a href="#首列不换行" class="headerlink" title="首列不换行"></a>首列不换行</h3><ul>
+<li>表格第一列单元格内容不换行，多数情况下表格首列不应该被压缩换行</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">table</span> <span class="selector-tag">td</span><span class="selector-pseudo">:nth-child(1)</span> &#123;</div><div class="line">    <span class="attribute">white-space</span>: nowrap; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="表格滚动条"><a href="#表格滚动条" class="headerlink" title="表格滚动条"></a>表格滚动条</h3><ul>
+<li>添加 JavaScript 代码，用一个 <code>&lt;div&gt;</code> 把表格包裹起来，父元素宽度不足时显示横向滚动条，避免表格撑破布局</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[].slice.call(<span class="built_in">document</span>.querySelectorAll(<span class="string">'table'</span>)).forEach(<span class="function"><span class="keyword">function</span>(<span class="params">el</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> wrapper = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</div><div class="line">    wrapper.className = <span class="string">'table-area'</span>;</div><div class="line">    el.parentNode.insertBefore(wrapper, el);</div><div class="line">    el.parentNode.removeChild(el);</div><div class="line">    wrapper.appendChild(el);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<ul>
+<li>jQuery</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"table"</span>).wrap(<span class="string">"&lt;div class='table-area'&gt;&lt;/div&gt;"</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li>同时添加如下 CSS</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.table-area</span> &#123;</div><div class="line">    <span class="attribute">overflow</span>: auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>To be added</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[git命令详解（高级）]]></title>
       <url>http://yoursite.com/2016/07/04/git%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3%EF%BC%88%E9%AB%98%E7%BA%A7%EF%BC%89/</url>
       <content type="html"><![CDATA[<p>Git日常应用中的命令，最基本的操作详解。<br><a id="more"></a></p>
-<h2 id="Git详解高级"><a href="#Git详解高级" class="headerlink" title="Git详解高级"></a>Git详解高级</h2><h3 id="什么是分支？为何存在？如何创建？如何切换？"><a href="#什么是分支？为何存在？如何创建？如何切换？" class="headerlink" title="什么是分支？为何存在？如何创建？如何切换？"></a>什么是分支？为何存在？如何创建？如何切换？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">git pull //更新代码</div><div class="line">git branch //查看本地分支，以*开头</div><div class="line">git branch -a //查看所有分支</div><div class="line">git branch new-branch-name //在当前分支的基础上创建新分支</div><div class="line">git checkout new-branch-name //切换到新分支</div><div class="line">git push -u origin new-branch-name //把本地的新分支推送到远程库</div></pre></td></tr></table></figure>
-<h3 id="代码如何合并？遇到冲突怎么解决？"><a href="#代码如何合并？遇到冲突怎么解决？" class="headerlink" title="代码如何合并？遇到冲突怎么解决？"></a>代码如何合并？遇到冲突怎么解决？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git checkout new-branch-name</div><div class="line">git pull</div><div class="line">git merge master //把主干的新代码合并到本地，有冲突解决冲突</div><div class="line">git add . //添加新增文件</div><div class="line">git commit -am //添加修改文件，去掉删除文件，提交</div></pre></td></tr></table></figure>
-<h3 id="查看代码提交记录？回溯代码？"><a href="#查看代码提交记录？回溯代码？" class="headerlink" title="查看代码提交记录？回溯代码？"></a>查看代码提交记录？回溯代码？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">git log -l 5</div><div class="line">git reset HEAD</div><div class="line">git reset -- hard @a232fdfsf334</div><div class="line">git commit -am &quot;message&quot;</div><div class="line">git push -f origin new-branch-name</div><div class="line">git revert @a232fdfsf334</div><div class="line">git push origin new-branch-name</div></pre></td></tr></table></figure>
-<h3 id="gitlab-github-多个git库帐号？推送到多个库"><a href="#gitlab-github-多个git库帐号？推送到多个库" class="headerlink" title="gitlab,github,多个git库帐号？推送到多个库?"></a>gitlab,github,多个git库帐号？推送到多个库?</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git remote -v</div><div class="line">git remote add gitlab git@gitlab.com/XXX</div><div class="line">git push -u origin gitlab</div></pre></td></tr></table></figure>]]></content>
+<h2 id="Git详解高级"><a href="#Git详解高级" class="headerlink" title="Git详解高级"></a>Git详解高级</h2><h3 id="什么是分支？为何存在？如何创建？如何切换？"><a href="#什么是分支？为何存在？如何创建？如何切换？" class="headerlink" title="什么是分支？为何存在？如何创建？如何切换？"></a>什么是分支？为何存在？如何创建？如何切换？</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">git pull //更新代码</div><div class="line">git branch //查看本地分支，以*开头</div><div class="line">git branch <span class="_">-a</span> //查看所有分支</div><div class="line">git branch new-branch-name //在当前分支的基础上创建新分支</div><div class="line">git checkout new-branch-name //切换到新分支</div><div class="line">git push -u origin new-branch-name //把本地的新分支推送到远程库</div></pre></td></tr></table></figure>
+<h3 id="代码如何合并？遇到冲突怎么解决？"><a href="#代码如何合并？遇到冲突怎么解决？" class="headerlink" title="代码如何合并？遇到冲突怎么解决？"></a>代码如何合并？遇到冲突怎么解决？</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git checkout new-branch-name</div><div class="line">git pull</div><div class="line">git merge master //把主干的新代码合并到本地，有冲突解决冲突</div><div class="line">git add . //添加新增文件</div><div class="line">git commit -am //添加修改文件，去掉删除文件，提交</div></pre></td></tr></table></figure>
+<h3 id="查看代码提交记录？回溯代码？"><a href="#查看代码提交记录？回溯代码？" class="headerlink" title="查看代码提交记录？回溯代码？"></a>查看代码提交记录？回溯代码？</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">log</span> <span class="_">-l</span> 5</div><div class="line">git reset HEAD</div><div class="line">git reset -- hard @a232fdfsf334</div><div class="line">git commit -am <span class="string">"message"</span></div><div class="line">git push <span class="_">-f</span> origin new-branch-name</div><div class="line">git revert @a232fdfsf334</div><div class="line">git push origin new-branch-name</div></pre></td></tr></table></figure>
+<h3 id="gitlab-github-多个git库帐号？推送到多个库"><a href="#gitlab-github-多个git库帐号？推送到多个库" class="headerlink" title="gitlab,github,多个git库帐号？推送到多个库?"></a>gitlab,github,多个git库帐号？推送到多个库?</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git remote -v</div><div class="line">git remote add gitlab git@gitlab.com/XXX</div><div class="line">git push -u origin gitlab</div></pre></td></tr></table></figure>]]></content>
     </entry>
     
     <entry>
@@ -1443,17 +1494,291 @@ location ~ \.php$ {
     </entry>
     
     <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>http://yoursite.com/2016/07/01/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+      <title><![CDATA[前端工程化工具初选]]></title>
+      <url>http://yoursite.com/2016/07/01/front-end-tools/</url>
+      <content type="html"><![CDATA[<p>　　面对日益纷杂的前端工具，作为新人常感无从下手。经过一番检索和简单对比，再结合自己的喜好，筛选了将要学习和使用的工具，以适应日益工程化、专业化的 Web 前端开发工作。</p>
+<a id="more"></a>
+<h2 id="Library-amp-Framework-库与框架"><a href="#Library-amp-Framework-库与框架" class="headerlink" title="Library &amp; Framework | 库与框架"></a>Library &amp; Framework | 库与框架</h2><blockquote>
+<ul>
+<li><a href="http://jquery.com/" target="_blank" rel="external">jQuery</a></li>
+<li><a href="http://jqueryui.com/" target="_blank" rel="external">jQuery UI</a>: A curated set of user interface interactions, effects, widgets, and themes</li>
+<li><a href="http://cn.vuejs.org/" target="_blank" rel="external">Vue.js</a>: 数据驱动的组件，为现代化的 Web 界面而生</li>
+<li><a href="http://facebook.github.io/react/" target="_blank" rel="external">React.js</a>: A JavaScript library for building user interfaces</li>
+<li><a href="https://facebook.github.io/react-native/" target="_blank" rel="external">React Native</a>: A framework for building native apps using React</li>
+</ul>
+</blockquote>
+<h2 id="The-Build-System-构建工具"><a href="#The-Build-System-构建工具" class="headerlink" title="The Build System | 构建工具"></a>The Build System | 构建工具</h2><p>The Build System is used to build, preview and test your project.</p>
+<blockquote>
+<ul>
+<li><a href="http://gulpjs.com/" target="_blank" rel="external">gulp.js</a>: Automate and enhance your workflow</li>
+</ul>
+</blockquote>
+<h2 id="The-Module-Bundler-模块打包器"><a href="#The-Module-Bundler-模块打包器" class="headerlink" title="The Module Bundler | 模块打包器"></a>The Module Bundler | 模块打包器</h2><p>Packs many modules into a few bundled assets.</p>
+<blockquote>
+<ul>
+<li><a href="https://webpack.github.io/" target="_blank" rel="external">webpack</a>: Take modules with dependencies and generate static assets representing those modules</li>
+</ul>
+</blockquote>
+<h2 id="The-Package-Manager-包管理"><a href="#The-Package-Manager-包管理" class="headerlink" title="The Package Manager | 包管理"></a>The Package Manager | 包管理</h2><p>The Package Manager is used for dependency management, so that you no longer have to manually download and manage your scripts.</p>
+<blockquote>
+<ul>
+<li><a href="https://www.npmjs.com/" target="_blank" rel="external">npm</a>: Node Package Manager.</li>
+</ul>
+</blockquote>
+<h2 id="CSS-Extension-CSS-处理"><a href="#CSS-Extension-CSS-处理" class="headerlink" title="CSS Extension | CSS 处理"></a>CSS Extension | CSS 处理</h2><p>Provide an efficient, dynamic, and expressive way to generate CSS.</p>
+<blockquote>
+<ul>
+<li><a href="https://github.com/stylus/stylus" target="_blank" rel="external">Stylus</a>: Expressive, robust, feature-rich CSS language built for nodejs</li>
+<li><a href="https://github.com/postcss/postcss" target="_blank" rel="external">PostCSS</a>: Transforming styles with JS plugins</li>
+</ul>
+</blockquote>
+<h2 id="JavaScript-Module-JavaScript-模块化"><a href="#JavaScript-Module-JavaScript-模块化" class="headerlink" title="JavaScript Module | JavaScript 模块化"></a>JavaScript Module | JavaScript 模块化</h2><blockquote>
+<ul>
+<li><a href="http://exploringjs.com/es6/ch_modules.html" target="_blank" rel="external">ECMAScript 6 Module</a></li>
+</ul>
+</blockquote>
+<h2 id="JavaScript-Template-JavaScript-模板引擎"><a href="#JavaScript-Template-JavaScript-模板引擎" class="headerlink" title="JavaScript Template | JavaScript 模板引擎"></a>JavaScript Template | JavaScript 模板引擎</h2><p>Generate HTML markup with plain JavaScript.</p>
+<blockquote>
+<ul>
+<li><a href="http://ejs.co/" target="_blank" rel="external">EJS</a></li>
+</ul>
+</blockquote>
+<h2 id="Test-Framework-测试框架"><a href="#Test-Framework-测试框架" class="headerlink" title="Test Framework | 测试框架"></a>Test Framework | 测试框架</h2><blockquote>
+<ul>
+<li><a href="http://mochajs.org/" target="_blank" rel="external">Mocha</a>: a simple, flexible, fun JavaScript test framework for node.js and the browser</li>
+<li><a href="http://chaijs.com/" target="_blank" rel="external">Chai</a>: a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework</li>
+</ul>
+</blockquote>
+<h2 id="The-scaffolding-tool-手脚架"><a href="#The-scaffolding-tool-手脚架" class="headerlink" title="The scaffolding tool | 手脚架"></a>The scaffolding tool | 手脚架</h2><p>Scaffolds out a new application, writing your build configuration and pulling in relevant build tasks and package manager dependencies that you might need for your build.</p>
+<blockquote>
+<ul>
+<li><a href="http://yeoman.io/" target="_blank" rel="external">Yeoman</a></li>
+</ul>
+</blockquote>
+<h2 id="集成方案"><a href="#集成方案" class="headerlink" title="集成方案"></a>集成方案</h2><blockquote>
+<ul>
+<li><a href="http://fis.baidu.com/" target="_blank" rel="external">FIS</a>: 解决前端开发中自动化工具、性能优化、模块化框架、开发规范、代码部署、开发流程等问题</li>
+</ul>
+</blockquote>
+<h2 id="Container-容器"><a href="#Container-容器" class="headerlink" title="Container | 容器"></a>Container | 容器</h2><blockquote>
+<ul>
+<li><a href="http://www.docker.com/" target="_blank" rel="external">Docker</a>: Build, Ship, and Run Any App, Anywhere</li>
+</ul>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Web Style Guide 前端代码规范]]></title>
+      <url>http://yoursite.com/2016/07/01/web-style-guide/</url>
+      <content type="html"><![CDATA[<p>　　在此记录自己已理解并开始遵循的前端代码规范。What How Why</p>
+<a id="more"></a>
+<h2 id="General-style-rules"><a href="#General-style-rules" class="headerlink" title="General style rules"></a>General style rules</h2><h3 id="Filename"><a href="#Filename" class="headerlink" title="Filename"></a>Filename</h3><ul>
+<li>Start a file name with a letter and avoid numbers:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">thousand-and-one-scripts.js</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>Start a filename with a special sign in order to flag it for a special purpose.</p>
+</blockquote>
+<ul>
+<li>Lower case in filename:</li>
+</ul>
+<blockquote>
+<p>Some operating systems support case sensitive file names and we should not mix the cases to minimize confusion and possible sources for human errors.</p>
+</blockquote>
+<h3 id="Separator"><a href="#Separator" class="headerlink" title="Separator"></a>Separator</h3><ul>
+<li>Use minus (-) sign as separating parts:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">my-script.js</div><div class="line">my-camel-case-name.css</div><div class="line">i-love-underscores.html</div><div class="line">my-script.js</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<ol>
+<li>For readability purpose. Users may mistake the underscores for spaces, as the underlining in the link hides the underscores;</li>
+<li>It’s a common separator in canonical URL and URL slugs;</li>
+</ol>
+</blockquote>
+<ul>
+<li>Use dot’s to separate the clear purpose of this additional meta-data in a filename:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">my-file.min.css</div></pre></td></tr></table></figure>
+<h3 id="Protocol"><a href="#Protocol" class="headerlink" title="Protocol"></a>Protocol</h3><ul>
+<li>Omit the protocol portion (http:, https:):</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//cdn.com/foundation.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">background: url(//static.example.com/images/bg.jpg)</div></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li>Makes the URL relative—prevents mixed content issues;</li>
+<li>Saves file size.</li>
+</ol>
+</blockquote>
+<h3 id="Text-indentation"><a href="#Text-indentation" class="headerlink" title="Text indentation"></a>Text indentation</h3><ul>
+<li>Indent by 4 spaces at a time. Hitting the Tab key in your text editor should generate four space characters rather than one tab character:</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Fantastic<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Great<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>Test<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li>Make code appearing identical across platforms;</li>
+<li>Developers can make adjustments to their editing environments a single time.</li>
+</ol>
+</blockquote>
+<h3 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h3><ul>
+<li>Comment why it was coded this way and comment the thinking behind. Also include links in your comments to open issues, specifications etc.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> offset = <span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="keyword">if</span>(includeLabels) &#123;</div><div class="line">  <span class="comment">// If the labels are included we need to have a minimum offset of 20 pixels</span></div><div class="line">  <span class="comment">// We need to set it explicitly because of the following bug: http://somebrowservendor.com/issue-tracker/ISSUE-1</span></div><div class="line">  offset = <span class="number">20</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>Use tools to generates API documentation from comments. <a href="http://usejsdoc.org/" target="_blank" rel="external">JSDoc</a> or <a href="http://yui.github.io/yuidoc/" target="_blank" rel="external">YUIDoc</a></li>
+</ul>
+<h3 id="Code-linting"><a href="#Code-linting" class="headerlink" title="Code linting"></a>Code linting</h3><ul>
+<li>Writing and following a style guide is a good practice but having an automated process that is enforcing it is even better. </li>
+</ul>
+<h2 id="HTML-style-rules"><a href="#HTML-style-rules" class="headerlink" title="HTML style rules"></a>HTML style rules</h2><h3 id="Document-type"><a href="#Document-type" class="headerlink" title="Document type"></a>Document type</h3><ul>
+<li>HTML5 (HTML syntax) is preferred for all HTML documents:</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="Script-loading"><a href="#Script-loading" class="headerlink" title="Script loading"></a>Script loading</h3><ul>
+<li>Add your script element just before the body close tag and add them with a async attribute:</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"main.css"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!-- body goes here --&gt;</span></div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"main.js"</span> <span class="attr">async</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li>On modern browsers, this will asynchronously load the script and don’t wait for CSSOM to complete before loading;</li>
+<li>On older browsers (IE9-), prevent DOM parser blocking, not affecting the user experience too much.</li>
+</ol>
+</blockquote>
+<h3 id="Type-attributes"><a href="#Type-attributes" class="headerlink" title="Type attributes"></a>Type attributes</h3><ul>
+<li>Omit type attributes for style sheets and scripts:</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"main.css"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"main.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>HTML5 implies text/css and text/javascript as defaults;<br>This can be safely done even for older browsers.</p>
+</blockquote>
+<h3 id="ID-in-Headings"><a href="#ID-in-Headings" class="headerlink" title="ID in Headings"></a>ID in Headings</h3><ul>
+<li>Give all headings a ID:</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h3</span> <span class="attr">id</span>=<span class="string">"best-practices"</span>&gt;</span>Best practices<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li>IDs for anchors, enter the URL to scroll to the position this element.</li>
+</ol>
+</blockquote>
+<h3 id="Quotation-marks"><a href="#Quotation-marks" class="headerlink" title="Quotation marks"></a>Quotation marks</h3><ul>
+<li>Use double quotation marks (“”) to quote attributes values:</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"news-article"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="0-values"><a href="#0-values" class="headerlink" title="0 values"></a>0 values</h3><ul>
+<li>Do not use units after 0 values unless they are required:</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">padding-bottom</span>: 0;</div><div class="line"><span class="selector-tag">margin</span>: 0;</div></pre></td></tr></table></figure>
+<h3 id="Shorthand-Properties"><a href="#Shorthand-Properties" class="headerlink" title="Shorthand Properties"></a>Shorthand Properties</h3><ul>
+<li>Should be used whenever possible, even in cases where only one value is explicitly set.</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">border-top: 0;</div><div class="line">font: 100%/1.6 palatino, georgia, serif;</div><div class="line">padding: 0 1em 2em;</div></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li>Useful for code efficiency and understandability.</li>
+</ol>
+</blockquote>
+<h3 id="Hexadecimal-Notation"><a href="#Hexadecimal-Notation" class="headerlink" title="Hexadecimal Notation"></a>Hexadecimal Notation</h3><ul>
+<li>Use 3 character hexadecimal notation where possible and lower case hex digits:</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">color</span>: <span class="selector-id">#f3a</span>;</div><div class="line"><span class="selector-tag">color</span>: <span class="selector-id">#d4ddef</span>;</div></pre></td></tr></table></figure>
+<h2 id="To-be-continued"><a href="#To-be-continued" class="headerlink" title="To be continued"></a>To be continued</h2><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li><strong><em>Web Styleguide - Style guide to harmonize HTML, Javascript and CSS / Sass coding style</em></strong> by <strong>Gion Kunz</strong> on <code>2014/10/8</code>: <a href="https://github.com/gionkunz/chartist-js/blob/develop/CODINGSTYLE.md" target="_blank" rel="external">https://github.com/gionkunz/chartist-js/blob/develop/CODINGSTYLE.md</a></li>
+<li><strong><em>Isobar Front-end Code Standards</em></strong> by <strong>Isobar</strong> on <code>2015/8/25</code>: <a href="http://isobar-idev.github.io/code-standards/" target="_blank" rel="external">http://isobar-idev.github.io/code-standards/</a></li>
+<li><strong><em>[译文] Isobar 前端代码规范 及 最佳实践</em></strong> by <strong>老码农</strong> on <code>2015/8/25</code>: <a href="http://coderlmn.github.io/code-standards/" target="_blank" rel="external">http://coderlmn.github.io/code-standards/</a></li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Git 基础命令与相关术语]]></title>
+      <url>http://yoursite.com/2015/11/23/git-command/</url>
+      <content type="html"><![CDATA[<p>　　笔记基本上整理自网站 <a href="https://try.github.io" target="_blank" rel="external">Try Git</a>，一套很不错的 Git 在线入门教程。</p>
+<a id="more"></a>
+<h2 id="git-init"><a href="#git-init" class="headerlink" title="git init"></a>git init</h2><p>To initialize a Git repository here</p>
+<h3 id="Directory"><a href="#Directory" class="headerlink" title="Directory"></a>Directory</h3><ul>
+<li>A folder used for storing multiple files.</li>
+</ul>
+<h3 id="Repository"><a href="#Repository" class="headerlink" title="Repository"></a>Repository</h3><ul>
+<li>A directory where Git has been initialized to start version controlling your files.</li>
+</ul>
+<h2 id="git-status"><a href="#git-status" class="headerlink" title="git status"></a>git status</h2><p>See what the current state of the project is.</p>
+<h3 id="staged"><a href="#staged" class="headerlink" title="staged"></a>staged</h3><ul>
+<li>Files are ready to be committed.<h3 id="unstaged"><a href="#unstaged" class="headerlink" title="unstaged"></a>unstaged</h3></li>
+<li>Files with changes that have not been prepared to be committed.<h3 id="untracked"><a href="#untracked" class="headerlink" title="untracked"></a>untracked</h3></li>
+<li>Files aren’t tracked by Git yet. This usually indicates a newly created file.<h3 id="deleted"><a href="#deleted" class="headerlink" title="deleted"></a>deleted</h3></li>
+<li>File has been deleted and is waiting to be removed from Git.</li>
+</ul>
+<h2 id="git-add-lt-file-gt"><a href="#git-add-lt-file-gt" class="headerlink" title="git add &lt;file&gt;"></a>git add <code>&lt;file&gt;</code></h2><p>Add files to the staging area.</p>
+<h3 id="Staging-Area"><a href="#Staging-Area" class="headerlink" title="Staging Area"></a>Staging Area</h3><ul>
+<li>A place where we can group files together before we “commit” them to Git.<br>Commit</li>
+</ul>
+<h3 id="add-all"><a href="#add-all" class="headerlink" title="add all"></a>add all</h3><ul>
+<li>You can also type <code>git add -A</code> . where the dot stands for the current directory, so everything in and beneath it is added. The <code>-A</code> ensures even file deletions are included.</li>
+</ul>
+<h2 id="git-reset"><a href="#git-reset" class="headerlink" title="git reset"></a>git reset</h2><p>You can use <code>git reset &lt;filename&gt;</code> to remove a file or files from the staging area.</p>
+<h2 id="Commit"><a href="#Commit" class="headerlink" title="Commit"></a>Commit</h2><p>A “commit” is a snapshot of our repository. This way if we ever need to look back at the changes we’ve made (or if someone else does), we will see a nice timeline of all changes.</p>
+<h3 id="git-commit-m-“msg”"><a href="#git-commit-m-“msg”" class="headerlink" title="git commit -m “msg”"></a>git commit -m “msg”</h3><ul>
+<li>To store our staged changes we run the commit command with a message describing what we’ve changed. </li>
+</ul>
+<h3 id="‘-a’-option"><a href="#‘-a’-option" class="headerlink" title="‘-a’ option"></a>‘-a’ option</h3><ul>
+<li>Auto removes deleted files with the commit.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git commit -am <span class="string">"msg"</span></div></pre></td></tr></table></figure>
+<h2 id="git-log"><a href="#git-log" class="headerlink" title="git log"></a>git log</h2><p>a journal that remembers all the changes we’ve committed so far</p>
+<h3 id="git-log-–summary"><a href="#git-log-–summary" class="headerlink" title="git log –summary"></a>git log –summary</h3><ul>
+<li>see more information for each commit. You can see where new files were added for the first time or where files were deleted. It’s a good overview of what’s going on in the project.</li>
+</ul>
+<h2 id="git-remote"><a href="#git-remote" class="headerlink" title="git remote"></a>git remote</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git remote add &lt;remote name&gt; &lt;repository URL&gt;</div><div class="line">git remote add origin https://github.com/try-git/try_git.git</div></pre></td></tr></table></figure>
+<p>Git doesn’t care what you name your remotes, but it’s typical to name your main one <code>origin</code>.</p>
+<p>It’s also a good idea for your main repository to be on a remote server like GitHub in case your machine is lost at sea during a transatlantic boat cruise or crushed by three monkey statues during an earthquake.</p>
+<h2 id="git-push"><a href="#git-push" class="headerlink" title="git push"></a>git push</h2><p>Tells Git where to put our commits when we’re ready.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git push -u &lt;remote name&gt; &lt;branch name&gt;</div><div class="line">git push -u origin master</div></pre></td></tr></table></figure>
+<p>The <code>-u</code> tells Git to remember the parameters, so that next time we can simply run <code>git push</code>.</p>
+<h2 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h2><p>Sometimes when you go to pull you may have changes you don’t want to commit just yet. One option you have, other than commiting, is to stash the changes.</p>
+<p>Use the command <code>git stash</code> to stash your changes, and <code>git stash apply</code> to re-apply your changes after your pull.</p>
+<h2 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git push &lt;remote name&gt; &lt;branch name&gt;</div><div class="line">git pull origin master</div></pre></td></tr></table></figure>
+<p>Check for changes on remote repository and pull down any new changes.</p>
+<h2 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h2><p>A good overview of changes we have made and lets us add files or directories one at a time and commit them separately.</p>
+<h3 id="git-diff-HEAD"><a href="#git-diff-HEAD" class="headerlink" title="git diff HEAD"></a>git diff HEAD</h3><ul>
+<li>Show what is different from our last commit. <code>HEAD</code> points to your most recent commit by default.</li>
+</ul>
+<h3 id="git-diff-–staged"><a href="#git-diff-–staged" class="headerlink" title="git diff –staged"></a>git diff –staged</h3><ul>
+<li>Look at changes within files that have already been staged.</li>
+</ul>
+<h2 id="git-checkout-–-lt-target-gt"><a href="#git-checkout-–-lt-target-gt" class="headerlink" title="git checkout – &lt;target&gt;"></a>git checkout – <code>&lt;target&gt;</code></h2><p>Changed files back to how they were at the last commit, namely get rid of all the changes since the last commit.</p>
+<p><code>--</code>: promise the command line that there are no more options after the ‘–’, avoid switching to the branch of the same name.</p>
+<h2 id="git-branch"><a href="#git-branch" class="headerlink" title="git branch"></a>git branch</h2><p>List local branches of now repository.</p>
+<h3 id="git-branch-lt-name-gt"><a href="#git-branch-lt-name-gt" class="headerlink" title="git branch &lt;name&gt;"></a>git branch <code>&lt;name&gt;</code></h3><ul>
+<li>Create a new branch.</li>
+</ul>
+<blockquote>
+<p>When developers are working on a feature or bug they’ll often create a copy (aka. branch) of their code they can make separate commits to. Then when they’re done they can merge this branch back into their main master branch.</p>
+</blockquote>
+<h3 id="git-checkout-lt-branch-gt"><a href="#git-checkout-lt-branch-gt" class="headerlink" title="git checkout &lt;branch&gt;"></a>git checkout <code>&lt;branch&gt;</code></h3><ul>
+<li>Switch to certain branch.</li>
+</ul>
+<h3 id="git-checkout-b-new-branch"><a href="#git-checkout-b-new-branch" class="headerlink" title="git checkout -b new_branch"></a>git checkout -b new_branch</h3><ul>
+<li>Checkout and create a branch at the same time. </li>
+</ul>
+<h2 id="git-rm-lt-file-gt"><a href="#git-rm-lt-file-gt" class="headerlink" title="git rm &lt;file&gt;"></a>git rm <code>&lt;file&gt;</code></h2><p>Not only remove the actual files from disk, but will also stage the removal of the files for us.</p>
+<h3 id="git-rm-r-folder"><a href="#git-rm-r-folder" class="headerlink" title="git rm -r folder"></a>git rm -r folder</h3><ul>
+<li>Recursively remove all folders and files from the given directory.</li>
+</ul>
+<h2 id="git-merge-lt-branch-gt"><a href="#git-merge-lt-branch-gt" class="headerlink" title="git merge &lt;branch&gt;"></a>git merge <code>&lt;branch&gt;</code></h2><p>Merge your changes from the given branch into current branch.</p>
+<h3 id="Merge-Conflicts"><a href="#Merge-Conflicts" class="headerlink" title="Merge Conflicts"></a>Merge Conflicts</h3><ul>
+<li>Merge Conflicts can occur when changes are made to a file at the same time. Reading more on <a href="http://git-scm.com/docs/git-merge#_how_conflicts_are_presented" target="_blank" rel="external">how conflicts are presented</a>.</li>
+</ul>
+<h2 id="Delete-Branch"><a href="#Delete-Branch" class="headerlink" title="Delete Branch"></a>Delete Branch</h2><h3 id="git-branch-d-lt-branch-gt"><a href="#git-branch-d-lt-branch-gt" class="headerlink" title="git branch -d &lt;branch&gt;"></a>git branch -d <code>&lt;branch&gt;</code></h3><ul>
+<li>Delete a local branch. <code>-d</code> won’t let you delete something that hasn’t been merged.</li>
+</ul>
+<h3 id="f-and-D"><a href="#f-and-D" class="headerlink" title="-f and -D"></a><code>-f</code> and <code>-D</code></h3><ul>
+<li>Force delete the branch that hasn’t been merged. </li>
+</ul>
+<blockquote>
+<p>Add the <code>-f</code>(–force) option or use <code>-D</code> which combines <code>-d -f</code> together into one command.</p>
+</blockquote>
+<h3 id="Delete-Remote-Branch"><a href="#Delete-Remote-Branch" class="headerlink" title="Delete Remote Branch"></a>Delete Remote Branch</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git branch -r <span class="_">-d</span> &lt;remote name&gt;/&lt;branch name&gt;</div><div class="line">git push &lt;remote name&gt;: &lt;branch name&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git branch -r <span class="_">-d</span> origin/branch-name</div><div class="line">git push origin :branch-name</div></pre></td></tr></table></figure>
 ]]></content>
     </entry>
     
