@@ -615,7 +615,7 @@ location ~ \.php$ {
 <blockquote>
 <p>下载: <a href="/resources/Excel-Shortcut-keys.apkg">Excel 快捷键大全 (Windows) for Anki</a></p>
 </blockquote>
-<p>释义默认中英对照显示，可按需隐藏。<br><img src="Anki-a1.png" alt="Anki-a1"></p>
+<p>释义默认中英对照显示，可按需隐藏。<br><img src="/resources/Anki-a1.png" alt="Anki-a1"></p>
 <h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h2><p>列出自己平时使用最频繁的10个 Excel 快捷键。</p>
 <table>
 <thead>
@@ -1331,83 +1331,6 @@ location ~ \.php$ {
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"http://yandex.st/highlightjs/8.0/styles/solarized_dark.min.css"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://yandex.st/highlightjs/8.0/highlight.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">hljs.initHighlightingOnLoad();</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><strong>效果显示：</strong><em>以下是示例代码</em></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> re</div><div class="line"> </div><div class="line">p = re.compile(<span class="string">"(\w+)('s|'re|n't)?"</span>)</div><div class="line">wc = &#123;&#125;</div><div class="line">tail_map = &#123; <span class="string">"'s"</span> : <span class="string">'is'</span>, <span class="string">"'re"</span> : <span class="string">'are'</span>, <span class="string">"n't"</span>: <span class="string">'not'</span>&#125;</div><div class="line"> </div><div class="line"><span class="keyword">for</span> m <span class="keyword">in</span> re.finditer(p, s):</div><div class="line">    word = m.group(<span class="number">1</span>).lower()                   <span class="comment"># Get the word in lower case</span></div><div class="line">    wc[word] = wc.get(word, <span class="number">0</span>) + <span class="number">1</span>              <span class="comment"># Increase word count</span></div><div class="line">    tail = m.group(<span class="number">2</span>)                           <span class="comment"># Get the word tail</span></div><div class="line">    <span class="keyword">if</span> tail <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:                        <span class="comment"># If a word tail exists,</span></div><div class="line">        tail = tail_map[tail]                   <span class="comment"># map it to its full form</span></div><div class="line">        wc[tail] = wc.get(tail, <span class="number">0</span>)+<span class="number">1</span>            <span class="comment"># Increase word count</span></div><div class="line"> </div><div class="line"><span class="keyword">print</span> (<span class="string">'Total word count: %d'</span>%sum(wc.values())) <span class="comment"># Output the total count</span></div><div class="line">max_len = max(map(len, wc.keys()))              <span class="comment"># Calculate the max length of words for pretty printing</span></div><div class="line"><span class="keyword">for</span> w <span class="keyword">in</span> sorted(wc.keys()):                     <span class="comment"># Sort the words</span></div><div class="line">    <span class="keyword">print</span> (<span class="string">'%*s =&gt; %d'</span>%(max_len, w, wc[w]))     <span class="comment"># Output</span></div></pre></td></tr></table></figure>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Yii2.0框架实战开发]]></title>
-      <url>http://yoursite.com/2016/07/04/Yii2-0%E6%A1%86%E6%9E%B6%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91/</url>
-      <content type="html"><![CDATA[<p>Yii是一个基于组件的高性能PHP框架，用于开发大型Web应用。Yii采用严格的OOP编写，并有着完善的库引用以及全面的教程。从MVC,DAO/ActiveRecord,widgets,cashing,等级式RBAC，Web服务，到主题化，I18N和L10N，Yii提供了今日Web2.0应用开发所需要的几乎一切功能。事实上，Yii是最有效率的PHP框架之一。</p>
-<a id="more"></a>
-<h2 id="第一课-安装Yii2-0框架及环境配置"><a href="#第一课-安装Yii2-0框架及环境配置" class="headerlink" title="第一课 安装Yii2.0框架及环境配置"></a>第一课 安装Yii2.0框架及环境配置</h2><h3 id="Composer安装静态资源索引插件和Yii2-0框架"><a href="#Composer安装静态资源索引插件和Yii2-0框架" class="headerlink" title="Composer安装静态资源索引插件和Yii2.0框架"></a>Composer安装静态资源索引插件和Yii2.0框架</h3><ul>
-<li><p><a href="https://getcomposer.org/download/" target="_blank" rel="external">composer</a></p>
-</li>
-<li><p><a href="https://packagist.org/" target="_blank" rel="external">Packagist仓库</a></p>
-</li>
-</ul>
-<blockquote>
-<p>yiisoft/yii2-app-basic</p>
-</blockquote>
-<p>  在 <a href="http://github.com" title="@githut" target="_blank" rel="external">GitHub仓库</a>下载</p>
-<ul>
-<li>安装插件，创建一个projects 目录下安装 yii</li>
-</ul>
-<pre><code>☁  ~ php composer.phar global require &quot;fxp/composer-asset-plugin:~1.1.1&quot;
-☁  ~ mkdir projects
-☁  ~ cd projects
-☁  projects php composer.phar create-project --prefer-dist --stability=dev yiisoft/yii2-app-basic yii
-</code></pre><p> 安装中可能出现需<strong>Token (hidden):</strong>提示，到<a href="https://github.com/settings/tokens" target="_blank" rel="external">GitHub -&gt; Personal access tokens</a> 如下图：<br> <img src="2.11.png" alt="图2.11"></p>
-<p>Yii2.0框架参考文档</p>
-<ul>
-<li><p><a href="http://www.yiichina.com/doc/guide/2.0" target="_blank" rel="external">中文文档</a> <strong><em>中文文档并不完全需查英文文档</em></strong></p>
-</li>
-<li><p><a href="http://www.yiiframework.com/doc-2.0/guide-index.html" target="_blank" rel="external">英文文档</a>   <strong><em>本人经过翻墙访问</em></strong></p>
-</li>
-</ul>
-<h3 id="归档文件安装"><a href="#归档文件安装" class="headerlink" title="归档文件安装"></a>归档文件安装</h3><ul>
-<li><p><a href="http://www.yiiframework.com/download" target="_blank" rel="external">下载地址：</a></p>
-</li>
-<li><p>修改<em>config/web.php</em>文件，给<em>cookerValidationKey</em>配置项添加一个密钥</p>
-</li>
-<li><p>（通过Composer安装，刚此步骤会自动完成）</p>
-</li>
-</ul>
-<blockquote>
-<p><em>在下面插入一段密钥（若为空），以供cookie validation的需要</em></p>
-<p><strong>‘cookieValidationKey’ = &gt; ‘在此处输入密钥’ </strong></p>
-</blockquote>
-<h3 id="Yii2-0框架目录结构"><a href="#Yii2-0框架目录结构" class="headerlink" title="Yii2.0框架目录结构"></a>Yii2.0框架目录结构</h3><p>目录结构</p>
-<ul>
-<li><p>basic/ 应用根目录</p>
-</li>
-<li><p>composer.json Composer 配置文件，描述包信息</p>
-</li>
-<li><p>console.php 控制台应用配置信息</p>
-</li>
-<li><p>web.php Web应用配置信息</p>
-</li>
-<li><p>commands/ 包含控制台命令类</p>
-</li>
-<li><p>controllers/ 包含控制器类</p>
-</li>
-<li><p>models/ 包含模型类</p>
-</li>
-<li><p>runtime/ 包含Yii在运行时生成的文件，例如日志和缓存文件</p>
-</li>
-<li><p>vendor/ 包含已经安装的Composer包，包括Yii框架自身</p>
-</li>
-<li><p>views/ 包含视图文件</p>
-</li>
-<li><p>web/ Web应用根目录，包含Web入口文件</p>
-</li>
-<li><p>assets/ 包含Yii发布的资源文件（javascript和css）</p>
-</li>
-<li><p>index.php 应用入口文件</p>
-</li>
-<li><p>yii Yii控制台命令执行脚本</p>
-</li>
-</ul>
-<p>– 后续完善中 –</p>
 ]]></content>
     </entry>
     
