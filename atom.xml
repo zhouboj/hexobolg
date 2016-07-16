@@ -167,13 +167,13 @@ location ~ \.php$ {
       <category term="开发环境" scheme="http://yoursite.com/categories/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
     
     
+      <category term="Mysql" scheme="http://yoursite.com/tags/Mysql/"/>
+    
       <category term="Nginx" scheme="http://yoursite.com/tags/Nginx/"/>
     
       <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
     
       <category term="MacOS" scheme="http://yoursite.com/tags/MacOS/"/>
-    
-      <category term="Mysql" scheme="http://yoursite.com/tags/Mysql/"/>
     
   </entry>
   
