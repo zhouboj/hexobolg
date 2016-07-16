@@ -103,8 +103,8 @@
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 0,
-      author: '博主'
+      userId: 2685819711,
+      author: 'Job-乔布'
     }
   };
 </script>
@@ -280,6 +280,142 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/15/Mysql/" itemprop="url">
+                  MySQL开启远程访问授权
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-15T03:01:30+08:00" content="2016-07-15">
+              2016-07-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/自用笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">自用笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/自用笔记/术业专攻/" itemprop="url" rel="index">
+                    <span itemprop="name">术业专攻</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/07/15/Mysql/" class="leancloud_visitors" data-flag-title="MySQL开启远程访问授权">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Mysql是日常工作中用的较多，此文个人之用。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/15/Mysql/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/13/emmet-html-css/" itemprop="url">
                   Mac OS使用brew安装Nginx、MySQL、PHP-FPM的LAMP开发环境
                 </a>
@@ -328,6 +464,15 @@
 
           
           
+             <span id="/2016/07/13/emmet-html-css/" class="leancloud_visitors" data-flag-title="Mac OS使用brew安装Nginx、MySQL、PHP-FPM的LAMP开发环境">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
 
           
         </div>
@@ -344,44 +489,26 @@
         
           
             <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>新版的 Mac OS 内置了Apache 和 PHP，我的系统版本是OS X EI Capitan 10.11.5，可以通过以下命令查看Apache和PHP的版本号：（php –version显示7.0.7，因我的MAC已安装了brew install php70）</p>
-<pre><code class="Nginx"><span class="attribute">httpd</span> -v
-Server version: Apache/<span class="number">2</span>.<span class="number">4</span>.<span class="number">18</span> (Unix)
-Server built:   Feb <span class="number">20</span> <span class="number">2016</span> <span class="number">20</span>:<span class="number">03</span>:<span class="number">19</span>
-
-php --version
-PHP <span class="number">7</span>.<span class="number">0</span>.<span class="number">7</span> (cli) (built: May <span class="number">27</span> <span class="number">2016</span> <span class="number">11</span>:<span class="number">13</span>:<span class="number">44</span>) ( NTS )
-Copyright (c) <span class="number">1997</span>-<span class="number">2016</span> The PHP Group
-Zend Engine v3.<span class="number">0</span>.<span class="number">0</span>, Copyright (c) <span class="number">1998</span>-<span class="number">2016</span> Zend Technologies
-</code></pre>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">httpd</span> -v</div><div class="line">Server version: Apache/<span class="number">2</span>.<span class="number">4</span>.<span class="number">18</span> (Unix)</div><div class="line">Server built:   Feb <span class="number">20</span> <span class="number">2016</span> <span class="number">20</span>:<span class="number">03</span>:<span class="number">19</span></div><div class="line"></div><div class="line">php --version</div><div class="line">PHP <span class="number">7</span>.<span class="number">0</span>.<span class="number">7</span> (cli) (built: May <span class="number">27</span> <span class="number">2016</span> <span class="number">11</span>:<span class="number">13</span>:<span class="number">44</span>) ( NTS )</div><div class="line">Copyright (c) <span class="number">1997</span>-<span class="number">2016</span> The PHP Group</div><div class="line">Zend Engine v3.<span class="number">0</span>.<span class="number">0</span>, Copyright (c) <span class="number">1998</span>-<span class="number">2016</span> Zend Technologies</div></pre></td></tr></table></figure>
 <p>因为我们要自己动手来安装 Nginx，因此首先来关闭系统自带的apache：</p>
-<pre><code>sudo apachectl stop  #关闭apache，如果事先没开启过，可以忽略报错信息
-</code></pre><p>如果你的apache已经加入了launchctl，使用下面的命令来关闭：</p>
-<pre><code>sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist
-</code></pre><p>为什么选择关闭apache？因为mac os x系统自带的apache是没有优雅的remove/uninstall 的方式的… 对于“洁癖”比较严重的童鞋，可以选择直接删除相关的文件！（千万不要手抖删错目录…）</p>
-<pre><code>sudo rm /usr/sbin/apachectl
-sudo rm /usr/sbin/httpd
-sudo rm -r /etc/apache2/        
-</code></pre><p>删除自带的php</p>
-<pre><code>sudo rm -r /usr/bin/php    
-</code></pre><p>如果没有安装brew，可以按照官网的步骤安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apachectl stop  <span class="comment">#关闭apache，如果事先没开启过，可以忽略报错信息</span></div></pre></td></tr></table></figure>
+<p>如果你的apache已经加入了launchctl，使用下面的命令来关闭：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist</div></pre></td></tr></table></figure>
+<p>为什么选择关闭apache？因为mac os x系统自带的apache是没有优雅的remove/uninstall 的方式的… 对于“洁癖”比较严重的童鞋，可以选择直接删除相关的文件！（千万不要手抖删错目录…）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo rm /usr/sbin/apachectl</div><div class="line">sudo rm /usr/sbin/httpd</div><div class="line">sudo rm -r /etc/apache2/</div></pre></td></tr></table></figure>
+<p>删除自带的php</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo rm -r /usr/bin/php</div></pre></td></tr></table></figure>
+<p>如果没有安装brew，可以按照官网的步骤安装</p>
 <pre><code>http://brew.sh/
 </code></pre><h2 id="nginx的安装与配置"><a href="#nginx的安装与配置" class="headerlink" title="nginx的安装与配置"></a>nginx的安装与配置</h2><p>安装nginx</p>
 <pre><code>brew install nginx
 </code></pre><p>修改配置文件</p>
-<pre><code>sudo vim /usr/local/etc/nginx/nginx.conf
-#修改默认的8080端口为80
-</code></pre><p>给予管理员权限</p>
-<pre><code>sudo chown root:wheel/usr/local/opt/nginx/bin/nginx
-sudo chmod u+s/usr/local/opt/nginx/bin/nginx
-</code></pre><p>加入launchctl启动控制</p>
-<pre><code>mkdir -p ~/Library/LaunchAgents
-cp /usr/local/opt/nginx/homebrew.mxcl.nginx.plist ~/Library/LaunchAgents/
-launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist
-</code></pre><p>运行nginx</p>
-<pre><code>sudo nginx #打开 nginx
-nginx -s reload|reopen|stop|quit  #重新加载配置|重启|停止|退出 nginx
-nginx -t   #测试配置是否有语法错误
-</code></pre><p>用法详解</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">	sudo vim /usr/<span class="built_in">local</span>/etc/nginx/nginx.conf</div><div class="line"></div><div class="line"><span class="comment">#修改默认的8080端口为80</span></div></pre></td></tr></table></figure>
+<p>给予管理员权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">	sudo chown root:wheel/usr/<span class="built_in">local</span>/opt/nginx/bin/nginx</div><div class="line">	sudo chmod u+s/usr/<span class="built_in">local</span>/opt/nginx/bin/nginx</div><div class="line">```	</div><div class="line"></div><div class="line">加入launchctl启动控制</div><div class="line"></div><div class="line">```bash</div><div class="line">	mkdir -p ~/Library/LaunchAgents</div><div class="line">	cp /usr/<span class="built_in">local</span>/opt/nginx/homebrew.mxcl.nginx.plist ~/Library/LaunchAgents/</div><div class="line">	launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist</div></pre></td></tr></table></figure>
+<p>运行nginx</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo nginx <span class="comment">#打开 nginx</span></div><div class="line">nginx <span class="_">-s</span> reload|reopen|stop|quit  <span class="comment">#重新加载配置|重启|停止|退出 nginx</span></div><div class="line">nginx -t   <span class="comment">#测试配置是否有语法错误</span></div></pre></td></tr></table></figure>
+<p>用法详解</p>
 <pre><code>nginx [-?hvVtq] [-s signal] [-c filename] [-p prefix] [-g directives]
 </code></pre><p>选项列表</p>
 <pre><code>-?,-h           : 打开帮助信息
@@ -394,60 +521,39 @@ nginx -t   #测试配置是否有语法错误
 -c filename     : 设置配置文件（默认是：/usr/local/etc/nginx/nginx.conf）
 -g directives   : 设置配置文件外的全局指令    
 </code></pre><h2 id="mysql的安装与配置"><a href="#mysql的安装与配置" class="headerlink" title="mysql的安装与配置"></a>mysql的安装与配置</h2><p>安装mysql</p>
-<pre><code>brew install mysql
-cd /usr/local/opt/mysql/
-</code></pre><p>修改配置文件</p>
-<pre><code>sudo vim my.cnf
-#如果出现无法启动mysql，rm my.cnf     
-</code></pre><p>加入launchctl启动控制</p>
-<pre><code>mkdir -p ~/Library/LaunchAgents/
-cp /usr/local/opt/mysql/homebrew.mxcl.mysql.plist ~/Library/LaunchAgents/
-launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
-#取消启动
-#launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist    
-</code></pre><p>初始化 mysql</p>
-<pre><code>./bin/mysql_install_db 
-</code></pre><p>执行安全设置脚本,设置root账号密码</p>
-<pre><code>./bin/mysql_secure_installation
-</code></pre><p>命令行连接mysql</p>
-<pre><code>mysql -uroot -p
-</code></pre><h2 id="php的安装与配置"><a href="#php的安装与配置" class="headerlink" title="php的安装与配置"></a>php的安装与配置</h2><p>brew 默认没有 php 安装包：</p>
-<pre><code>brew tap homebrew/dupes
-brew tap josegonzalez/homebrew-php        
-</code></pre><p>现在可以安装php了：</p>
-<pre><code>brew install php54 --with-imap --with-tidy --with-debug --with-mysql --with-fpm
-</code></pre><p>将php路径加入PATH</p>
-<pre><code>sudo vim ~/.bash_profile    
-export PATH=&quot;$(brew --prefix php54)/bin:$PATH&quot;
-
-source ~/.bash_profile        
-</code></pre><p>加入launchctl启动控制</p>
-<pre><code>mkdir -p ~/Library/LaunchAgents
-cp /usr/local/opt/php54/homebrew.mxcl.php54.plist ~/Library/LaunchAgents/
-launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php54.plist
-</code></pre><p>配置路径</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">brew install mysql</div><div class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/opt/mysql/</div></pre></td></tr></table></figure>
+<p>修改配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo vim my.cnf</div><div class="line"><span class="comment">#如果出现无法启动mysql，rm my.cnf</span></div></pre></td></tr></table></figure>
+<p>加入launchctl启动控制</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">	mkdir -p ~/Library/LaunchAgents/</div><div class="line">	cp /usr/<span class="built_in">local</span>/opt/mysql/homebrew.mxcl.mysql.plist ~/Library/LaunchAgents/</div><div class="line">	launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist</div><div class="line">	<span class="comment">#取消启动</span></div><div class="line">	<span class="comment">#launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist</span></div><div class="line">```	</div><div class="line">		</div><div class="line">初始化 mysql</div><div class="line"></div><div class="line">	./bin/mysql_install_db </div><div class="line">	</div><div class="line">	</div><div class="line">执行安全设置脚本,设置root账号密码</div><div class="line"></div><div class="line">	./bin/mysql_secure_installation</div><div class="line">	</div><div class="line">命令行连接mysql</div><div class="line"></div><div class="line">	mysql -uroot -p</div><div class="line">	</div><div class="line">php的安装与配置</div><div class="line">---</div><div class="line"></div><div class="line">brew 默认没有 php 安装包：</div><div class="line"></div><div class="line">	brew tap homebrew/dupes</div><div class="line">	brew tap josegonzalez/homebrew-php		</div><div class="line">	</div><div class="line">现在可以安装php了：</div><div class="line"></div><div class="line">```bash</div><div class="line">brew install php54 --with-imap --with-tidy --with-debug --with-mysql --with-fpm</div></pre></td></tr></table></figure>
+<p>将php路径加入PATH</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo vim ~/.bash_profile    </div><div class="line"><span class="built_in">export</span> PATH=<span class="string">"<span class="variable">$(brew --prefix php54)</span>/bin:<span class="variable">$PATH</span>"</span></div><div class="line"></div><div class="line"><span class="built_in">source</span> ~/.bash_profile</div></pre></td></tr></table></figure>
+<p>加入launchctl启动控制</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir -p ~/Library/LaunchAgents</div><div class="line">cp /usr/<span class="built_in">local</span>/opt/php54/homebrew.mxcl.php54.plist ~/Library/LaunchAgents/</div><div class="line">launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php54.plist</div></pre></td></tr></table></figure>
+<p>配置路径</p>
 <pre><code>/usr/local/etc/php/5.4/php.ini
 /usr/local/etc/php/5.4/php-fpm.conf        
 </code></pre><p>配置 Nginx 支持 PHP-FPM</p>
-<pre><code>sudo vim /usr/local/etc/nginx/nginx.conf    
+<pre><code class="bash">sudo vim /usr/<span class="built_in">local</span>/etc/nginx/nginx.conf    
 
-# 添加默认首页 php
+<span class="comment"># 添加默认首页 php</span>
 index  index.php index.html index.htm;
 
-# 取消以下内容的注释，并做修改
+<span class="comment"># 取消以下内容的注释，并做修改</span>
 location ~ \.php$ {
     fastcgi_intercept_errors on;
     fastcgi_pass   127.0.0.1:9000;
     fastcgi_index  index.php;
-    fastcgi_param  SCRIPT_FILENAME  /usr/local/Cellar/nginx/1.6.0_1/html$fastcgi_script_name;
-    include        /usr/local/etc/nginx/fastcgi_params;
+    fastcgi_param  SCRIPT_FILENAME  /usr/<span class="built_in">local</span>/Cellar/nginx/1.6.0_1/html<span class="variable">$fastcgi_script_name</span>;
+    include        /usr/<span class="built_in">local</span>/etc/nginx/fastcgi_params;
 }
-</code></pre><h2 id="测试环境"><a href="#测试环境" class="headerlink" title="测试环境"></a>测试环境</h2><pre><code class="php">sudo vim /usr/local/Cellar/nginx/<span class="number">1.6</span><span class="number">.0</span>_1/html/index.php
+</code></pre>
+<h2 id="测试环境"><a href="#测试环境" class="headerlink" title="测试环境"></a>测试环境</h2><pre><code class="bash">sudo vim /usr/<span class="built_in">local</span>/Cellar/nginx/1.6.0_1/html/index.php
 
 <span class="comment">#添加测试代码</span>
-<span class="meta">&lt;?php</span> 
+&lt;?php 
     phpinfo();
-<span class="meta">?&gt;</span>
+?&gt;
 </code></pre>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>到目前为止，我们的Nginx、MySQL、PHP-FPM三大软件已经安装好了，针对不同的系统版本和软件版本，可能会遇到一些问题，欢迎留言探讨。            </p>
 
@@ -546,6 +652,15 @@ location ~ \.php$ {
           
 
           
+          
+             <span id="/2016/07/09/emmet-html-css/" class="leancloud_visitors" data-flag-title="Emmet：HTML/CSS代码快速编写神器 - Web前端">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
           
 
           
@@ -662,6 +777,15 @@ location ~ \.php$ {
 
           
           
+             <span id="/2016/07/07/Mac-Sublime Text/" class="leancloud_visitors" data-flag-title="Sublime Text2的Mac实用快捷键">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
 
           
         </div>
@@ -777,6 +901,15 @@ location ~ \.php$ {
 
           
           
+             <span id="/2016/07/06/anki-templates/" class="leancloud_visitors" data-flag-title="Anki 自用卡片模板分享">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
 
           
         </div>
@@ -891,6 +1024,15 @@ location ~ \.php$ {
           
 
           
+          
+             <span id="/2016/07/06/anki-excel-shortcuts/" class="leancloud_visitors" data-flag-title="Anki 记忆库之 Excel 快捷键大全">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
           
 
           
@@ -1019,6 +1161,15 @@ location ~ \.php$ {
 
           
           
+             <span id="/2016/07/04/Markdown编辑器Mou中的代码高亮方法/" class="leancloud_visitors" data-flag-title="Markdown编辑器Mou中的代码高亮方法">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
 
           
         </div>
@@ -1133,6 +1284,15 @@ location ~ \.php$ {
           
 
           
+          
+             <span id="/2016/07/04/markdown-table-style/" class="leancloud_visitors" data-flag-title="Markdown 表格样式调整与自适应优化">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
           
 
           
@@ -1261,6 +1421,15 @@ location ~ \.php$ {
 
           
           
+             <span id="/2016/07/04/git命令详解（高级）/" class="leancloud_visitors" data-flag-title="git命令详解（高级）">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
 
           
         </div>
@@ -1388,6 +1557,15 @@ location ~ \.php$ {
 
           
           
+             <span id="/2016/07/02/GitHub的入门与实践/" class="leancloud_visitors" data-flag-title="GitHut的入门与实践">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
 
           
         </div>
@@ -1405,133 +1583,6 @@ location ~ \.php$ {
           <p>从Git的基本知识和操作方法入手，详细介绍了GitHub的各种功能，GitHub与其它工具或服务的集成，使用GitHub的开发流程以及如何将GitHub引入到企业中。<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/07/02/GitHub的入门与实践/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/01/front-end-tools/" itemprop="url">
-                  前端工程化工具初选
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-01T07:51:28+08:00" content="2016-07-01">
-              2016-07-01
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/自用笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">自用笔记</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/自用笔记/术业专攻/" itemprop="url" rel="index">
-                    <span itemprop="name">术业专攻</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>　　面对日益纷杂的前端工具，作为新人常感无从下手。经过一番检索和简单对比，再结合自己的喜好，筛选了将要学习和使用的工具，以适应日益工程化、专业化的 Web 前端开发工作。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/01/front-end-tools/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1606,7 +1657,7 @@ location ~ \.php$ {
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1614,7 +1665,7 @@ location ~ \.php$ {
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1623,7 +1674,7 @@ location ~ \.php$ {
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1641,6 +1692,35 @@ location ~ \.php$ {
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/31880580" target="_blank" title="新浪微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  新浪微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zhouboj" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/jzb3188" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
           
         </div>
 
@@ -1900,6 +1980,113 @@ location ~ \.php$ {
   
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("5JFUX5HuwUS2XbrhpF3iHUiO-gzGzoHsz", "JrBFchSIk7g5Ks6mlF03qjld");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 
