@@ -136,10 +136,10 @@
   
   <entry>
     <title>Mac OS使用brew安装Nginx、MySQL、PHP-FPM的LAMP开发环境</title>
-    <link href="http://yoursite.com/2016/07/13/emmet-html-css/"/>
-    <id>http://yoursite.com/2016/07/13/emmet-html-css/</id>
+    <link href="http://yoursite.com/2016/07/13/install-nginx-mysql-php-fpm-by-brew-on-mac/"/>
+    <id>http://yoursite.com/2016/07/13/install-nginx-mysql-php-fpm-by-brew-on-mac/</id>
     <published>2016-07-13T07:53:09.000Z</published>
-    <updated>2016-07-16T03:26:53.000Z</updated>
+    <updated>2016-07-16T23:48:47.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h2&gt;&lt;p&gt;新版的 Mac OS 内置了Apache 和 PHP，我的系统版本是OS X EI Capitan 10.11.5，可以通过以下命令查看Apache和PHP的版本号：（php –version显示7.0.7，因我的MAC已安装了brew install php70）&lt;/p&gt;
 &lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;httpd&lt;/span&gt; -v&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Server version: Apache/&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;18&lt;/span&gt; (Unix)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Server built:   Feb &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2016&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;03&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;19&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;php --version&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;PHP &lt;span class=&quot;number&quot;&gt;7&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;7&lt;/span&gt; (cli) (built: May &lt;span class=&quot;number&quot;&gt;27&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2016&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;11&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;13&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;44&lt;/span&gt;) ( NTS )&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Copyright (c) &lt;span class=&quot;number&quot;&gt;1997&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;2016&lt;/span&gt; The PHP Group&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Zend Engine v3.&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, Copyright (c) &lt;span class=&quot;number&quot;&gt;1998&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;2016&lt;/span&gt; Zend Technologies&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -235,7 +235,7 @@ location ~ \.php$ {
     <link href="http://yoursite.com/2016/07/09/emmet-html-css/"/>
     <id>http://yoursite.com/2016/07/09/emmet-html-css/</id>
     <published>2016-07-08T16:24:45.000Z</published>
-    <updated>2016-07-15T20:26:49.000Z</updated>
+    <updated>2016-07-16T23:50:42.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;/p&gt;&lt;h2 id=&quot;intro&quot;&gt;前言&lt;/h2&gt; Emmet的前身是大名鼎鼎的Zen coding，如果你从事Web前端开发的话，对该插件一定不会陌生。它使用仿CSS选择器的语法来生成代码，大大提高了HTML/CSS代码编写的速度。&lt;em&gt;注：版权属于ITeye网站所有, &lt;a href=&quot;/about&quot;&gt;Job&lt;/a&gt; 借此感谢！&lt;/em&gt; &lt;p&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
