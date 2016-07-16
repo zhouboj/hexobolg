@@ -1715,97 +1715,6 @@ location ~ \.php$ {
   </entry>
   
   <entry>
-    <title>前端工程化工具初选</title>
-    <link href="http://yoursite.com/2016/07/01/front-end-tools/"/>
-    <id>http://yoursite.com/2016/07/01/front-end-tools/</id>
-    <published>2016-06-30T23:51:28.000Z</published>
-    <updated>2016-07-15T21:39:37.000Z</updated>
-    
-    <content type="html">&lt;p&gt;　　面对日益纷杂的前端工具，作为新人常感无从下手。经过一番检索和简单对比，再结合自己的喜好，筛选了将要学习和使用的工具，以适应日益工程化、专业化的 Web 前端开发工作。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;Library-amp-Framework-库与框架&quot;&gt;&lt;a href=&quot;#Library-amp-Framework-库与框架&quot; class=&quot;headerlink&quot; title=&quot;Library &amp;amp; Framework | 库与框架&quot;&gt;&lt;/a&gt;Library &amp;amp; Framework | 库与框架&lt;/h2&gt;&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://jquery.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;jQuery&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://jqueryui.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;jQuery UI&lt;/a&gt;: A curated set of user interface interactions, effects, widgets, and themes&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://cn.vuejs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Vue.js&lt;/a&gt;: 数据驱动的组件，为现代化的 Web 界面而生&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React.js&lt;/a&gt;: A JavaScript library for building user interfaces&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://facebook.github.io/react-native/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React Native&lt;/a&gt;: A framework for building native apps using React&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;The-Build-System-构建工具&quot;&gt;&lt;a href=&quot;#The-Build-System-构建工具&quot; class=&quot;headerlink&quot; title=&quot;The Build System | 构建工具&quot;&gt;&lt;/a&gt;The Build System | 构建工具&lt;/h2&gt;&lt;p&gt;The Build System is used to build, preview and test your project.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://gulpjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;gulp.js&lt;/a&gt;: Automate and enhance your workflow&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;The-Module-Bundler-模块打包器&quot;&gt;&lt;a href=&quot;#The-Module-Bundler-模块打包器&quot; class=&quot;headerlink&quot; title=&quot;The Module Bundler | 模块打包器&quot;&gt;&lt;/a&gt;The Module Bundler | 模块打包器&lt;/h2&gt;&lt;p&gt;Packs many modules into a few bundled assets.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://webpack.github.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;webpack&lt;/a&gt;: Take modules with dependencies and generate static assets representing those modules&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;The-Package-Manager-包管理&quot;&gt;&lt;a href=&quot;#The-Package-Manager-包管理&quot; class=&quot;headerlink&quot; title=&quot;The Package Manager | 包管理&quot;&gt;&lt;/a&gt;The Package Manager | 包管理&lt;/h2&gt;&lt;p&gt;The Package Manager is used for dependency management, so that you no longer have to manually download and manage your scripts.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;npm&lt;/a&gt;: Node Package Manager.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;CSS-Extension-CSS-处理&quot;&gt;&lt;a href=&quot;#CSS-Extension-CSS-处理&quot; class=&quot;headerlink&quot; title=&quot;CSS Extension | CSS 处理&quot;&gt;&lt;/a&gt;CSS Extension | CSS 处理&lt;/h2&gt;&lt;p&gt;Provide an efficient, dynamic, and expressive way to generate CSS.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/stylus/stylus&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Stylus&lt;/a&gt;: Expressive, robust, feature-rich CSS language built for nodejs&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/postcss/postcss&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;PostCSS&lt;/a&gt;: Transforming styles with JS plugins&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;JavaScript-Module-JavaScript-模块化&quot;&gt;&lt;a href=&quot;#JavaScript-Module-JavaScript-模块化&quot; class=&quot;headerlink&quot; title=&quot;JavaScript Module | JavaScript 模块化&quot;&gt;&lt;/a&gt;JavaScript Module | JavaScript 模块化&lt;/h2&gt;&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://exploringjs.com/es6/ch_modules.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ECMAScript 6 Module&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;JavaScript-Template-JavaScript-模板引擎&quot;&gt;&lt;a href=&quot;#JavaScript-Template-JavaScript-模板引擎&quot; class=&quot;headerlink&quot; title=&quot;JavaScript Template | JavaScript 模板引擎&quot;&gt;&lt;/a&gt;JavaScript Template | JavaScript 模板引擎&lt;/h2&gt;&lt;p&gt;Generate HTML markup with plain JavaScript.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://ejs.co/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;EJS&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;Test-Framework-测试框架&quot;&gt;&lt;a href=&quot;#Test-Framework-测试框架&quot; class=&quot;headerlink&quot; title=&quot;Test Framework | 测试框架&quot;&gt;&lt;/a&gt;Test Framework | 测试框架&lt;/h2&gt;&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://mochajs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Mocha&lt;/a&gt;: a simple, flexible, fun JavaScript test framework for node.js and the browser&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://chaijs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Chai&lt;/a&gt;: a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;The-scaffolding-tool-手脚架&quot;&gt;&lt;a href=&quot;#The-scaffolding-tool-手脚架&quot; class=&quot;headerlink&quot; title=&quot;The scaffolding tool | 手脚架&quot;&gt;&lt;/a&gt;The scaffolding tool | 手脚架&lt;/h2&gt;&lt;p&gt;Scaffolds out a new application, writing your build configuration and pulling in relevant build tasks and package manager dependencies that you might need for your build.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://yeoman.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Yeoman&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;集成方案&quot;&gt;&lt;a href=&quot;#集成方案&quot; class=&quot;headerlink&quot; title=&quot;集成方案&quot;&gt;&lt;/a&gt;集成方案&lt;/h2&gt;&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://fis.baidu.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;FIS&lt;/a&gt;: 解决前端开发中自动化工具、性能优化、模块化框架、开发规范、代码部署、开发流程等问题&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;Container-容器&quot;&gt;&lt;a href=&quot;#Container-容器&quot; class=&quot;headerlink&quot; title=&quot;Container | 容器&quot;&gt;&lt;/a&gt;Container | 容器&lt;/h2&gt;&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.docker.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Docker&lt;/a&gt;: Build, Ship, and Run Any App, Anywhere&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;　　面对日益纷杂的前端工具，作为新人常感无从下手。经过一番检索和简单对比，再结合自己的喜好，筛选了将要学习和使用的工具，以适应日益工程化、专业化的 Web 前端开发工作。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="自用笔记" scheme="http://yoursite.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="术业专攻" scheme="http://yoursite.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/%E6%9C%AF%E4%B8%9A%E4%B8%93%E6%94%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Web Style Guide 前端代码规范</title>
     <link href="http://yoursite.com/2016/07/01/web-style-guide/"/>
     <id>http://yoursite.com/2016/07/01/web-style-guide/</id>
@@ -1945,6 +1854,97 @@ location ~ \.php$ {
       <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
     
       <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端工程化工具初选</title>
+    <link href="http://yoursite.com/2016/07/01/front-end-tools/"/>
+    <id>http://yoursite.com/2016/07/01/front-end-tools/</id>
+    <published>2016-06-30T23:51:28.000Z</published>
+    <updated>2016-07-15T21:39:37.000Z</updated>
+    
+    <content type="html">&lt;p&gt;　　面对日益纷杂的前端工具，作为新人常感无从下手。经过一番检索和简单对比，再结合自己的喜好，筛选了将要学习和使用的工具，以适应日益工程化、专业化的 Web 前端开发工作。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;Library-amp-Framework-库与框架&quot;&gt;&lt;a href=&quot;#Library-amp-Framework-库与框架&quot; class=&quot;headerlink&quot; title=&quot;Library &amp;amp; Framework | 库与框架&quot;&gt;&lt;/a&gt;Library &amp;amp; Framework | 库与框架&lt;/h2&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://jquery.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;jQuery&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://jqueryui.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;jQuery UI&lt;/a&gt;: A curated set of user interface interactions, effects, widgets, and themes&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://cn.vuejs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Vue.js&lt;/a&gt;: 数据驱动的组件，为现代化的 Web 界面而生&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React.js&lt;/a&gt;: A JavaScript library for building user interfaces&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://facebook.github.io/react-native/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React Native&lt;/a&gt;: A framework for building native apps using React&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;The-Build-System-构建工具&quot;&gt;&lt;a href=&quot;#The-Build-System-构建工具&quot; class=&quot;headerlink&quot; title=&quot;The Build System | 构建工具&quot;&gt;&lt;/a&gt;The Build System | 构建工具&lt;/h2&gt;&lt;p&gt;The Build System is used to build, preview and test your project.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://gulpjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;gulp.js&lt;/a&gt;: Automate and enhance your workflow&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;The-Module-Bundler-模块打包器&quot;&gt;&lt;a href=&quot;#The-Module-Bundler-模块打包器&quot; class=&quot;headerlink&quot; title=&quot;The Module Bundler | 模块打包器&quot;&gt;&lt;/a&gt;The Module Bundler | 模块打包器&lt;/h2&gt;&lt;p&gt;Packs many modules into a few bundled assets.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://webpack.github.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;webpack&lt;/a&gt;: Take modules with dependencies and generate static assets representing those modules&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;The-Package-Manager-包管理&quot;&gt;&lt;a href=&quot;#The-Package-Manager-包管理&quot; class=&quot;headerlink&quot; title=&quot;The Package Manager | 包管理&quot;&gt;&lt;/a&gt;The Package Manager | 包管理&lt;/h2&gt;&lt;p&gt;The Package Manager is used for dependency management, so that you no longer have to manually download and manage your scripts.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;npm&lt;/a&gt;: Node Package Manager.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;CSS-Extension-CSS-处理&quot;&gt;&lt;a href=&quot;#CSS-Extension-CSS-处理&quot; class=&quot;headerlink&quot; title=&quot;CSS Extension | CSS 处理&quot;&gt;&lt;/a&gt;CSS Extension | CSS 处理&lt;/h2&gt;&lt;p&gt;Provide an efficient, dynamic, and expressive way to generate CSS.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/stylus/stylus&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Stylus&lt;/a&gt;: Expressive, robust, feature-rich CSS language built for nodejs&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/postcss/postcss&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;PostCSS&lt;/a&gt;: Transforming styles with JS plugins&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;JavaScript-Module-JavaScript-模块化&quot;&gt;&lt;a href=&quot;#JavaScript-Module-JavaScript-模块化&quot; class=&quot;headerlink&quot; title=&quot;JavaScript Module | JavaScript 模块化&quot;&gt;&lt;/a&gt;JavaScript Module | JavaScript 模块化&lt;/h2&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://exploringjs.com/es6/ch_modules.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ECMAScript 6 Module&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;JavaScript-Template-JavaScript-模板引擎&quot;&gt;&lt;a href=&quot;#JavaScript-Template-JavaScript-模板引擎&quot; class=&quot;headerlink&quot; title=&quot;JavaScript Template | JavaScript 模板引擎&quot;&gt;&lt;/a&gt;JavaScript Template | JavaScript 模板引擎&lt;/h2&gt;&lt;p&gt;Generate HTML markup with plain JavaScript.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://ejs.co/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;EJS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Test-Framework-测试框架&quot;&gt;&lt;a href=&quot;#Test-Framework-测试框架&quot; class=&quot;headerlink&quot; title=&quot;Test Framework | 测试框架&quot;&gt;&lt;/a&gt;Test Framework | 测试框架&lt;/h2&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://mochajs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Mocha&lt;/a&gt;: a simple, flexible, fun JavaScript test framework for node.js and the browser&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://chaijs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Chai&lt;/a&gt;: a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;The-scaffolding-tool-手脚架&quot;&gt;&lt;a href=&quot;#The-scaffolding-tool-手脚架&quot; class=&quot;headerlink&quot; title=&quot;The scaffolding tool | 手脚架&quot;&gt;&lt;/a&gt;The scaffolding tool | 手脚架&lt;/h2&gt;&lt;p&gt;Scaffolds out a new application, writing your build configuration and pulling in relevant build tasks and package manager dependencies that you might need for your build.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://yeoman.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Yeoman&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;集成方案&quot;&gt;&lt;a href=&quot;#集成方案&quot; class=&quot;headerlink&quot; title=&quot;集成方案&quot;&gt;&lt;/a&gt;集成方案&lt;/h2&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://fis.baidu.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;FIS&lt;/a&gt;: 解决前端开发中自动化工具、性能优化、模块化框架、开发规范、代码部署、开发流程等问题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Container-容器&quot;&gt;&lt;a href=&quot;#Container-容器&quot; class=&quot;headerlink&quot; title=&quot;Container | 容器&quot;&gt;&lt;/a&gt;Container | 容器&lt;/h2&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.docker.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Docker&lt;/a&gt;: Build, Ship, and Run Any App, Anywhere&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;　　面对日益纷杂的前端工具，作为新人常感无从下手。经过一番检索和简单对比，再结合自己的喜好，筛选了将要学习和使用的工具，以适应日益工程化、专业化的 Web 前端开发工作。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="自用笔记" scheme="http://yoursite.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="术业专攻" scheme="http://yoursite.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/%E6%9C%AF%E4%B8%9A%E4%B8%93%E6%94%BB/"/>
+    
     
   </entry>
   
