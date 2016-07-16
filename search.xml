@@ -6,7 +6,7 @@
     <entry>
       <title><![CDATA[MySQL开启远程访问授权]]></title>
       <url>http://yoursite.com/2016/07/15/Mysql/</url>
-      <content type="html"><![CDATA[<p>Mysql是日常工作中用的较多，此文个人之用。</p>
+      <content type="html"><![CDATA[<p>解决MySQL不允许从远程访问的方法.</p>
 <a id="more"></a>
 <p>在做开发测试的时候，经常会用到MySQL数据库。测试使用的数据库不在本机上而在虚拟机里，访问数据库就比较蛋碎了。因为MySQL数据库默认是没有开放远程访问授权的。不能够直接访问，下面介绍两种常用的开启MySQL远程访问权限开启方法:</p>
 <h3 id="方法一：修改user表开启远程访问"><a href="#方法一：修改user表开启远程访问" class="headerlink" title="方法一：修改user表开启远程访问"></a>方法一：修改<code>user</code>表开启远程访问</h3><p>在终端中键入以下命令登录MySQL数据库:</p>
