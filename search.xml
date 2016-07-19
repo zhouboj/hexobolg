@@ -4,6 +4,154 @@
   
     
     <entry>
+      <title><![CDATA[Mysql数据库的基本操作应用]]></title>
+      <url>http://yoursite.com/2016/07/19/mysql-base/</url>
+      <content type="html"><![CDATA[<h2 id="Mysql数据库的基本操作"><a href="#Mysql数据库的基本操作" class="headerlink" title="Mysql数据库的基本操作"></a>Mysql数据库的基本操作</h2><h3 id="1、显示数据库"><a href="#1、显示数据库" class="headerlink" title="1、显示数据库"></a>1、显示数据库</h3><ul>
+<li>语法格式：SHOW DATABASES;</li>
+<li>说明：查看你的Mysql服务器上多少个数据库</li>
+</ul>
+<h3 id="2、创建数据库存"><a href="#2、创建数据库存" class="headerlink" title="2、创建数据库存"></a>2、创建数据库存</h3><ul>
+<li>语法：CREATE DATABASE db_name [IF NOT EXITSTS][CHARSET utf8]</li>
+<li>参数：<ul>
+<li>db_name:自己定义的数据库名称。命名规则：字母、数字、下划线.不能是纯数字命名。</li>
+<li>【IF NOT EXITSTS】：如果创建的数据库已经存在，则不会报错。</li>
+<li>【CHARSET utf8】：指定当前数据库的字符集，默认为latin1。这里的”utf8”不加横线</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>SHOW 命令的使用<br>  SHOW CREATE DATABASE db_name; //查看创建数据库的语句过程</p>
+</blockquote>
+<h3 id="3、删除数据库"><a href="#3、删除数据库" class="headerlink" title="3、删除数据库"></a>3、删除数据库</h3><ul>
+<li>语法格式：DROP DATABASE db_name[IF EXISTS];</li>
+<li>参数说明：<ul>
+<li>【IF EXISTS】条件判断，可选项，如果数据库存在，再进行删除，不会报错。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Mysql 数据库字符集</p>
+<ul>
+<li>描述：通过MYSQL命令来修改数据库的字符集</li>
+<li>语法: ALTER DATABASE db_name DEFAULT CHARACTER SET utf8;</li>
+</ul>
+</blockquote>
+<h2 id="MySQL-数据表操作"><a href="#MySQL-数据表操作" class="headerlink" title="MySQL 数据表操作"></a>MySQL 数据表操作</h2><h3 id="1、选择当前操作的数据库"><a href="#1、选择当前操作的数据库" class="headerlink" title="1、选择当前操作的数据库"></a>1、选择当前操作的数据库</h3><ul>
+<li>语法：USE db_name;</li>
+<li>说明：选中数据库</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mysql&gt; use jzb88;</div><div class="line">Database changed</div><div class="line">mysql&gt;</div></pre></td></tr></table></figure>
+<h3 id="2、显示数据表"><a href="#2、显示数据表" class="headerlink" title="2、显示数据表"></a>2、显示数据表</h3><ul>
+<li>语法：SHOW TABLES;</li>
+</ul>
+<h3 id="3、创建数据表"><a href="#3、创建数据表" class="headerlink" title="3、创建数据表"></a>3、创建数据表</h3><ul>
+<li>语法：CREATE TABLE table_name(列1 类型 列的属性，列2 类型 列的属性，……);</li>
+<li>说明：多个字段中间用英文下的逗号（,）隔开。</li>
+<li>参数说明：<ul>
+<li>列的名称：命名规则与数据库的规则一样。</li>
+<li>列的类型：整形、浮点型、字符型、文本型、日期型</li>
+<li>列的属性<ul>
+<li>列是否为空：NOT NULL | NULL</li>
+<li>自动增长：AUTO_INCREMENT<ul>
+<li>注意：自动增长属性，只能用于id字段。一个表只能有一个自动增长属性。</li>
+</ul>
+</li>
+<li>默认值：DEFAULE value .value的值可以是整形或字符型。</li>
+<li>主键（主索引）:PRIMARY KEY.<ul>
+<li>注意：主索引一般指定是id字段。一个表只能有一个主索引。</li>
+</ul>
+</li>
+<li>结论：id字段的属性，必须有三个：not null、auto increment、primary kdy.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>实例</strong>：创建一个<strong>news</strong>的数据表</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">create table news(</div><div class="line">  id int not null auto_increment primary key, <span class="comment">#编号</span></div><div class="line">  title varchar(100) not null, <span class="comment">#标题</span></div><div class="line">  author varchar(20) not null, <span class="comment">#作者</span></div><div class="line">  <span class="built_in">source</span> varchar(30) not null, <span class="comment">#来源</span></div><div class="line">  hits int(5) not null default 0, <span class="comment">#单击率</span></div><div class="line">  is_ppt tinyint(1) not null default 0, <span class="comment">#是否是幻灯新闻</span></div><div class="line">  content text null, <span class="comment">#新闻内容</span></div><div class="line">  addate int(16) not null <span class="comment">#添加时间</span></div><div class="line">);</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">mysql&gt; create table news(</div><div class="line">    -&gt; id int not null auto_increment primary key,</div><div class="line">    -&gt; title varchar(50) not null,</div><div class="line">    -&gt; hits int not null default 0,</div><div class="line">    -&gt; content text,</div><div class="line">    -&gt; addate int not null</div><div class="line">    -&gt; );</div><div class="line">Query OK, 0 rows affected (0.06 sec)</div><div class="line"></div><div class="line">mysql&gt;</div></pre></td></tr></table></figure>
+<h3 id="4、显示数据表"><a href="#4、显示数据表" class="headerlink" title="4、显示数据表"></a>4、显示数据表</h3><ul>
+<li>语法：<strong>SHOW CREATE TABLE</strong> table_name;</li>
+</ul>
+<h3 id="5、describe显示表的结构"><a href="#5、describe显示表的结构" class="headerlink" title="5、describe显示表的结构"></a>5、<strong>describe</strong>显示表的结构</h3><ul>
+<li>语法：<strong>DESCRIBE</strong> table_name;</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">mysql&gt; describe news;</div><div class="line">+---------+-------------+------+-----+---------+----------------+</div><div class="line">| Field   | Type        | Null | Key | Default | Extra          |</div><div class="line">+---------+-------------+------+-----+---------+----------------+</div><div class="line">| id      | int(11)     | NO   | PRI | NULL    | auto_increment |</div><div class="line">| title   | varchar(50) | NO   |     | NULL    |                |</div><div class="line">| hits    | int(11)     | NO   |     | 0       |                |</div><div class="line">| content | text        | YES  |     | NULL    |                |</div><div class="line">| addate  | int(11)     | NO   |     | NULL    |                |</div><div class="line">+---------+-------------+------+-----+---------+----------------+</div><div class="line">5 rows <span class="keyword">in</span> <span class="built_in">set</span> (0.01 sec)</div><div class="line"></div><div class="line">mysql&gt;</div></pre></td></tr></table></figure>
+<h3 id="6、删除数据表"><a href="#6、删除数据表" class="headerlink" title="6、删除数据表"></a>6、删除数据表</h3><ul>
+<li>语法：<strong>DROP TABLE</strong> table_name;</li>
+</ul>
+<h2 id="MySQL数据类型"><a href="#MySQL数据类型" class="headerlink" title="MySQL数据类型"></a>MySQL数据类型</h2><h3 id="1、整形"><a href="#1、整形" class="headerlink" title="1、整形"></a>1、整形</h3><table>
+<thead>
+<tr>
+<th>类形</th>
+<th style="text-align:center"></th>
+<th style="text-align:right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tinyint</td>
+<td style="text-align:center">0-255</td>
+<td style="text-align:right">1个字节长</td>
+</tr>
+<tr>
+<td>smallint</td>
+<td style="text-align:center">0-65535</td>
+<td style="text-align:right">2个字节长</td>
+</tr>
+<tr>
+<td>int</td>
+<td style="text-align:center">0-21亿</td>
+<td style="text-align:right">4个字节长</td>
+</tr>
+<tr>
+<td>bigint</td>
+<td style="text-align:center">0-42亿</td>
+<td style="text-align:right">8个字节长</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2、浮点型"><a href="#2、浮点型" class="headerlink" title="2、浮点型"></a>2、浮点型</h3><p><strong>float(M,D)</strong> 单精度浮点数。可以精确到小数点后7位。<strong>M</strong>代表总宽度，<strong>D</strong>代表小数位。</p>
+<font size="3px" color="##008B00">float(8,2)含义：宽度为8，小数为2，整数为5位。</font>
+
+<p><strong>double(M,D)</strong> 双精度浮点数。可以精确到小数点后15位。<strong>M</strong>代表总宽度，<strong>D</strong>代表小数位。</p>
+<h3 id="3、字符型和文本型"><a href="#3、字符型和文本型" class="headerlink" title="3、字符型和文本型"></a>3、字符型和文本型</h3><p><strong>char(M)</strong> 固定长度字符，M 代表长度。<br><strong>varchar(M)</strong> 可变长度字符，M 代表长度</p>
+<blockquote>
+<p><strong>char(6)</strong> 存储『邮编』。只能是6个<br>  <strong>varchar(6)</strong> 最少1个，最多6个。</p>
+ <font size="3px" color="#008B00">简单分析：char()存取数据的速度，要比varchar()快一点</font>
+
+</blockquote>
+<h3 id="4、文本型"><a href="#4、文本型" class="headerlink" title="4、文本型"></a>4、文本型</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th style="text-align:center"></th>
+<th style="text-align:right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tinytext</td>
+<td style="text-align:center">0-255</td>
+<td style="text-align:right">最小文本型</td>
+</tr>
+<tr>
+<td>text</td>
+<td style="text-align:center">0-1677万</td>
+<td style="text-align:right">中型文本</td>
+</tr>
+<tr>
+<td>longtext</td>
+<td style="text-align:center">0-42亿</td>
+<td style="text-align:right">大型文本</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5、日期时间型"><a href="#5、日期时间型" class="headerlink" title="5、日期时间型"></a>5、日期时间型</h3><p>略……</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[人是需要有点精神的，有点通灵的精神]]></title>
       <url>http://yoursite.com/2016/07/16/duhougan/</url>
       <content type="html"><![CDATA[<blockquote><p>我爱茶的苦涩与清香，也爱书的厚重与精深。每当烦愁顿生，沏一杯清茶、读一本好书，就能驱散心底那一片低迷，阻断那缕缕忧伤不再肆意蔓爬，灵魂方可真正的得到润养和净化。开始醉了….&amp;*……%￥#@</p>

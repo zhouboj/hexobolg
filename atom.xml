@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-07-17T00:09:57.000Z</updated>
+  <updated>2016-07-19T14:18:58.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,170 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mysql数据库的基本操作应用</title>
+    <link href="http://yoursite.com/2016/07/19/mysql-base/"/>
+    <id>http://yoursite.com/2016/07/19/mysql-base/</id>
+    <published>2016-07-19T13:01:30.000Z</published>
+    <updated>2016-07-19T14:18:58.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;Mysql数据库的基本操作&quot;&gt;&lt;a href=&quot;#Mysql数据库的基本操作&quot; class=&quot;headerlink&quot; title=&quot;Mysql数据库的基本操作&quot;&gt;&lt;/a&gt;Mysql数据库的基本操作&lt;/h2&gt;&lt;h3 id=&quot;1、显示数据库&quot;&gt;&lt;a href=&quot;#1、显示数据库&quot; class=&quot;headerlink&quot; title=&quot;1、显示数据库&quot;&gt;&lt;/a&gt;1、显示数据库&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;语法格式：SHOW DATABASES;&lt;/li&gt;
+&lt;li&gt;说明：查看你的Mysql服务器上多少个数据库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;2、创建数据库存&quot;&gt;&lt;a href=&quot;#2、创建数据库存&quot; class=&quot;headerlink&quot; title=&quot;2、创建数据库存&quot;&gt;&lt;/a&gt;2、创建数据库存&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;语法：CREATE DATABASE db_name [IF NOT EXITSTS][CHARSET utf8]&lt;/li&gt;
+&lt;li&gt;参数：&lt;ul&gt;
+&lt;li&gt;db_name:自己定义的数据库名称。命名规则：字母、数字、下划线.不能是纯数字命名。&lt;/li&gt;
+&lt;li&gt;【IF NOT EXITSTS】：如果创建的数据库已经存在，则不会报错。&lt;/li&gt;
+&lt;li&gt;【CHARSET utf8】：指定当前数据库的字符集，默认为latin1。这里的”utf8”不加横线&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;SHOW 命令的使用&lt;br&gt;  SHOW CREATE DATABASE db_name; //查看创建数据库的语句过程&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;3、删除数据库&quot;&gt;&lt;a href=&quot;#3、删除数据库&quot; class=&quot;headerlink&quot; title=&quot;3、删除数据库&quot;&gt;&lt;/a&gt;3、删除数据库&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;语法格式：DROP DATABASE db_name[IF EXISTS];&lt;/li&gt;
+&lt;li&gt;参数说明：&lt;ul&gt;
+&lt;li&gt;【IF EXISTS】条件判断，可选项，如果数据库存在，再进行删除，不会报错。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Mysql 数据库字符集&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;描述：通过MYSQL命令来修改数据库的字符集&lt;/li&gt;
+&lt;li&gt;语法: ALTER DATABASE db_name DEFAULT CHARACTER SET utf8;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;MySQL-数据表操作&quot;&gt;&lt;a href=&quot;#MySQL-数据表操作&quot; class=&quot;headerlink&quot; title=&quot;MySQL 数据表操作&quot;&gt;&lt;/a&gt;MySQL 数据表操作&lt;/h2&gt;&lt;h3 id=&quot;1、选择当前操作的数据库&quot;&gt;&lt;a href=&quot;#1、选择当前操作的数据库&quot; class=&quot;headerlink&quot; title=&quot;1、选择当前操作的数据库&quot;&gt;&lt;/a&gt;1、选择当前操作的数据库&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;语法：USE db_name;&lt;/li&gt;
+&lt;li&gt;说明：选中数据库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;mysql&amp;gt; use jzb88;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Database changed&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;mysql&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;2、显示数据表&quot;&gt;&lt;a href=&quot;#2、显示数据表&quot; class=&quot;headerlink&quot; title=&quot;2、显示数据表&quot;&gt;&lt;/a&gt;2、显示数据表&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;语法：SHOW TABLES;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;3、创建数据表&quot;&gt;&lt;a href=&quot;#3、创建数据表&quot; class=&quot;headerlink&quot; title=&quot;3、创建数据表&quot;&gt;&lt;/a&gt;3、创建数据表&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;语法：CREATE TABLE table_name(列1 类型 列的属性，列2 类型 列的属性，……);&lt;/li&gt;
+&lt;li&gt;说明：多个字段中间用英文下的逗号（,）隔开。&lt;/li&gt;
+&lt;li&gt;参数说明：&lt;ul&gt;
+&lt;li&gt;列的名称：命名规则与数据库的规则一样。&lt;/li&gt;
+&lt;li&gt;列的类型：整形、浮点型、字符型、文本型、日期型&lt;/li&gt;
+&lt;li&gt;列的属性&lt;ul&gt;
+&lt;li&gt;列是否为空：NOT NULL | NULL&lt;/li&gt;
+&lt;li&gt;自动增长：AUTO_INCREMENT&lt;ul&gt;
+&lt;li&gt;注意：自动增长属性，只能用于id字段。一个表只能有一个自动增长属性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;默认值：DEFAULE value .value的值可以是整形或字符型。&lt;/li&gt;
+&lt;li&gt;主键（主索引）:PRIMARY KEY.&lt;ul&gt;
+&lt;li&gt;注意：主索引一般指定是id字段。一个表只能有一个主索引。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;结论：id字段的属性，必须有三个：not null、auto increment、primary kdy.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;实例&lt;/strong&gt;：创建一个&lt;strong&gt;news&lt;/strong&gt;的数据表&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;create table news(&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  id int not null auto_increment primary key, &lt;span class=&quot;comment&quot;&gt;#编号&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  title varchar(100) not null, &lt;span class=&quot;comment&quot;&gt;#标题&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  author varchar(20) not null, &lt;span class=&quot;comment&quot;&gt;#作者&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;source&lt;/span&gt; varchar(30) not null, &lt;span class=&quot;comment&quot;&gt;#来源&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  hits int(5) not null default 0, &lt;span class=&quot;comment&quot;&gt;#单击率&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  is_ppt tinyint(1) not null default 0, &lt;span class=&quot;comment&quot;&gt;#是否是幻灯新闻&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  content text null, &lt;span class=&quot;comment&quot;&gt;#新闻内容&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  addate int(16) not null &lt;span class=&quot;comment&quot;&gt;#添加时间&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;mysql&amp;gt; create table news(&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    -&amp;gt; id int not null auto_increment primary key,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    -&amp;gt; title varchar(50) not null,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    -&amp;gt; hits int not null default 0,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    -&amp;gt; content text,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    -&amp;gt; addate int not null&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    -&amp;gt; );&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Query OK, 0 rows affected (0.06 sec)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;mysql&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;4、显示数据表&quot;&gt;&lt;a href=&quot;#4、显示数据表&quot; class=&quot;headerlink&quot; title=&quot;4、显示数据表&quot;&gt;&lt;/a&gt;4、显示数据表&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;语法：&lt;strong&gt;SHOW CREATE TABLE&lt;/strong&gt; table_name;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;5、describe显示表的结构&quot;&gt;&lt;a href=&quot;#5、describe显示表的结构&quot; class=&quot;headerlink&quot; title=&quot;5、describe显示表的结构&quot;&gt;&lt;/a&gt;5、&lt;strong&gt;describe&lt;/strong&gt;显示表的结构&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;语法：&lt;strong&gt;DESCRIBE&lt;/strong&gt; table_name;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;mysql&amp;gt; describe news;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;+---------+-------------+------+-----+---------+----------------+&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;| Field   | Type        | Null | Key | Default | Extra          |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;+---------+-------------+------+-----+---------+----------------+&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;| id      | int(11)     | NO   | PRI | NULL    | auto_increment |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;| title   | varchar(50) | NO   |     | NULL    |                |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;| hits    | int(11)     | NO   |     | 0       |                |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;| content | text        | YES  |     | NULL    |                |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;| addate  | int(11)     | NO   |     | NULL    |                |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;+---------+-------------+------+-----+---------+----------------+&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5 rows &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt; (0.01 sec)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;mysql&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;6、删除数据表&quot;&gt;&lt;a href=&quot;#6、删除数据表&quot; class=&quot;headerlink&quot; title=&quot;6、删除数据表&quot;&gt;&lt;/a&gt;6、删除数据表&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;语法：&lt;strong&gt;DROP TABLE&lt;/strong&gt; table_name;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;MySQL数据类型&quot;&gt;&lt;a href=&quot;#MySQL数据类型&quot; class=&quot;headerlink&quot; title=&quot;MySQL数据类型&quot;&gt;&lt;/a&gt;MySQL数据类型&lt;/h2&gt;&lt;h3 id=&quot;1、整形&quot;&gt;&lt;a href=&quot;#1、整形&quot; class=&quot;headerlink&quot; title=&quot;1、整形&quot;&gt;&lt;/a&gt;1、整形&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;类形&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align:right&quot;&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;tinyint&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;0-255&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;1个字节长&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;smallint&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;0-65535&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;2个字节长&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;int&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;0-21亿&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;4个字节长&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;bigint&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;0-42亿&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;8个字节长&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&quot;2、浮点型&quot;&gt;&lt;a href=&quot;#2、浮点型&quot; class=&quot;headerlink&quot; title=&quot;2、浮点型&quot;&gt;&lt;/a&gt;2、浮点型&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;float(M,D)&lt;/strong&gt; 单精度浮点数。可以精确到小数点后7位。&lt;strong&gt;M&lt;/strong&gt;代表总宽度，&lt;strong&gt;D&lt;/strong&gt;代表小数位。&lt;/p&gt;
+&lt;font size=&quot;3px&quot; color=&quot;##008B00&quot;&gt;float(8,2)含义：宽度为8，小数为2，整数为5位。&lt;/font&gt;
+
+&lt;p&gt;&lt;strong&gt;double(M,D)&lt;/strong&gt; 双精度浮点数。可以精确到小数点后15位。&lt;strong&gt;M&lt;/strong&gt;代表总宽度，&lt;strong&gt;D&lt;/strong&gt;代表小数位。&lt;/p&gt;
+&lt;h3 id=&quot;3、字符型和文本型&quot;&gt;&lt;a href=&quot;#3、字符型和文本型&quot; class=&quot;headerlink&quot; title=&quot;3、字符型和文本型&quot;&gt;&lt;/a&gt;3、字符型和文本型&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;char(M)&lt;/strong&gt; 固定长度字符，M 代表长度。&lt;br&gt;&lt;strong&gt;varchar(M)&lt;/strong&gt; 可变长度字符，M 代表长度&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;char(6)&lt;/strong&gt; 存储『邮编』。只能是6个&lt;br&gt;  &lt;strong&gt;varchar(6)&lt;/strong&gt; 最少1个，最多6个。&lt;/p&gt;
+ &lt;font size=&quot;3px&quot; color=&quot;#008B00&quot;&gt;简单分析：char()存取数据的速度，要比varchar()快一点&lt;/font&gt;
+
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;4、文本型&quot;&gt;&lt;a href=&quot;#4、文本型&quot; class=&quot;headerlink&quot; title=&quot;4、文本型&quot;&gt;&lt;/a&gt;4、文本型&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;类型&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align:right&quot;&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;tinytext&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;0-255&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;最小文本型&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;text&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;0-1677万&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;中型文本&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;longtext&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;0-42亿&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;大型文本&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&quot;5、日期时间型&quot;&gt;&lt;a href=&quot;#5、日期时间型&quot; class=&quot;headerlink&quot; title=&quot;5、日期时间型&quot;&gt;&lt;/a&gt;5、日期时间型&lt;/h3&gt;&lt;p&gt;略……&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Mysql数据库的基本操作&quot;&gt;&lt;a href=&quot;#Mysql数据库的基本操作&quot; class=&quot;headerlink&quot; title=&quot;Mysql数据库的基本操作&quot;&gt;&lt;/a&gt;Mysql数据库的基本操作&lt;/h2&gt;&lt;h3 id=&quot;1、显示数据库&quot;&gt;&lt;a href=&quot;#1、
+    
+    </summary>
+    
+      <category term="术业专攻" scheme="http://yoursite.com/categories/%E6%9C%AF%E4%B8%9A%E4%B8%93%E6%94%BB/"/>
+    
+    
+      <category term="Mysql" scheme="http://yoursite.com/tags/Mysql/"/>
+    
+  </entry>
   
   <entry>
     <title>人是需要有点精神的，有点通灵的精神</title>
