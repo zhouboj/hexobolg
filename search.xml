@@ -6,7 +6,8 @@
     <entry>
       <title><![CDATA[Mysql数据库的基本操作应用]]></title>
       <url>http://yoursite.com/2016/07/19/mysql-base/</url>
-      <content type="html"><![CDATA[<h2 id="Mysql数据库的基本操作"><a href="#Mysql数据库的基本操作" class="headerlink" title="Mysql数据库的基本操作"></a>Mysql数据库的基本操作</h2><h3 id="1、显示数据库"><a href="#1、显示数据库" class="headerlink" title="1、显示数据库"></a>1、显示数据库</h3><ul>
+      <content type="html"><![CDATA[<p>Mysql是最流行的关系型数据库管理系统,在WEB应用方面MySQL是最好的RDBMS(Relational Database Management System:关系数据库管理系统)应用软件之一。<br><a id="more"></a></p>
+<h2 id="Mysql数据库的基本操作"><a href="#Mysql数据库的基本操作" class="headerlink" title="Mysql数据库的基本操作"></a>Mysql数据库的基本操作</h2><h3 id="1、显示数据库"><a href="#1、显示数据库" class="headerlink" title="1、显示数据库"></a>1、显示数据库</h3><ul>
 <li>语法格式：SHOW DATABASES;</li>
 <li>说明：查看你的Mysql服务器上多少个数据库</li>
 </ul>
