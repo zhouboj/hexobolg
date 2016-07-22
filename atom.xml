@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-07-22T16:15:50.000Z</updated>
+  <updated>2016-07-22T16:22:40.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="http://yoursite.com/2016/07/22/mac-brow/"/>
     <id>http://yoursite.com/2016/07/22/mac-brow/</id>
     <published>2016-07-22T13:01:30.000Z</published>
-    <updated>2016-07-22T16:15:50.000Z</updated>
+    <updated>2016-07-22T16:22:40.000Z</updated>
     
-    <content type="html">&lt;h1 id=&quot;OS-X-Mavericks&quot;&gt;&lt;a href=&quot;#OS-X-Mavericks&quot; class=&quot;headerlink&quot; title=&quot;OS X Mavericks&quot;&gt;&lt;/a&gt;OS X Mavericks&lt;/h1&gt;&lt;p&gt;重新安装系统，在苹果商店下载好OS X Mavericks安装文件，然后准备一支16G的USB3.0 U盘。制作OS X Mavericks 全新安装启动U盘。&lt;br&gt;插上U盘，在终端执行：&lt;code&gt;sudo /Applications/Install\ OS\ X\ Mavericks.app/Contents/Resources/createinstallmedia --volume /Volumes/untitled --applicationpath /Applications/Install\ OS\ X\ Mavericks.app --nointeraction&lt;/code&gt;&lt;br&gt;untitled 是你的u盘盘符，根据实际情况来。&lt;/p&gt;
+    <content type="html">&lt;p&gt;给自己一个备忘，希望也可以帮助到刚接触Mac环境的同学们。本开发环境，全部基于HomeBrew安装。&lt;br&gt;主要软件版本：PHP5.5.14，Nginx 1.6.0，MySQL5.6.19&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;OS-X-Mavericks&quot;&gt;&lt;a href=&quot;#OS-X-Mavericks&quot; class=&quot;headerlink&quot; title=&quot;OS X Mavericks&quot;&gt;&lt;/a&gt;OS X Mavericks&lt;/h1&gt;&lt;p&gt;重新安装系统，在苹果商店下载好OS X Mavericks安装文件，然后准备一支16G的USB3.0 U盘。制作OS X Mavericks 全新安装启动U盘。&lt;br&gt;插上U盘，在终端执行：&lt;code&gt;sudo /Applications/Install\ OS\ X\ Mavericks.app/Contents/Resources/createinstallmedia --volume /Volumes/untitled --applicationpath /Applications/Install\ OS\ X\ Mavericks.app --nointeraction&lt;/code&gt;&lt;br&gt;untitled 是你的u盘盘符，根据实际情况来。&lt;/p&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;Erasing Disk: 0%… 10%… 20%… 30%…100%…&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;gt;Copying installer files to disk…&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Copy complete.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Making disk bootable…&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Copying boot files…&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;gt;Copy complete.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;gt;Done.&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;看到上面的信息说明启动盘制作成功。 安装起来so easy ：）&lt;/p&gt;
 &lt;blockquote&gt;
@@ -162,7 +163,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;OS-X-Mavericks&quot;&gt;&lt;a href=&quot;#OS-X-Mavericks&quot; class=&quot;headerlink&quot; title=&quot;OS X Mavericks&quot;&gt;&lt;/a&gt;OS X Mavericks&lt;/h1&gt;&lt;p&gt;重新安装系统，在苹果商店下载好OS X Ma
+      &lt;p&gt;给自己一个备忘，希望也可以帮助到刚接触Mac环境的同学们。本开发环境，全部基于HomeBrew安装。&lt;br&gt;主要软件版本：PHP5.5.14，Nginx 1.6.0，MySQL5.6.19&lt;br&gt;
     
     </summary>
     
