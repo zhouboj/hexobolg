@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/07/22/mac-brow/index.html">
 <meta property="og:site_name" content="Job Notes">
 <meta property="og:description" content="给自己一个备忘，希望也可以帮助到刚接触Mac环境的同学们。本开发环境，全部基于HomeBrew安装。主要软件版本：PHP5.5.14，Nginx 1.6.0，MySQL5.6.19">
-<meta property="og:updated_time" content="2016-07-22T16:40:10.000Z">
+<meta property="og:updated_time" content="2016-07-23T00:29:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="全新安装Mac OSX 开发者环境 同时使用homebrew搭建 PHP，Nginx ，MySQL，Redis，Memcache ... ... (LNMP开发环境)">
 <meta name="twitter:description" content="给自己一个备忘，希望也可以帮助到刚接触Mac环境的同学们。本开发环境，全部基于HomeBrew安装。主要软件版本：PHP5.5.14，Nginx 1.6.0，MySQL5.6.19">
@@ -372,7 +372,7 @@
 <p>自检：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew doctor</div></pre></td></tr></table></figure>
 <p>常用命令： <em>（所有软件以PHP5.5为例子）</em></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">brew update                        \<span class="comment">#更新brew可安装包，建议每次执行一下</span></div><div class="line">brew search php55                  \<span class="comment">#搜索php5.5</span></div><div class="line">brew tap josegonzalez/php          \<span class="comment">#安装扩展\&lt;gihhub\_user/repo\&gt; </span></div><div class="line">brew tap                           \<span class="comment">#查看安装的扩展列表</span></div><div class="line">brew install php55                 \<span class="comment">#安装php5.5</span></div><div class="line">brew remove  php55                 \<span class="comment">#卸载php5.5</span></div><div class="line">brew upgrade php55                 \<span class="comment">#升级php5.5</span></div><div class="line">brew options php55                 \<span class="comment">#查看php5.5安装选项</span></div><div class="line">brew info    php55                 \<span class="comment">#查看php5.5相关信息</span></div><div class="line">brew home    php55                 \<span class="comment">#访问php5.5官方网站</span></div><div class="line">brew services list                 \<span class="comment">#查看系统通过 brew 安装的服务</span></div><div class="line">brew services cleanup              \<span class="comment">#清除已卸载无用的启动配置文件</span></div><div class="line">brew services restart php55        \<span class="comment">#重启php-fpm</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">brew update                        <span class="comment">#更新brew可安装包，建议每次执行一下</span></div><div class="line">brew search php55                  <span class="comment">#搜索php5.5</span></div><div class="line">brew tap josegonzalez/php          <span class="comment">#安装扩展\&lt;gihhub\_user/repo\&gt; </span></div><div class="line">brew tap                           <span class="comment">#查看安装的扩展列表</span></div><div class="line">brew install php55                 <span class="comment">#安装php5.5</span></div><div class="line">brew remove  php55                 <span class="comment">#卸载php5.5</span></div><div class="line">brew upgrade php55                 <span class="comment">#升级php5.5</span></div><div class="line">brew options php55                 <span class="comment">#查看php5.5安装选项</span></div><div class="line">brew info    php55                 <span class="comment">#查看php5.5相关信息</span></div><div class="line">brew home    php55                 <span class="comment">#访问php5.5官方网站</span></div><div class="line">brew services list                 <span class="comment">#查看系统通过 brew 安装的服务</span></div><div class="line">brew services cleanup              <span class="comment">#清除已卸载无用的启动配置文件</span></div><div class="line">brew services restart php55        <span class="comment">#重启php-fpm</span></div></pre></td></tr></table></figure>
 <p><em>注意：brew services 相关命令最好别经常用了，提示会被移除</em></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">➜  ~  brew services restart php55</div><div class="line">Warning: brew services is unsupported and will be removed soon.</div><div class="line">You should use launchctl instead.</div><div class="line">Please feel free volunteer to support it <span class="keyword">in</span> a tap.</div><div class="line"></div><div class="line">Stopping `php55`... (might take a <span class="keyword">while</span>)</div><div class="line">==\&gt; Successfully stopped `php55` (label: homebrew.mxcl.php55)</div><div class="line">==\&gt; Successfully started `php55` (label: homebrew.mxcl.php55)</div></pre></td></tr></table></figure>
 <h1 id="Oh-My-Zsh"><a href="#Oh-My-Zsh" class="headerlink" title="Oh My Zsh"></a>Oh My Zsh</h1><blockquote>
@@ -500,11 +500,6 @@
     <div>
       
         
-<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="Job wechat" style="width: 200px; max-width: 100%;"/>
-    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
-</div>
-
 
       
     </div>
@@ -544,6 +539,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/23/mac-path/" rel="prev" title="MAC 设置环境变量path的几种方法Memcache ... ... (LNMP开发环境)">
+                MAC 设置环境变量path的几种方法Memcache ... ... (LNMP开发环境) <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -638,7 +637,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
