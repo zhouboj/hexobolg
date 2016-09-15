@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-15T19:04:15.000Z</updated>
+  <updated>2016-09-15T19:08:52.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="http://yoursite.com/2016/09/15/2016-09-15/"/>
     <id>http://yoursite.com/2016/09/15/2016-09-15/</id>
     <published>2016-09-14T16:00:00.000Z</published>
-    <updated>2016-09-15T19:04:15.000Z</updated>
+    <updated>2016-09-15T19:08:52.000Z</updated>
     
     <content type="html">&lt;p&gt;本篇提到的所有归档和压缩文件格式（如&lt;strong&gt;zip、gzip、bzip2&lt;/strong&gt;以及&lt;strong&gt;tar&lt;/strong&gt;）都很流行，而&lt;strong&gt;zip&lt;/strong&gt;可能是世界上最广泛使用的格式。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;用Zip归档和压缩文件&quot;&gt;&lt;a href=&quot;#用Zip归档和压缩文件&quot; class=&quot;headerlink&quot; title=&quot;用Zip归档和压缩文件&quot;&gt;&lt;/a&gt;用Zip归档和压缩文件&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;zip&lt;/strong&gt; 既可以对文件进行归档，也可以对文件进行压缩，这样有利于将多个文件作为电子邮件的附件发送、备份文件，或节约磁盘空间。&lt;/p&gt;
+&lt;h2 id=&quot;一、用Zip归档和压缩文件&quot;&gt;&lt;a href=&quot;#一、用Zip归档和压缩文件&quot; class=&quot;headerlink&quot; title=&quot;一、用Zip归档和压缩文件&quot;&gt;&lt;/a&gt;一、用Zip归档和压缩文件&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;zip&lt;/strong&gt; 既可以对文件进行归档，也可以对文件进行压缩，这样有利于将多个文件作为电子邮件的附件发送、备份文件，或节约磁盘空间。&lt;/p&gt;
 &lt;h3 id=&quot;用Zip获得最好的压缩效果&quot;&gt;&lt;a href=&quot;#用Zip获得最好的压缩效果&quot; class=&quot;headerlink&quot; title=&quot;用Zip获得最好的压缩效果&quot;&gt;&lt;/a&gt;用Zip获得最好的压缩效果&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;-[0-9]&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;用&lt;strong&gt;zip&lt;/strong&gt;进行压缩时，可以调整其压缩率。&lt;strong&gt;zip&lt;/strong&gt;命令使用&lt;code&gt;0&lt;/code&gt;到&lt;code&gt;9&lt;/code&gt;来表示压缩率的度量标准：&lt;code&gt;0&lt;/code&gt;表示&lt;em&gt;“一点也不压缩”&lt;/em&gt;，&lt;code&gt;1&lt;/code&gt;表示&lt;em&gt;“忙完成压缩，而不需要压缩太多”&lt;/em&gt;，&lt;code&gt;9&lt;/code&gt;表示&lt;em&gt;“尽可能压缩文件，不介意会为此等待较长 的时间”&lt;/em&gt;。默认值是&lt;code&gt;6&lt;/code&gt;。&lt;/p&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;☁  jzb3188  ls &lt;span class=&quot;_&quot;&gt;-l&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;total 0&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-rw-r--r--  1 jiangzhoubo  staff  0  9 15 22:35 1.txt&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-rw-r--r--  1 jiangzhoubo  staff  0  9 15 22:35 2.txt&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-rw-r--r--  1 jiangzhoubo  staff  0  9 15 22:35 3.txt&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-rw-r--r--  1 jiangzhoubo  staff  0  9 15 22:35 4.txt&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-rw-r--r--  1 jiangzhoubo  staff  0  9 15 22:35 5.txt&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;☁  jzb3188  zip -9 moby.zip *.txt&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  adding: 1.txt (stored 0%)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  adding: 2.txt (stored 0%)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  adding: 3.txt (stored 0%)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  adding: 4.txt (stored 0%)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  adding: 5.txt (stored 0%)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  ☁  jzb3188  ls &lt;span class=&quot;_&quot;&gt;-l&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;total 8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-rw-r--r--  1 jiangzhoubo  staff    0  9 15 22:35 1.txt&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-rw-r--r--  1 jiangzhoubo  staff    0  9 15 22:35 2.txt&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-rw-r--r--  1 jiangzhoubo  staff    0  9 15 22:35 3.txt&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-rw-r--r--  1 jiangzhoubo  staff    0  9 15 22:35 4.txt&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-rw-r--r--  1 jiangzhoubo  staff    0  9 15 22:35 5.txt&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-rw-r--r--  1 jiangzhoubo  staff  712  9 15 22:37 moby.zip&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -85,7 +85,7 @@
 &lt;p&gt;&lt;code&gt;-t&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;用&lt;code&gt;-t&lt;/code&gt;（代表test）选项对文档进行测试。在每次处理Zip压缩文件时，都应该使用&lt;code&gt;-t&lt;/code&gt;选项。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;用gzip归档和压缩文件&quot;&gt;&lt;a href=&quot;#用gzip归档和压缩文件&quot; class=&quot;headerlink&quot; title=&quot;用gzip归档和压缩文件&quot;&gt;&lt;/a&gt;用gzip归档和压缩文件&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;gzip&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;二、用gzip归档和压缩文件&quot;&gt;&lt;a href=&quot;#二、用gzip归档和压缩文件&quot; class=&quot;headerlink&quot; title=&quot;二、用gzip归档和压缩文件&quot;&gt;&lt;/a&gt;二、用gzip归档和压缩文件&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;gzip&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;在某些方面，&lt;strong&gt;gzip&lt;/strong&gt;的使用要比&lt;strong&gt;zip&lt;/strong&gt;更简单些。使用&lt;strong&gt;zip&lt;/strong&gt;，需要指定新创建的&lt;strong&gt;zip&lt;/strong&gt;文件的名称，否则&lt;strong&gt;zip&lt;/strong&gt;就不能运行。而使用&lt;strong&gt;gzip&lt;/strong&gt;时，可以只输入命令和需要压缩的文件名。&lt;/p&gt;
 &lt;p&gt;不过，&lt;strong&gt;zip&lt;/strong&gt;和&lt;strong&gt;gzip&lt;/strong&gt;之间还是有很大的区别。使用&lt;strong&gt;zip&lt;/strong&gt;压缩文件时，它会保留原始文件；而使用&lt;strong&gt;gzip&lt;/strong&gt;压缩文件时，最终得到的只是新创建的压缩文件，原始文件不存在了。&lt;/p&gt;
 &lt;p&gt;如果想让&lt;strong&gt;gzip&lt;/strong&gt;保留原始文件，则需要使用&lt;code&gt;-c&lt;/code&gt;（或&lt;em&gt;–stdout&lt;/em&gt;或&lt;em&gt;–to-stdout&lt;/em&gt;）选项，它可以将&lt;strong&gt;gzip&lt;/strong&gt;的结果输出到&lt;code&gt;shell&lt;/code&gt;，但还需要将输出重定向到另一个文件。&lt;/p&gt;
@@ -97,7 +97,7 @@
 &lt;h3 id=&quot;解压用gzip压缩的文件&quot;&gt;&lt;a href=&quot;#解压用gzip压缩的文件&quot; class=&quot;headerlink&quot; title=&quot;解压用gzip压缩的文件&quot;&gt;&lt;/a&gt;解压用gzip压缩的文件&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;gunzip&lt;/strong&gt;&lt;br&gt;与gzip会删除原始文件，只保留gzip压缩结果一样，&lt;strong&gt;gunzip&lt;/strong&gt;也会删除&lt;em&gt;.gz&lt;/em&gt;文件&lt;br&gt;使用&lt;code&gt;-c&lt;/code&gt;选项可能是个好主意，特别是你计划保留&lt;code&gt;.gz&lt;/code&gt;文件，或者想把它发送给其他人。&lt;br&gt;&lt;strong&gt;说明&lt;/strong&gt; &lt;em&gt;如果你不喜欢使用&lt;code&gt;gunzip&lt;/code&gt;命令，也可以使用&lt;code&gt;gzip -d (或 --decompress 或 --uncompress)&lt;/code&gt;。&lt;/em&gt;&lt;/p&gt;
 &lt;h3 id=&quot;测试将要用gunzip解压的文件&quot;&gt;&lt;a href=&quot;#测试将要用gunzip解压的文件&quot; class=&quot;headerlink&quot; title=&quot;测试将要用gunzip解压的文件&quot;&gt;&lt;/a&gt;测试将要用gunzip解压的文件&lt;/h3&gt;&lt;p&gt;&lt;em&gt;-t&lt;/em&gt;&lt;br&gt;在用gunzip命令解压某个（或某些 ）文件之前，或许你想验证一下文件能否正确解压，所有文件都不会有任何损坏。为此，可以使用&lt;em&gt;-t&lt;/em&gt;（或–test ）选项。&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ gzip -t paradise_lost.txt.gz&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;用bzip2归档和压缩文件&quot;&gt;&lt;a href=&quot;#用bzip2归档和压缩文件&quot; class=&quot;headerlink&quot; title=&quot;用bzip2归档和压缩文件&quot;&gt;&lt;/a&gt;用bzip2归档和压缩文件&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;bzip2&lt;/strong&gt;&lt;br&gt;与&lt;strong&gt;gzip&lt;/strong&gt;一样，&lt;strong&gt;bzip2&lt;/strong&gt;也只保留最终生成的&lt;code&gt;.bz2&lt;/code&gt;，原始的mody-dick.txt文件将不复存在。若要保留原始的文件，可以使用&lt;em&gt;-c&lt;/em&gt;（或–stdout）选项，并将结果通过管道输出到文件名以&lt;code&gt;.bz2&lt;/code&gt;结尾的文件中。&lt;/p&gt;
+&lt;h2 id=&quot;三、用bzip2归档和压缩文件&quot;&gt;&lt;a href=&quot;#三、用bzip2归档和压缩文件&quot; class=&quot;headerlink&quot; title=&quot;三、用bzip2归档和压缩文件&quot;&gt;&lt;/a&gt;三、用bzip2归档和压缩文件&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;bzip2&lt;/strong&gt;&lt;br&gt;与&lt;strong&gt;gzip&lt;/strong&gt;一样，&lt;strong&gt;bzip2&lt;/strong&gt;也只保留最终生成的&lt;code&gt;.bz2&lt;/code&gt;，原始的mody-dick.txt文件将不复存在。若要保留原始的文件，可以使用&lt;em&gt;-c&lt;/em&gt;（或–stdout）选项，并将结果通过管道输出到文件名以&lt;code&gt;.bz2&lt;/code&gt;结尾的文件中。&lt;/p&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$  ls &lt;span class=&quot;_&quot;&gt;-l&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;total 8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-rw-r--r--  1 jiangzhoubo  staff  307  9 16 00:25 moby-dick.txt&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$  bzip2 -c moby-dick.txt &amp;gt;moby-dick.txt.bz2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$  ls &lt;span class=&quot;_&quot;&gt;-l&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;total 16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-rw-r--r--  1 jiangzhoubo  staff  14  9 16 00:27 moby-dick.txt&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-rw-r--r--  1 jiangzhoubo  staff  61  9 16 00:27 moby-dick.txt.bz2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h3 id=&quot;用bzip2获得最好的压缩效果&quot;&gt;&lt;a href=&quot;#用bzip2获得最好的压缩效果&quot; class=&quot;headerlink&quot; title=&quot;用bzip2获得最好的压缩效果&quot;&gt;&lt;/a&gt;用bzip2获得最好的压缩效果&lt;/h3&gt;&lt;p&gt;&lt;em&gt;-[0-9]&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;与zip和gzip一样，用bzip2压缩也可以调整它使用的压缩率&lt;/p&gt;
@@ -109,7 +109,7 @@
 &lt;h3 id=&quot;测试将要用bunzip2解压文件&quot;&gt;&lt;a href=&quot;#测试将要用bunzip2解压文件&quot; class=&quot;headerlink&quot; title=&quot;测试将要用bunzip2解压文件&quot;&gt;&lt;/a&gt;测试将要用bunzip2解压文件&lt;/h3&gt;&lt;p&gt;&lt;em&gt;-t&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;想验证一下文件能否正确解压，可以使用&lt;em&gt;-t&lt;/em&gt;（或–text）选项完成这个操作。&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ bunzip2 -t paradise_lost.txt.gz&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;用tar归档文件&quot;&gt;&lt;a href=&quot;#用tar归档文件&quot; class=&quot;headerlink&quot; title=&quot;用tar归档文件&quot;&gt;&lt;/a&gt;用tar归档文件&lt;/h2&gt;&lt;p&gt;&lt;em&gt;-cf&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&quot;四、用tar归档文件&quot;&gt;&lt;a href=&quot;#四、用tar归档文件&quot; class=&quot;headerlink&quot; title=&quot;四、用tar归档文件&quot;&gt;&lt;/a&gt;四、用tar归档文件&lt;/h2&gt;&lt;p&gt;&lt;em&gt;-cf&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;记住，&lt;strong&gt;tar&lt;/strong&gt; 不能进行压缩，只进行归档（顺便提一下，结果生成的归档文件就是&lt;code&gt;tarball&lt;/code&gt;）。实际上tar是使用其他程序（比如&lt;strong&gt;gzip&lt;/strong&gt;或&lt;strong&gt;bzip2&lt;/strong&gt;）来压缩它要创建的归档文件。即使你不打算压缩&lt;code&gt;tarball&lt;/code&gt;，也仍然可以用同样的基本选项以同样的方式来创建它：&lt;em&gt;-c&lt;/em&gt;（或&lt;em&gt;–create&lt;/em&gt;）选项告诉&lt;strong&gt;tar&lt;/strong&gt;正在创建一个&lt;code&gt;tarball&lt;/code&gt;，而&lt;em&gt;-f&lt;/em&gt;（或&lt;em&gt;–file&lt;/em&gt;）选项则用于为&lt;code&gt;tarball&lt;/code&gt;指定文件名。&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ tar -cf moby.tar *.txt&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;与&lt;strong&gt;gzip&lt;/strong&gt;和&lt;strong&gt;bzip2&lt;/strong&gt;不一样的是，&lt;strong&gt;tar&lt;/strong&gt;会保留原始的文件。&lt;/p&gt;
@@ -133,7 +133,7 @@
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ tar -zvtf moby.tar.gz&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ tar -zxvf moby.tar.gz&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;&lt;strong&gt;说明&lt;/strong&gt; &lt;em&gt;如果正在打开的tarball是用bzip2压缩的，则应该使用以下命令：&lt;/em&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ tar -jxvf moby.tar.bz2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;小结&quot;&gt;&lt;a href=&quot;#小结&quot; class=&quot;headerlink&quot; title=&quot;小结&quot;&gt;&lt;/a&gt;小结&lt;/h2&gt;&lt;p&gt;Mac和Linux系统的使用方法一样，归档和压缩更多是为了方便，但也还是必不可少的。归档和压缩工具的使用将远超出你的想象，所以应该好好学习使用这些工具。&lt;/p&gt;
+&lt;h2 id=&quot;五、小结&quot;&gt;&lt;a href=&quot;#五、小结&quot; class=&quot;headerlink&quot; title=&quot;五、小结&quot;&gt;&lt;/a&gt;五、小结&lt;/h2&gt;&lt;p&gt;Mac和Linux系统的使用方法一样，归档和压缩更多是为了方便，但也还是必不可少的。归档和压缩工具的使用将远超出你的想象，所以应该好好学习使用这些工具。&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -513,13 +513,13 @@
     
       <category term="Mac" scheme="http://yoursite.com/tags/Mac/"/>
     
+      <category term="MySQL" scheme="http://yoursite.com/tags/MySQL/"/>
+    
       <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
     
       <category term="Brew" scheme="http://yoursite.com/tags/Brew/"/>
     
       <category term="Nginx" scheme="http://yoursite.com/tags/Nginx/"/>
-    
-      <category term="MySQL" scheme="http://yoursite.com/tags/MySQL/"/>
     
   </entry>
   
