@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-15T18:01:53.000Z</updated>
+  <updated>2016-09-15T18:13:51.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,20 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>Linux命令速查手册——归档和压缩</title>
     <link href="http://yoursite.com/2016/09/15/2016-09-15/"/>
     <id>http://yoursite.com/2016/09/15/2016-09-15/</id>
     <published>2016-09-14T16:00:00.000Z</published>
-    <updated>2016-09-15T18:01:53.000Z</updated>
+    <updated>2016-09-15T18:13:51.000Z</updated>
     
-    <content type="html">&lt;p&gt;title: Linux命令速查手册——归档和压缩&lt;br&gt;date: 2016-09-15&lt;br&gt;categories:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;技术&lt;br&gt;tags:&lt;/li&gt;
-&lt;li&gt;Linux&lt;/li&gt;
-&lt;li&gt;Mac&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;本篇提到的所有归档和压缩文件格式（如zip、gzip、bzip2以及tar）都很流行，而zip可能是世界上最广泛使用的格式。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;本篇提到的所有归档和压缩文件格式（如zip、gzip、bzip2以及tar）都很流行，而zip可能是世界上最广泛使用的格式。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;用Zip归档和压缩文件&quot;&gt;&lt;a href=&quot;#用Zip归档和压缩文件&quot; class=&quot;headerlink&quot; title=&quot;用Zip归档和压缩文件&quot;&gt;&lt;/a&gt;用Zip归档和压缩文件&lt;/h2&gt;&lt;p&gt;zip既可以对文件进行归档，也可以对文件进行压缩，这样有利于将多个文件作为电子邮件的附件发送、备份文件，或节约磁盘空间。&lt;/p&gt;
 &lt;h3 id=&quot;用Zip获得最好的压缩效果&quot;&gt;&lt;a href=&quot;#用Zip获得最好的压缩效果&quot; class=&quot;headerlink&quot; title=&quot;用Zip获得最好的压缩效果&quot;&gt;&lt;/a&gt;用Zip获得最好的压缩效果&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;-[0-9]
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;用&lt;strong&gt;zip&lt;/strong&gt;进行压缩时，可以调整其压缩率。&lt;strong&gt;zip&lt;/strong&gt;命令使用&lt;code&gt;0&lt;/code&gt;到&lt;code&gt;9&lt;/code&gt;来表示压缩率的度量标准：&lt;code&gt;0&lt;/code&gt;表示&lt;em&gt;“一点也不压缩”&lt;/em&gt;，&lt;code&gt;1&lt;/code&gt;表示&lt;em&gt;“忙完成压缩，而不需要压缩太多”&lt;/em&gt;，&lt;code&gt;9&lt;/code&gt;表示&lt;em&gt;“尽可能压缩文件，不介意会为此等待较长 的时间”&lt;/em&gt;。默认值是&lt;code&gt;6&lt;/code&gt;。&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;☁  jzb3188  ls &lt;span class=&quot;_&quot;&gt;-l&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;total 0&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-rw-r--r--  1 jiangzhoubo  staff  0  9 15 22:35 1.txt&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-rw-r--r--  1 jiangzhoubo  staff  0  9 15 22:35 2.txt&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-rw-r--r--  1 jiangzhoubo  staff  0  9 15 22:35 3.txt&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-rw-r--r--  1 jiangzhoubo  staff  0  9 15 22:35 4.txt&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-rw-r--r--  1 jiangzhoubo  staff  0  9 15 22:35 5.txt&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;☁  jzb3188  zip -9 moby.zip *.txt&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  adding: 1.txt (stored 0%)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  adding: 2.txt (stored 0%)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  adding: 3.txt (stored 0%)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  adding: 4.txt (stored 0%)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  adding: 5.txt (stored 0%)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  ☁  jzb3188  ls &lt;span class=&quot;_&quot;&gt;-l&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;total 8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-rw-r--r--  1 jiangzhoubo  staff    0  9 15 22:35 1.txt&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-rw-r--r--  1 jiangzhoubo  staff    0  9 15 22:35 2.txt&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-rw-r--r--  1 jiangzhoubo  staff    0  9 15 22:35 3.txt&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-rw-r--r--  1 jiangzhoubo  staff    0  9 15 22:35 4.txt&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-rw-r--r--  1 jiangzhoubo  staff    0  9 15 22:35 5.txt&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-rw-r--r--  1 jiangzhoubo  staff  712  9 15 22:37 moby.zip&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -65,17 +58,16 @@
     
     <summary type="html">
     
-      &lt;p&gt;title: Linux命令速查手册——归档和压缩&lt;br&gt;date: 2016-09-15&lt;br&gt;categories:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;技术&lt;br&gt;tags:&lt;/li&gt;
-&lt;li&gt;Linux&lt;/li&gt;
-&lt;li&gt;Mac&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;本篇提到的所有归档和压缩文件格式（如zip、gzip、bzip2以及tar）都很流行，而zip可能是世界上最广泛使用的格式。&lt;br&gt;
+      &lt;p&gt;本篇提到的所有归档和压缩文件格式（如zip、gzip、bzip2以及tar）都很流行，而zip可能是世界上最广泛使用的格式。&lt;br&gt;
     
     </summary>
     
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Mac" scheme="http://yoursite.com/tags/Mac/"/>
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
     
   </entry>
   
