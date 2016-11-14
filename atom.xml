@@ -579,11 +579,11 @@
     
       <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
     
-      <category term="MySQL" scheme="http://yoursite.com/tags/MySQL/"/>
-    
       <category term="Brew" scheme="http://yoursite.com/tags/Brew/"/>
     
       <category term="Nginx" scheme="http://yoursite.com/tags/Nginx/"/>
+    
+      <category term="MySQL" scheme="http://yoursite.com/tags/MySQL/"/>
     
   </entry>
   
