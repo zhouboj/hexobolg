@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-11-08T21:16:14.000Z</updated>
+  <updated>2016-11-13T15:30:13.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux系统下安装rz/sz命令及使用说明</title>
+    <link href="http://yoursite.com/2016/11/13/lrzszinstall/"/>
+    <id>http://yoursite.com/2016/11/13/lrzszinstall/</id>
+    <published>2016-11-13T12:28:00.000Z</published>
+    <updated>2016-11-13T15:30:13.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;/p&gt;&lt;h2 id=&quot;intro&quot;&gt;首页&lt;/h2&gt;对于经常使用Linux系统的人员来说，少不了将本地的文件上传到服务器或者从服务器上下载文件到本地，rz / sz命令很方便的帮我们实现了这个功能，但是很多Linux系统初始并没有这两个命令。今天，我们就简单的讲解一下如何安装和使用rz、sz命令。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;1-软件安装&quot;&gt;&lt;a href=&quot;#1-软件安装&quot; class=&quot;headerlink&quot; title=&quot;1.软件安装&quot;&gt;&lt;/a&gt;1.软件安装&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;root 账号登陆后，依次执行以下命令：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; /tmp&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;wget http://www.ohse.de/uwe/releases/lrzsz-0.12.20.tar.gz&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;tar zxvf lrzsz-0.12.20.tar.gz &amp;amp;&amp;amp; &lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; lrzsz-0.12.20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;./configure &amp;amp;&amp;amp; make &amp;amp;&amp;amp; make install&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;上面安装过程默认把lsz和lrz安装到了/usr/local/bin/&lt;br&gt;目录下，现在我们并不能直接使用，下面创建软链接，并命名为rz/sz：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; /usr/bin&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;ln &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/bin/lrz rz&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;ln &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/bin/lsz sz&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;2-使用说明&quot;&gt;&lt;a href=&quot;#2-使用说明&quot; class=&quot;headerlink&quot; title=&quot;2.使用说明&quot;&gt;&lt;/a&gt;2.使用说明&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;sz命令发送文件到本地：
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;sz filename&lt;/strong&gt;&lt;br&gt;      rz命令本地上传文件到服务器：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;rz&lt;/strong&gt;&lt;br&gt;      执行该命令后，在弹出框中选择要上传的文件即可。&lt;br&gt;      说明：打开SecureCRT软件 -&amp;gt; Options -&amp;gt; session options -&amp;gt; X/Y/Zmodem 下可以设置上传和下载的目录。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;h2 id=&quot;intro&quot;&gt;首页&lt;/h2&gt;对于经常使用Linux系统的人员来说，少不了将本地的文件上传到服务器或者从服务器上下载文件到本地，rz / sz命令很方便的帮我们实现了这个功能，但是很多Linux系统初始并没有这两个命令。今天，我们就简单的讲解一下如何安装和使用rz、sz命令。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>php简单的文章系统</title>

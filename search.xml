@@ -4,6 +4,24 @@
   
     
     <entry>
+      <title><![CDATA[Linux系统下安装rz/sz命令及使用说明]]></title>
+      <url>http://yoursite.com/2016/11/13/lrzszinstall/</url>
+      <content type="html"><![CDATA[<p></p><h2 id="intro">首页</h2>对于经常使用Linux系统的人员来说，少不了将本地的文件上传到服务器或者从服务器上下载文件到本地，rz / sz命令很方便的帮我们实现了这个功能，但是很多Linux系统初始并没有这两个命令。今天，我们就简单的讲解一下如何安装和使用rz、sz命令。<br><a id="more"></a><p></p>
+<h2 id="1-软件安装"><a href="#1-软件安装" class="headerlink" title="1.软件安装"></a>1.软件安装</h2><blockquote>
+<p>root 账号登陆后，依次执行以下命令：</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /tmp</div><div class="line"></div><div class="line">wget http://www.ohse.de/uwe/releases/lrzsz-0.12.20.tar.gz</div><div class="line"></div><div class="line">tar zxvf lrzsz-0.12.20.tar.gz &amp;&amp; <span class="built_in">cd</span> lrzsz-0.12.20</div><div class="line"></div><div class="line">./configure &amp;&amp; make &amp;&amp; make install</div></pre></td></tr></table></figure>
+<blockquote>
+<p>上面安装过程默认把lsz和lrz安装到了/usr/local/bin/<br>目录下，现在我们并不能直接使用，下面创建软链接，并命名为rz/sz：</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="built_in">cd</span> /usr/bin</div><div class="line"></div><div class="line">ln <span class="_">-s</span> /usr/<span class="built_in">local</span>/bin/lrz rz</div><div class="line"></div><div class="line">ln <span class="_">-s</span> /usr/<span class="built_in">local</span>/bin/lsz sz</div></pre></td></tr></table></figure>
+<h2 id="2-使用说明"><a href="#2-使用说明" class="headerlink" title="2.使用说明"></a>2.使用说明</h2><pre><code>sz命令发送文件到本地：
+</code></pre><p><strong>sz filename</strong><br>      rz命令本地上传文件到服务器：</p>
+<p><strong>rz</strong><br>      执行该命令后，在弹出框中选择要上传的文件即可。<br>      说明：打开SecureCRT软件 -&gt; Options -&gt; session options -&gt; X/Y/Zmodem 下可以设置上传和下载的目录。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[php简单的文章系统]]></title>
       <url>http://yoursite.com/2016/10/31/article-php/</url>
       <content type="html"><![CDATA[<p></p><h2 id="intro">首页</h2>简单的PHP文章系统，自己平时练手写的仅供参考，本系统只有6个文件，分别是：<br><a id="more"></a><p></p>
