@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title><![CDATA[一个实用的sed替换字符串的例子]]></title>
+      <url>http://yoursite.com/2016/11/15/sed-use/</url>
+      <content type="html"><![CDATA[<p></p><h2 id="intro">首页</h2>对于经常使用Linux系统的人员来说，sed用法还是方便了不少操作。<br><a id="more"></a><p></p>
+<p>用sed替换文件中的字符串是很常见功能，用起来很简单，语法是这样：</p>
+<blockquote>
+<p>sed ‘s/打算被替换的字符串/新字符串/‘ 文件名</p>
+</blockquote>
+<p>我今天找了半天，想完成这样的功能，就是把下面的文件（假设文件是Config.xml）内容中的site1的Version改成2，注意，你事先并不知道site1的Version是1还是别的值。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;Configuration&gt;</div><div class="line">   &lt;Site Name=<span class="string">"site1"</span> Version=<span class="string">"1"</span> Root=<span class="string">"/var/root1"</span>/&gt;</div><div class="line">   &lt;Site Name=<span class="string">"site2"</span> Version=<span class="string">"1"</span> Root=<span class="string">"/var/root2"</span>/&gt;</div><div class="line">&lt;/Configuration&gt;</div></pre></td></tr></table></figure>
+<p>这里的难点是有多个Version,得先把要替换的Version所在的那一行找出来才行（sed是可以指定在具体哪一行上进行替换的）。所以解决方法有两个步骤： </p>
+<ol>
+<li>找到site1所在的行号 </li>
+<li>在这一行上把Version=”任意值” 换成Version=”2”</li>
+</ol>
+<p>第一个步骤用grep和awk来完成，grep的-n参数可以把行号现实出来：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grep -n <span class="string">"Name=\"site1\""</span> Config.xml</div></pre></td></tr></table></figure></p>
+<p>的输出是<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">2:    &lt;Site Name=<span class="string">"site1"</span> Version=<span class="string">"1"</span>/&gt;</div></pre></td></tr></table></figure></p>
+<p>最前面的2就是行号，用awk轻易可以把它打印出来,第二个awk中的-F:指的是用冒号来分割字符串。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grep -n <span class="string">"Name=\"site1\""</span> Config.xml | awk <span class="string">'&#123;print $1&#125;'</span> | awk -F: <span class="string">'&#123;print $1&#125;'</span></div></pre></td></tr></table></figure>
+<p>现在假设我们已经知道要替换第二行的Version，首先想到的尝试的是<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sed <span class="string">'2s/Version=".*"/Version="2"/'</span> Config.xml</div></pre></td></tr></table></figure></p>
+<p>这里s前面的2,就是我们写死的行号（当然实际中不能写死，后面会说怎么用参数来替换它）。结果不是我们想要的:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;Configuration&gt;</div><div class="line">   &lt;Site Name=<span class="string">"site1"</span> Version=<span class="string">"2"</span>/&gt;</div><div class="line">   &lt;Site Name=<span class="string">"site2"</span> Version=<span class="string">"1"</span> Root=<span class="string">"/var/root2"</span>/&gt;</div><div class="line">&lt;/Configuration&gt;</div></pre></td></tr></table></figure></p>
+<p>问题出在Version=”. “这个正则表达式，我们的本意是匹配Version=”1”，结果匹配的是Version=”1” Root=”/var/root1”。因为. 匹配了任意的字符串，包括双引号在内，我们要匹配的是不包含双引号的任意多个字符，应该写成这样:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sed <span class="string">'2s/Version="[^\"]/Version="2/'</span> Config.xml</div></pre></td></tr></table></figure></p>
+<p>现在最后的问题就是如何去掉写死的行号,因为sed支持shell变量，所以只要把行号写到一个临时的shell变量中，在sed里引用就行了(写在一行很长，你可以放在两行里执行也没有问题)。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">linenum=`grep -n <span class="string">"Name=\"site1\""</span> Config.xml | awk <span class="string">'&#123;print $1&#125;'</span> | awk -F: <span class="string">'&#123;print $1&#125;'</span>` | sed <span class="string">"<span class="variable">$&#123;linenum&#125;</span>s/Version=\"[^\"]/Version=\"2/"</span> Config.xml</div></pre></td></tr></table></figure></p>
+<p>这里要注意的是如果用了shell变量，就要用双引号，至于双引号里面的双引号，就只能用\”来转义了。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Linux系统下安装rz/sz命令及使用说明]]></title>
       <url>http://yoursite.com/2016/11/13/lrzszinstall/</url>
       <content type="html"><![CDATA[<p></p><h2 id="intro">首页</h2>对于经常使用Linux系统的人员来说，少不了将本地的文件上传到服务器或者从服务器上下载文件到本地，rz / sz命令很方便的帮我们实现了这个功能，但是很多Linux系统初始并没有这两个命令。今天，我们就简单的讲解一下如何安装和使用rz、sz命令。<br><a id="more"></a><p></p>
